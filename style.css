@@ -1,1187 +1,653 @@
-/* =========================================================
-   VARIABLES
-========================================================= */
-
-:root {
-    --primary: #4f46e5;
-    --primary-dark: #3730a3;
-    --primary-light: #eef2ff;
-
-    --text: #172033;
-    --text-light: #64748b;
-    --heading: #111827;
-
-    --background: #ffffff;
-    --background-alt: #f8fafc;
-    --card: #ffffff;
-
-    --border: #e2e8f0;
-
-    --success: #16a34a;
-    --danger: #dc2626;
-    --warning: #f59e0b;
-
-    --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
-    --shadow-md: 0 12px 30px rgba(15, 23, 42, 0.1);
-    --shadow-lg: 0 25px 60px rgba(15, 23, 42, 0.15);
-
-    --radius-sm: 8px;
-    --radius-md: 14px;
-    --radius-lg: 22px;
-
-    --transition: 0.25s ease;
-}
-
-body.dark {
-    --text: #e5e7eb;
-    --text-light: #94a3b8;
-    --heading: #f8fafc;
-
-    --background: #0f172a;
-    --background-alt: #111827;
-    --card: #1e293b;
-
-    --border: #334155;
-
-    --primary-light: #312e81;
-
-    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.4);
-}
-
+"use strict";
 
 /* =========================================================
-   RESET
+   DATA BUKU
 ========================================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Inter", sans-serif;
-    background: var(--background);
-    color: var(--text);
-    line-height: 1.6;
-    transition: background var(--transition), color var(--transition);
-}
-
-button,
-input,
-select {
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-.hidden {
-    display: none !important;
-}
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-
-.container {
-    width: min(1180px, calc(100% - 40px));
-    margin: auto;
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.btn {
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-weight: 600;
-    transition: all var(--transition);
-}
-
-.btn-primary {
-    background: var(--primary);
-    color: white;
-}
-
-.btn-primary:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    background: transparent;
-    color: var(--primary);
-    border: 1px solid var(--primary);
-}
-
-.btn-outline:hover {
-    background: var(--primary-light);
-}
-
-.btn-full {
-    width: 100%;
-}
-
-.icon-button {
-    width: 42px;
-    height: 42px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--text);
-    transition: var(--transition);
-}
-
-.icon-button:hover {
-    color: var(--primary);
-    border-color: var(--primary);
-}
-
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    height: 76px;
-    background: color-mix(in srgb, var(--background) 94%, transparent);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-}
-
-.nav-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--heading);
-    white-space: nowrap;
-}
-
-.logo > span:last-child > span {
-    color: var(--primary);
-}
-
-.logo-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary);
-    color: white;
-    border-radius: 10px;
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-    margin-left: auto;
-}
-
-.nav-link {
-    color: var(--text-light);
-    font-size: 14px;
-    font-weight: 600;
-    transition: var(--transition);
-    position: relative;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--primary);
-}
-
-.nav-link.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -9px;
-    height: 2px;
-    background: var(--primary);
-}
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.mobile-menu-button {
-    display: none;
-    border: 0;
-    background: transparent;
-    color: var(--text);
-    font-size: 22px;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-    background:
-        radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.1), transparent 30%),
-        radial-gradient(circle at 90% 30%, rgba(99, 102, 241, 0.08), transparent 30%),
-        var(--background);
-    overflow: hidden;
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    align-items: center;
-    gap: 70px;
-}
-
-.hero-content {
-    padding: 70px 0;
-}
-
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 13px;
-    border-radius: 50px;
-    background: var(--primary-light);
-    color: var(--primary);
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 22px;
-}
-
-.hero h1 {
-    color: var(--heading);
-    font-size: clamp(42px, 5vw, 66px);
-    line-height: 1.08;
-    letter-spacing: -2px;
-    margin-bottom: 22px;
-}
-
-.hero h1 span {
-    color: var(--primary);
-    display: block;
-}
-
-.hero-content > p {
-    max-width: 600px;
-    color: var(--text-light);
-    font-size: 17px;
-    margin-bottom: 30px;
-}
-
-.hero-search {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    max-width: 650px;
-    padding: 7px;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    background: var(--card);
-    box-shadow: var(--shadow-md);
-}
-
-.hero-search > i {
-    margin-left: 13px;
-    color: var(--text-light);
-}
-
-.hero-search input {
-    flex: 1;
-    min-width: 0;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: var(--text);
-}
-
-.hero-search input::placeholder {
-    color: var(--text-light);
-}
-
-.popular-search {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 9px;
-    margin-top: 16px;
-    color: var(--text-light);
-    font-size: 13px;
-}
-
-.search-tag {
-    border: 0;
-    background: var(--background-alt);
-    color: var(--text);
-    padding: 5px 10px;
-    border-radius: 20px;
-}
-
-.search-tag:hover {
-    background: var(--primary-light);
-    color: var(--primary);
-}
-
-.hero-stats {
-    display: flex;
-    gap: 38px;
-    margin-top: 42px;
-}
-
-.stat {
-    display: flex;
-    flex-direction: column;
-}
-
-.stat strong {
-    color: var(--heading);
-    font-size: 24px;
-}
-
-.stat span {
-    color: var(--text-light);
-    font-size: 13px;
-}
-
-.hero-visual {
-    position: relative;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-circle {
-    position: absolute;
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
-    background: var(--primary-light);
-}
-
-.book-stack {
-    position: relative;
-    width: 350px;
-    height: 350px;
-}
-
-.floating-book {
-    position: absolute;
-    width: 190px;
-    height: 250px;
-    border-radius: 8px 18px 18px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 70px;
-    color: white;
-    box-shadow: var(--shadow-lg);
-}
-
-.book-one {
-    background: #4f46e5;
-    transform: rotate(-12deg);
-    left: 10px;
-    top: 65px;
-}
-
-.book-two {
-    background: #7c3aed;
-    transform: rotate(7deg);
-    left: 90px;
-    top: 40px;
-}
-
-.book-three {
-    background: #2563eb;
-    transform: rotate(18deg);
-    left: 150px;
-    top: 85px;
-}
-
-.reading-card {
-    position: absolute;
-    right: -10px;
-    bottom: 10px;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px;
-    border-radius: 14px;
-    background: var(--card);
-    box-shadow: var(--shadow-lg);
-}
-
-.reading-icon {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background: var(--primary-light);
-    color: var(--primary);
-}
-
-.reading-card strong {
-    display: block;
-    color: var(--heading);
-    font-size: 13px;
-}
-
-.reading-card small {
-    color: var(--text-light);
-}
-
-
-/* =========================================================
-   SECTIONS
-========================================================= */
-
-.section {
-    padding: 90px 0;
-}
-
-.section-alt {
-    background: var(--background-alt);
-}
-
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 30px;
-    margin-bottom: 35px;
-}
-
-.section-label {
-    color: var(--primary);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-}
-
-.section-heading h2 {
-    margin-top: 7px;
-    color: var(--heading);
-    font-size: 34px;
-    line-height: 1.2;
-}
-
-.section-heading p {
-    color: var(--text-light);
-    margin-top: 7px;
-}
-
-
-/* =========================================================
-   SORT
-========================================================= */
-
-.sort-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-light);
-    font-size: 13px;
-}
-
-.sort-wrapper select {
-    padding: 10px 14px;
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    background: var(--card);
-    color: var(--text);
-    outline: none;
-}
-
-
-/* =========================================================
-   CATEGORY
-========================================================= */
-
-.category-filter {
-    display: flex;
-    gap: 9px;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
-}
-
-.category-button {
-    padding: 9px 15px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--text-light);
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.category-button:hover,
-.category-button.active {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
-}
-
-.search-result-info {
-    color: var(--text-light);
-    font-size: 13px;
-    margin-bottom: 18px;
-}
-
-
-/* =========================================================
-   BOOK GRID
-========================================================= */
-
-.books-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-}
-
-.book-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    transition: all var(--transition);
-    animation: cardAppear 0.45s ease both;
-}
-
-.book-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-md);
-}
-
-@keyframes cardAppear {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
+const books = [
+    {
+        id: 1,
+        title: "Belajar JavaScript Modern",
+        author: "Andi Pratama",
+        category: "Teknologi",
+        year: 2025,
+        rating: 4.8,
+        description: "Panduan praktis mempelajari JavaScript modern mulai dari dasar hingga pembuatan aplikasi web interaktif.",
+        cover: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "JavaScript merupakan salah satu bahasa pemrograman yang sangat banyak digunakan dalam pengembangan web modern.",
+            "Pada bagian ini kita mempelajari variabel, tipe data, operator, percabangan, dan perulangan.",
+            "Setelah memahami dasar JavaScript, kita dapat mulai menggunakan function untuk membuat program yang lebih terstruktur.",
+            "DOM memungkinkan JavaScript berinteraksi langsung dengan elemen HTML sehingga halaman dapat menjadi interaktif.",
+            "Event listener digunakan untuk merespons tindakan pengguna seperti klik tombol, mengetik pada input, dan melakukan submit form."
+        ]
+    },
+
+    {
+        id: 2,
+        title: "Dasar-Dasar Pemrograman",
+        author: "Budi Santoso",
+        category: "Pendidikan",
+        year: 2024,
+        rating: 4.6,
+        description: "Materi dasar pemrograman untuk pemula yang ingin memahami cara berpikir komputasional.",
+        cover: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "Pemrograman adalah proses memberikan instruksi kepada komputer untuk menyelesaikan suatu masalah.",
+            "Algoritma membantu kita menyusun langkah penyelesaian masalah secara sistematis.",
+            "Variabel digunakan untuk menyimpan data yang diperlukan oleh program.",
+            "Struktur kontrol membantu program menentukan tindakan berdasarkan kondisi tertentu.",
+            "Dengan latihan yang konsisten, konsep pemrograman akan menjadi semakin mudah dipahami."
+        ]
+    },
+
+    {
+        id: 3,
+        title: "Sejarah Indonesia",
+        author: "Dewi Lestari",
+        category: "Sejarah",
+        year: 2023,
+        rating: 4.7,
+        description: "Mengenal perjalanan sejarah Indonesia dari masa kerajaan hingga era modern.",
+        cover: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "Sejarah Indonesia memiliki perjalanan panjang yang dipengaruhi berbagai kerajaan, perdagangan, dan kebudayaan.",
+            "Kerajaan-kerajaan Nusantara memainkan peranan penting dalam perkembangan masyarakat dan kebudayaan.",
+            "Perdagangan maritim membuat wilayah Nusantara terhubung dengan berbagai wilayah dunia.",
+            "Masa kolonial membawa perubahan besar dalam kehidupan sosial, ekonomi, dan politik.",
+            "Memahami sejarah membantu kita melihat hubungan antara masa lalu dan kehidupan masyarakat saat ini."
+        ]
+    },
+
+    {
+        id: 4,
+        title: "Fisika untuk Pemula",
+        author: "Rina Wijaya",
+        category: "Sains",
+        year: 2024,
+        rating: 4.5,
+        description: "Pengantar fisika dengan penjelasan sederhana dan contoh yang dekat dengan kehidupan sehari-hari.",
+        cover: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "Fisika mempelajari berbagai fenomena alam dan hubungan antara materi, energi, ruang, serta waktu.",
+            "Gerak merupakan salah satu konsep dasar dalam fisika.",
+            "Gaya dapat menyebabkan benda mengalami perubahan gerak.",
+            "Energi dapat berubah dari satu bentuk ke bentuk lainnya.",
+            "Fisika dapat kita temukan dalam berbagai aktivitas kehidupan sehari-hari."
+        ]
+    },
+
+    {
+        id: 5,
+        title: "Membangun Bisnis Digital",
+        author: "Fajar Nugroho",
+        category: "Bisnis",
+        year: 2025,
+        rating: 4.9,
+        description: "Panduan memahami peluang, strategi, dan tantangan membangun bisnis pada era digital.",
+        cover: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "Transformasi digital menciptakan berbagai peluang baru bagi pelaku bisnis.",
+            "Sebuah bisnis perlu memahami masalah pelanggan sebelum membuat produk.",
+            "Strategi pemasaran digital dapat membantu bisnis menjangkau calon pelanggan.",
+            "Data dapat digunakan untuk memahami perilaku pelanggan.",
+            "Bisnis yang mampu beradaptasi dapat menghadapi perubahan pasar dengan lebih baik."
+        ]
+    },
+
+    {
+        id: 6,
+        title: "Laskar Pelangi",
+        author: "Andrea Hirata",
+        category: "Novel",
+        year: 2005,
+        rating: 4.9,
+        description: "Kisah tentang persahabatan, pendidikan, dan perjuangan anak-anak Belitung.",
+        cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "Di sebuah sekolah sederhana, sekelompok anak bertemu dan memulai perjalanan persahabatan.",
+            "Mereka memiliki karakter yang berbeda namun saling mendukung.",
+            "Keterbatasan tidak menghentikan keinginan mereka untuk belajar.",
+            "Guru mereka memberikan inspirasi agar tidak menyerah pada keadaan.",
+            "Persahabatan membuat perjalanan pendidikan mereka menjadi penuh kenangan."
+        ]
+    },
+
+    {
+        id: 7,
+        title: "Petualangan di Hutan",
+        author: "Maya Putri",
+        category: "Anak-anak",
+        year: 2022,
+        rating: 4.4,
+        description: "Cerita petualangan anak-anak yang belajar tentang keberanian dan menjaga alam.",
+        cover: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "Pagi itu, Raka dan teman-temannya memulai perjalanan menuju hutan.",
+            "Mereka menemukan berbagai jenis tumbuhan dan hewan.",
+            "Dalam perjalanan mereka belajar pentingnya menjaga kebersihan hutan.",
+            "Sebuah sungai kecil menjadi tempat mereka beristirahat.",
+            "Petualangan tersebut membuat mereka semakin menyayangi alam."
+        ]
+    },
+
+    {
+        id: 8,
+        title: "Kecerdasan Buatan untuk Semua",
+        author: "Agus Ramadhan",
+        category: "Teknologi",
+        year: 2025,
+        rating: 4.8,
+        description: "Pengenalan kecerdasan buatan dengan bahasa sederhana untuk masyarakat umum.",
+        cover: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "Kecerdasan buatan merupakan teknologi yang memungkinkan komputer melakukan tugas yang biasanya membutuhkan kecerdasan manusia.",
+            "Machine learning memungkinkan sistem belajar dari data.",
+            "Kecerdasan buatan digunakan pada berbagai bidang.",
+            "Penggunaan teknologi perlu memperhatikan keamanan dan tanggung jawab.",
+            "Pemahaman dasar AI dapat membantu masyarakat menghadapi perubahan teknologi."
+        ]
+    },
+
+    {
+        id: 9,
+        title: "Psikologi Pendidikan",
+        author: "Siti Rahma",
+        category: "Pendidikan",
+        year: 2023,
+        rating: 4.5,
+        description: "Mengenal proses belajar, motivasi, dan perkembangan peserta didik.",
+        cover: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "Pendidikan tidak hanya berkaitan dengan penyampaian materi.",
+            "Setiap peserta didik memiliki karakteristik dan kebutuhan yang berbeda.",
+            "Motivasi dapat memengaruhi proses belajar.",
+            "Lingkungan belajar yang baik dapat membantu peserta didik berkembang.",
+            "Guru memiliki peranan penting dalam menciptakan pengalaman belajar yang bermakna."
+        ]
+    },
+
+    {
+        id: 10,
+        title: "Rahasia Alam Semesta",
+        author: "Arif Hidayat",
+        category: "Sains",
+        year: 2024,
+        rating: 4.7,
+        description: "Perjalanan mengenal galaksi, bintang, planet, dan berbagai fenomena alam semesta.",
+        cover: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "Alam semesta memiliki ukuran yang sangat luas dan terdiri dari berbagai objek astronomi.",
+            "Bintang merupakan objek yang menghasilkan cahaya dan energi.",
+            "Planet bergerak mengelilingi bintang dalam sistem tertentu.",
+            "Galaksi terdiri dari miliaran bintang dan berbagai objek lainnya.",
+            "Penelitian astronomi membantu manusia memahami asal-usul dan perkembangan alam semesta."
+        ]
+    },
+
+    {
+        id: 11,
+        title: "Strategi Keuangan Pribadi",
+        author: "Nadia Permata",
+        category: "Bisnis",
+        year: 2025,
+        rating: 4.6,
+        description: "Panduan mengatur keuangan pribadi secara sederhana dan terencana.",
+        cover: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "Pengelolaan keuangan dimulai dengan memahami pemasukan dan pengeluaran.",
+            "Anggaran membantu kita mengetahui ke mana uang digunakan.",
+            "Dana darurat dapat membantu menghadapi kebutuhan yang tidak terduga.",
+            "Menabung secara konsisten membutuhkan kebiasaan yang terencana.",
+            "Perencanaan keuangan dapat disesuaikan dengan kondisi masing-masing individu."
+        ]
+    },
+
+    {
+        id: 12,
+        title: "Kisah di Balik Senja",
+        author: "Aulia Sari",
+        category: "Fiksi",
+        year: 2023,
+        rating: 4.3,
+        description: "Novel fiksi tentang persahabatan, keluarga, dan perjalanan menemukan makna kehidupan.",
+        cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=80",
+        available: true,
+        pages: [
+            "Senja selalu membawa suasana berbeda bagi tokoh utama dalam cerita.",
+            "Pertemuan dengan seorang teman lama membuat berbagai kenangan kembali muncul.",
+            "Mereka berbicara tentang keputusan yang pernah dibuat.",
+            "Perjalanan hidup tidak selalu berjalan sesuai rencana.",
+            "Pada akhirnya, menerima perubahan menjadi bagian penting dalam perjalanan mereka."
+        ]
     }
+];
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+/* =========================================================
+   STORAGE
+========================================================= */
+
+const STORAGE = {
+    favorites: "pd_favorites",
+    history: "pd_history",
+    progress: "pd_progress",
+    theme: "pd_theme",
+    user: "pd_user",
+    account: "pd_account",
+    lastPages: "pd_last_pages"
+};
+
+
+function readStorage(key, fallback) {
+    try {
+        const value = localStorage.getItem(key);
+
+        if (value === null) {
+            return fallback;
+        }
+
+        return JSON.parse(value);
+    } catch (error) {
+        console.warn("Storage error:", key, error);
+        return fallback;
     }
 }
 
-.book-cover {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.book-cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.favorite-button {
-    position: absolute;
-    right: 12px;
-    top: 12px;
-    width: 36px;
-    height: 36px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.92);
-    color: #64748b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    z-index: 2;
-}
-
-.favorite-button:hover,
-.favorite-button.active {
-    color: var(--danger);
-}
-
-.book-info {
-    padding: 17px;
-}
-
-.book-category {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 800;
-    color: var(--primary);
-    background: var(--primary-light);
-    padding: 4px 8px;
-    border-radius: 5px;
-    margin-bottom: 9px;
-}
-
-.book-title {
-    color: var(--heading);
-    font-size: 16px;
-    line-height: 1.35;
-    margin-bottom: 5px;
-}
-
-.book-author {
-    color: var(--text-light);
-    font-size: 12px;
-    margin-bottom: 11px;
-}
-
-.book-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 11px;
-    margin-bottom: 14px;
-}
-
-.book-rating {
-    color: var(--warning);
-}
-
-.book-status {
-    color: var(--success);
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.book-status.unavailable {
-    color: var(--danger);
-}
-
-.book-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-}
-
-.book-actions button {
-    padding: 8px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 700;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text);
-}
-
-.book-actions button:first-child {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-}
-
-.book-actions button:hover {
-    opacity: 0.85;
+function writeStorage(key, value) {
+    try {
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+        console.warn("Storage write error:", key, error);
+    }
 }
 
 
 /* =========================================================
-   EMPTY STATE
+   STATE
 ========================================================= */
 
-.empty-state {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 70px 20px;
-    color: var(--text-light);
+let favorites = readStorage(STORAGE.favorites, []);
+let history = readStorage(STORAGE.history, []);
+let progress = readStorage(STORAGE.progress, {});
+let lastPages = readStorage(STORAGE.lastPages, {});
+
+let currentCategory = "Semua";
+let currentSearch = "";
+let currentSort = "newest";
+
+let currentReaderBook = null;
+let currentReaderPage = 0;
+
+
+/* =========================================================
+   DOM
+========================================================= */
+
+const booksGrid = document.getElementById("booksGrid");
+const favoriteGrid = document.getElementById("favoriteGrid");
+const historyGrid = document.getElementById("historyGrid");
+
+const heroSearch = document.getElementById("heroSearch");
+const heroSearchForm = document.getElementById("heroSearchForm");
+
+const categoryList = document.getElementById("categoryList");
+const sortSelect = document.getElementById("sortSelect");
+const searchStatus = document.getElementById("searchStatus");
+
+const detailModal = document.getElementById("detailModal");
+const detailContent = document.getElementById("detailContent");
+
+const authModal = document.getElementById("authModal");
+const loginForm = document.getElementById("loginForm");
+const registerForm = document.getElementById("registerForm");
+
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+const themeToggle = document.getElementById("themeToggle");
+
+const reader = document.getElementById("reader");
+const readerTitle = document.getElementById("readerTitle");
+const readerAuthor = document.getElementById("readerAuthor");
+const readerText = document.getElementById("readerText");
+const readerPageNumber = document.getElementById("readerPageNumber");
+const readerPageInfo = document.getElementById("readerPageInfo");
+const readerProgressBar = document.getElementById("readerProgressBar");
+
+const toastContainer = document.getElementById("toastContainer");
+
+const backTop = document.getElementById("backTop");
+
+
+/* =========================================================
+   BOOK FUNCTIONS
+========================================================= */
+
+function getBook(id) {
+    return books.find(book => book.id === Number(id));
 }
 
-.empty-state i {
-    display: block;
-    font-size: 48px;
-    color: var(--border);
-    margin-bottom: 16px;
+
+function getFilteredBooks() {
+
+    let result = [...books];
+
+    if (currentSearch.trim()) {
+        const keyword = currentSearch.toLowerCase().trim();
+
+        result = result.filter(book =>
+            book.title.toLowerCase().includes(keyword) ||
+            book.author.toLowerCase().includes(keyword) ||
+            book.category.toLowerCase().includes(keyword)
+        );
+    }
+
+    if (currentCategory !== "Semua") {
+        result = result.filter(
+            book => book.category === currentCategory
+        );
+    }
+
+    if (currentSort === "newest") {
+        result.sort((a, b) => b.year - a.year);
+    }
+
+    if (currentSort === "rating") {
+        result.sort((a, b) => b.rating - a.rating);
+    }
+
+    if (currentSort === "title") {
+        result.sort((a, b) =>
+            a.title.localeCompare(b.title, "id")
+        );
+    }
+
+    return result;
 }
 
-.empty-state h3 {
-    color: var(--heading);
-    margin-bottom: 5px;
+
+function renderBooks() {
+
+    const result = getFilteredBooks();
+
+    searchStatus.textContent = currentSearch
+        ? `${result.length} buku ditemukan untuk "${currentSearch}"`
+        : `${result.length} buku tersedia`;
+
+    if (!result.length) {
+
+        booksGrid.innerHTML = `
+            <div class="empty-state">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>Tidak ada buku yang ditemukan.</h3>
+                <p>Coba gunakan kata kunci atau kategori lain.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    booksGrid.innerHTML = result
+        .map(book => createBookCard(book))
+        .join("");
+}
+
+
+function createBookCard(book) {
+
+    const isFavorite = favorites.includes(book.id);
+
+    return `
+        <article class="book-card">
+
+            <div class="book-cover">
+
+                <img
+                    src="${book.cover}"
+                    alt="Cover ${escapeHTML(book.title)}"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                >
+
+                <div class="book-cover-fallback" style="display:none;">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <button
+                    class="favorite-btn ${isFavorite ? "active" : ""}"
+                    data-action="favorite"
+                    data-id="${book.id}"
+                    aria-label="${isFavorite ? "Hapus dari favorit" : "Tambah ke favorit"}"
+                    title="${isFavorite ? "Hapus dari favorit" : "Tambah ke favorit"}"
+                >
+                    <i class="${isFavorite ? "fa-solid" : "fa-regular"} fa-heart"></i>
+                </button>
+
+            </div>
+
+            <div class="book-body">
+
+                <span class="book-category">
+                    ${escapeHTML(book.category)}
+                </span>
+
+                <h3 class="book-title">
+                    ${escapeHTML(book.title)}
+                </h3>
+
+                <p class="book-author">
+                    ${escapeHTML(book.author)}
+                </p>
+
+                <div class="book-meta">
+                    <span class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        ${book.rating}
+                    </span>
+
+                    <span class="${book.available ? "available" : "unavailable"}">
+                        ${book.available ? "Tersedia" : "Dipinjam"}
+                    </span>
+                </div>
+
+                <div class="book-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        data-action="read"
+                        data-id="${book.id}"
+                    >
+                        <i class="fa-solid fa-book-open"></i>
+                        Baca
+                    </button>
+
+                    <button
+                        class="btn btn-outline"
+                        data-action="detail"
+                        data-id="${book.id}"
+                    >
+                        Detail
+                    </button>
+
+                </div>
+
+            </div>
+        </article>
+    `;
+}
+
+
+function renderFavorites() {
+
+    const favoriteBooks = books.filter(book =>
+        favorites.includes(book.id)
+    );
+
+    if (!favoriteBooks.length) {
+
+        favoriteGrid.innerHTML = `
+            <div class="empty-state">
+                <i class="fa-regular fa-heart"></i>
+                <h3>Belum ada buku favorit.</h3>
+                <p>Tekan ikon hati pada buku untuk menyimpannya.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    favoriteGrid.innerHTML = favoriteBooks
+        .map(book => createBookCard(book))
+        .join("");
 }
 
 
 /* =========================================================
-   HISTORY
+   FAVORITES
 ========================================================= */
 
-.history-grid {
-    display: grid;
-    gap: 15px;
+function toggleFavorite(id) {
+
+    id = Number(id);
+
+    if (favorites.includes(id)) {
+
+        favorites = favorites.filter(
+            favoriteId => favoriteId !== id
+        );
+
+        showToast("Buku dihapus dari favorit.", "success");
+
+    } else {
+
+        favorites.push(id);
+
+        showToast("Buku ditambahkan ke favorit.", "success");
+    }
+
+    writeStorage(STORAGE.favorites, favorites);
+
+    renderBooks();
+    renderFavorites();
+    updateProfile();
 }
 
-.history-card {
-    display: grid;
-    grid-template-columns: 80px 1fr auto;
-    align-items: center;
-    gap: 18px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 13px;
-}
 
-.history-cover {
-    width: 80px;
-    height: 105px;
-    border-radius: 7px;
-    overflow: hidden;
-}
+function loadFavorites() {
 
-.history-cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    favorites = readStorage(STORAGE.favorites, []);
 
-.history-info h3 {
-    color: var(--heading);
-    font-size: 15px;
-}
+    if (!Array.isArray(favorites)) {
+        favorites = [];
+    }
 
-.history-info p {
-    color: var(--text-light);
-    font-size: 12px;
-}
-
-.progress-wrapper {
-    margin-top: 10px;
-    max-width: 450px;
-}
-
-.progress-track {
-    height: 6px;
-    background: var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    background: var(--primary);
-    border-radius: inherit;
-}
-
-.progress-text {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 4px;
-    font-size: 10px;
-    color: var(--text-light);
+    renderFavorites();
 }
 
 
 /* =========================================================
-   PROFILE
+   DETAIL
 ========================================================= */
 
-.profile-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 30px;
-}
+function openBookDetail(id) {
 
-.profile-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding-bottom: 28px;
-    border-bottom: 1px solid var(--border);
-}
+    const book = getBook(id);
 
-.profile-avatar {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    background: var(--primary);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    font-weight: 800;
-}
+    if (!book) return;
 
-.profile-main-info {
-    flex: 1;
-}
+    const isFavorite = favorites.includes(book.id);
 
-.profile-main-info h3 {
-    color: var(--heading);
-    font-size: 22px;
-}
+    detailContent.innerHTML = `
 
-.profile-main-info p {
-    color: var(--text-light);
-    font-size: 13px;
-}
+        <div class="detail-layout">
 
-.profile-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 25px;
-}
+            <img
+                class="detail-cover"
+                src="${book.cover}"
+                alt="Cover ${escapeHTML(book.title)}"
+                onerror="this.src=''; this.alt='Cover tidak tersedia';"
+            >
 
-.profile-stat-card {
-    padding: 20px;
-    border-radius: 13px;
-    background: var(--background-alt);
-}
+            <div class="detail-info">
 
-.profile-stat-card i {
-    color: var(--primary);
-    margin-bottom: 10px;
-}
+                <span class="book-category">
+                    ${escapeHTML(book.category)}
+                </span>
 
-.profile-stat-card strong,
-.profile-stat-card span {
-    display: block;
-}
+                <h2 id="detailTitle">
+                    ${escapeHTML(book.title)}
+                </h2>
 
-.profile-stat-card strong {
-    color: var(--heading);
-    font-size: 24px;
-}
+                <p class="detail-author">
+                    oleh ${escapeHTML(book.author)}
+                </p>
 
-.profile-stat-card span {
-    color: var(--text-light);
-    font-size: 12px;
-}
+                <div class="detail-meta">
+                    <span>
+                        Tahun: ${book.year}
+                    </span>
 
+                    <span>
+                        Rating: ⭐ ${book.rating}
+                    </span>
 
-/* =========================================================
-   FOOTER
-========================================================= */
+                    <span>
+                        ${book.available ? "Tersedia" : "Tidak tersedia"}
+                    </span>
+                </div>
 
-.footer {
-    background: #0f172a;
-    color: #cbd5e1;
-    padding-top: 60px;
-}
+                <p class="detail-description">
+                    ${escapeHTML(book.description)}
+                </p>
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 50px;
-    padding-bottom: 50px;
-}
+                <div class="detail-buttons">
 
-.footer-logo {
-    color: white;
-    margin-bottom: 18px;
-}
+                    <button
+                        class="btn btn-primary"
+                        data-action="read"
+                        data-id="${book.id}"
+                    >
+                        <i class="fa-solid fa-book-open"></i>
+                        Baca Sekarang
+                    </button>
 
-.footer > .container > div > p,
-.footer-grid > div:first-child > p {
-    color: #94a3b8;
-    max-width: 350px;
-    font-size: 13px;
-}
+                    <button
+                        class="btn btn-outline"
+                        data-action="favorite"
+                        data-id="${book.id}"
+                    >
+                        <i class="${isFavorite ? "fa-solid" : "fa-regular"} fa-heart"></i>
+                        ${isFavorite ? "Hapus Favorit" : "Tambah Favorit"}
+                    </button>
 
-.footer h4 {
-    color: white;
-    margin-bottom: 16px;
-}
+                </div>
 
-.footer-grid > div:not(:first-child) a {
-    display: block;
-    color: #94a3b8;
-    font-size: 13px;
-    margin-bottom: 10px;
-}
+            </div>
 
-.footer-grid > div:not(:first-child) a:hover {
-    color: white;
-}
+        </div>
+    `;
 
-.social-links {
-    display: flex;
-    gap: 9px;
-}
-
-.social-links a {
-    width: 36px;
-    height: 36px;
-    border: 1px solid #334155;
-    border-radius: 50%;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-bottom {
-    border-top: 1px solid #1e293b;
-    padding: 20px;
-    text-align: center;
-    color: #64748b;
-    font-size: 12px;
+    openModal(detailModal);
 }
 
 
-/* =========================================================
-   MODAL
-========================================================= */
+function closeModal(modal) {
 
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 2000;
-    background: rgba(15, 23, 42, 0.65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-}
+    if (!modal) return;
 
-.modal-overlay.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal {
-    width: min(750px, 100%);
-    max-height: 90vh;
-    overflow-y: auto;
-    background: var(--card);
-    border-radius: 20px;
-    position: relative;
-    transform: translateY(20px) scale(0.98);
-    transition: var(--transition);
-}
-
-.modal-overlay.show .modal {
-    transform: translateY(0) scale(1);
-}
-
-.modal-close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: none;
-    background: var(--background-alt);
-    color: var(--text);
-    z-index: 5;
-}
-
-.book-detail {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 30px;
-    padding: 35px;
-}
-
-.detail-cover {
-    height: 350px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.detail-cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.detail-info {
-    padding-top: 10px;
-}
-
-.detail-info h2 {
-    color: var(--heading);
-    font-size: 28px;
-    line-height: 1.25;
-    margin: 10px 0 7px;
-}
-
-.detail-author {
-    color: var(--text-light);
-    margin-bottom: 18px;
-}
-
-.detail-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 18px;
-}
-
-.detail-meta span {
-    padding: 5px 9px;
-    border-radius: 6px;
-    background: var(--background-alt);
-    color: var(--text-light);
-    font-size: 11px;
-}
-
-.detail-description {
-    color: var(--text-light);
-    font-size: 13px;
-    margin-bottom: 22px;
-}
-
-.detail-actions {
-    display: flex;
-    gap: 9px;
-}
-
-
-/* =========================================================
-   AUTH
-========================================================= */
-
-.auth-modal {
-    width: min(440px, 100%);
-    padding: 35px;
-}
-
-.auth-header {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.auth-logo {
-    width: 55px;
-    height: 55px;
-    margin: 0 auto 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
-    background: var(--primary-light);
-    color: var(--primary);
-    font-size: 22px;
-}
-
-.auth-header h2 {
-    color: var(--heading);
-    margin-bottom: 5px;
-}
-
-.auth-header p {
-    color: var(--text-light);
-    font-size: 13px;
-}
-
-.auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-}
-
-.form-group label {
-    color: var(--heading);
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.input-icon {
-    position: relative;
-}
-
-.input-icon i {
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-light);
-}
-
-.input-icon input {
-    width: 100%;
-    padding: 12px 13px 12px 40px;
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    outline: none;
-    background: var(--background);
-    color: var(--text);
-}
-
-.input-icon input:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-}
-
-.auth-switch {
-    text-align: center;
-    color: var(--text-light);
-    font-size: 12px;
-}
-
-.auth-switch button {
-    border: none;
-    background: transparent;
-    color: var(--primary);
-    font-weight: 700;
+    modal.classList.remove("show");
 }
 
 
@@ -1189,187 +655,891 @@ img {
    READER
 ========================================================= */
 
-.reader {
-    position: fixed;
-    inset: 0;
-    z-index: 3000;
-    background: var(--background-alt);
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
+function openReader(id, page = null) {
+
+    const book = getBook(id);
+
+    if (!book) return;
+
+    currentReaderBook = book;
+
+    let savedPage = Number(lastPages[book.id]);
+
+    if (!Number.isInteger(savedPage) || savedPage < 0) {
+        savedPage = 0;
+    }
+
+    if (page !== null) {
+        savedPage = Number(page);
+    }
+
+    if (savedPage >= book.pages.length) {
+        savedPage = book.pages.length - 1;
+    }
+
+    currentReaderPage = savedPage;
+
+    readerTitle.textContent = book.title;
+    readerAuthor.textContent = book.author;
+
+    reader.classList.remove("hidden");
+
+    document.body.style.overflow = "hidden";
+
+    renderReaderPage();
+
+    addToHistory(book.id);
+
+    showToast("Buku berhasil dibuka.", "success");
 }
 
-.reader.show {
-    opacity: 1;
-    visibility: visible;
+
+function closeReader() {
+
+    if (currentReaderBook) {
+        saveReadingProgress();
+    }
+
+    reader.classList.add("hidden");
+
+    document.body.style.overflow = "";
+
+    currentReaderBook = null;
 }
 
-.reader-header {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 0 25px;
-    background: var(--card);
-    border-bottom: 1px solid var(--border);
+
+function renderReaderPage() {
+
+    if (!currentReaderBook) return;
+
+    const pages = currentReaderBook.pages;
+
+    const totalPages = pages.length;
+
+    if (currentReaderPage < 0) {
+        currentReaderPage = 0;
+    }
+
+    if (currentReaderPage >= totalPages) {
+        currentReaderPage = totalPages - 1;
+    }
+
+    readerText.textContent = pages[currentReaderPage];
+
+    readerPageNumber.textContent = currentReaderPage + 1;
+
+    readerPageInfo.textContent =
+        `${currentReaderPage + 1} / ${totalPages}`;
+
+    const percent =
+        ((currentReaderPage + 1) / totalPages) * 100;
+
+    readerProgressBar.style.width = `${percent}%`;
+
+    saveReadingProgress();
 }
 
-.reader-close {
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: var(--background-alt);
-    border-radius: 50%;
-    color: var(--text);
+
+function nextPage() {
+
+    if (!currentReaderBook) return;
+
+    if (currentReaderPage < currentReaderBook.pages.length - 1) {
+
+        currentReaderPage++;
+
+        renderReaderPage();
+
+    } else {
+
+        showToast("Anda sudah berada di halaman terakhir.", "success");
+
+        saveReadingProgress();
+    }
 }
 
-.reader-title {
-    flex: 1;
+
+function previousPage() {
+
+    if (!currentReaderBook) return;
+
+    if (currentReaderPage > 0) {
+
+        currentReaderPage--;
+
+        renderReaderPage();
+
+    } else {
+
+        showToast("Anda sudah berada di halaman pertama.");
+    }
 }
 
-.reader-title strong,
-.reader-title span {
-    display: block;
+
+function saveReadingProgress() {
+
+    if (!currentReaderBook) return;
+
+    const total = currentReaderBook.pages.length;
+
+    const percentage =
+        Math.round(
+            ((currentReaderPage + 1) / total) * 100
+        );
+
+    progress[currentReaderBook.id] = percentage;
+
+    lastPages[currentReaderBook.id] = currentReaderPage;
+
+    writeStorage(STORAGE.progress, progress);
+    writeStorage(STORAGE.lastPages, lastPages);
+
+    renderHistory();
 }
 
-.reader-title strong {
-    color: var(--heading);
-    font-size: 14px;
+
+/* =========================================================
+   HISTORY
+========================================================= */
+
+function addToHistory(id) {
+
+    id = Number(id);
+
+    history = history.filter(bookId => bookId !== id);
+
+    history.unshift(id);
+
+    history = history.slice(0, 10);
+
+    writeStorage(STORAGE.history, history);
+
+    renderHistory();
+    updateProfile();
 }
 
-.reader-title span {
-    color: var(--text-light);
-    font-size: 11px;
+
+function renderHistory() {
+
+    const historyBooks = history
+        .map(id => getBook(id))
+        .filter(Boolean);
+
+    if (!historyBooks.length) {
+
+        historyGrid.innerHTML = `
+            <div class="empty-state">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <h3>Belum ada riwayat bacaan.</h3>
+                <p>Buku yang Anda baca akan muncul di sini.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    historyGrid.innerHTML = historyBooks
+        .map(book => {
+
+            const percentage = progress[book.id] || 0;
+
+            return `
+                <article class="history-card">
+
+                    <img
+                        class="history-cover"
+                        src="${book.cover}"
+                        alt="Cover ${escapeHTML(book.title)}"
+                    >
+
+                    <div class="history-info">
+
+                        <h3>${escapeHTML(book.title)}</h3>
+
+                        <p>${escapeHTML(book.author)}</p>
+
+                        <div class="history-percent">
+                            <span>Progress membaca</span>
+                            <span>${percentage}%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div style="width:${percentage}%"></div>
+                        </div>
+
+                        <button
+                            class="btn btn-primary"
+                            style="margin-top:10px; padding:7px 10px; font-size:11px;"
+                            data-action="read"
+                            data-id="${book.id}"
+                        >
+                            <i class="fa-solid fa-play"></i>
+                            Lanjutkan
+                        </button>
+
+                    </div>
+
+                </article>
+            `;
+        })
+        .join("");
 }
 
-.reader-progress-container {
-    height: 4px;
-    background: var(--border);
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchBooks(value) {
+
+    currentSearch = value;
+
+    renderBooks();
 }
 
-.reader-progress {
-    width: 0;
-    height: 100%;
-    background: var(--primary);
-    transition: width 0.2s ease;
+
+heroSearch.addEventListener("input", event => {
+
+    searchBooks(event.target.value);
+
+});
+
+
+heroSearchForm.addEventListener("submit", event => {
+
+    event.preventDefault();
+
+    searchBooks(heroSearch.value);
+
+    document
+        .getElementById("koleksi")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+});
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+categoryList.addEventListener("click", event => {
+
+    const button = event.target.closest("[data-category]");
+
+    if (!button) return;
+
+    currentCategory = button.dataset.category;
+
+    document
+        .querySelectorAll(".category-btn")
+        .forEach(btn => {
+            btn.classList.toggle(
+                "active",
+                btn.dataset.category === currentCategory
+            );
+        });
+
+    renderBooks();
+
+});
+
+
+document.querySelectorAll(".category-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        currentCategory = card.dataset.category;
+
+        document
+            .querySelectorAll(".category-btn")
+            .forEach(btn => {
+                btn.classList.toggle(
+                    "active",
+                    btn.dataset.category === currentCategory
+                );
+            });
+
+        renderBooks();
+
+        document
+            .getElementById("koleksi")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    });
+
+});
+
+
+/* =========================================================
+   SORT
+========================================================= */
+
+sortSelect.addEventListener("change", event => {
+
+    currentSort = event.target.value;
+
+    renderBooks();
+
+});
+
+
+/* =========================================================
+   GLOBAL BOOK ACTION
+========================================================= */
+
+document.addEventListener("click", event => {
+
+    const element = event.target.closest("[data-action]");
+
+    if (!element) return;
+
+    const action = element.dataset.action;
+    const id = Number(element.dataset.id);
+
+    if (!id) return;
+
+    if (action === "favorite") {
+
+        toggleFavorite(id);
+
+        if (detailModal.classList.contains("show")) {
+            openBookDetail(id);
+        }
+
+    }
+
+    if (action === "detail") {
+        openBookDetail(id);
+    }
+
+    if (action === "read") {
+
+        closeModal(detailModal);
+
+        openReader(id);
+    }
+
+});
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+function openModal(modal) {
+
+    if (!modal) return;
+
+    modal.classList.add("show");
+
+    document.body.style.overflow = "hidden";
 }
 
-.reader-main {
-    flex: 1;
-    overflow-y: auto;
-    padding: 45px 20px;
+
+document.querySelectorAll("[data-close]").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const modalId = button.dataset.close;
+
+        const modal = document.getElementById(modalId);
+
+        closeModal(modal);
+
+        if (!document.querySelector(".modal.show") &&
+            reader.classList.contains("hidden")) {
+
+            document.body.style.overflow = "";
+        }
+
+    });
+
+});
+
+
+[detailModal, authModal].forEach(modal => {
+
+    modal.addEventListener("click", event => {
+
+        if (event.target === modal) {
+
+            closeModal(modal);
+
+            if (reader.classList.contains("hidden")) {
+                document.body.style.overflow = "";
+            }
+
+        }
+
+    });
+
+});
+
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+
+        if (detailModal.classList.contains("show")) {
+            closeModal(detailModal);
+        }
+
+        if (authModal.classList.contains("show")) {
+            closeModal(authModal);
+        }
+
+        if (!reader.classList.contains("hidden")) {
+            closeReader();
+        }
+
+        if (reader.classList.contains("hidden")) {
+            document.body.style.overflow = "";
+        }
+    }
+
+});
+
+
+/* =========================================================
+   READER CONTROLS
+========================================================= */
+
+document
+    .getElementById("readerClose")
+    .addEventListener("click", closeReader);
+
+
+document
+    .getElementById("nextPage")
+    .addEventListener("click", nextPage);
+
+
+document
+    .getElementById("previousPage")
+    .addEventListener("click", previousPage);
+
+
+document.addEventListener("keydown", event => {
+
+    if (reader.classList.contains("hidden")) return;
+
+    if (event.key === "ArrowRight") {
+        nextPage();
+    }
+
+    if (event.key === "ArrowLeft") {
+        previousPage();
+    }
+
+});
+
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+function openLogin() {
+
+    authModal.classList.add("show");
+
+    loginForm.classList.remove("hidden");
+    registerForm.classList.add("hidden");
+
+    document
+        .querySelectorAll(".auth-tab")
+        .forEach(tab => {
+            tab.classList.toggle(
+                "active",
+                tab.dataset.auth === "login"
+            );
+        });
+
+    document.body.style.overflow = "hidden";
 }
 
-.reader-paper {
-    width: min(780px, 100%);
-    min-height: 600px;
-    margin: auto;
-    padding: 65px 75px;
-    background: var(--card);
-    box-shadow: var(--shadow-md);
-    border-radius: 5px;
+
+function openRegister() {
+
+    authModal.classList.add("show");
+
+    loginForm.classList.add("hidden");
+    registerForm.classList.remove("hidden");
+
+    document
+        .querySelectorAll(".auth-tab")
+        .forEach(tab => {
+            tab.classList.toggle(
+                "active",
+                tab.dataset.auth === "register"
+            );
+        });
+
+    document.body.style.overflow = "hidden";
 }
 
-.reader-page-number {
-    color: var(--text-light);
-    text-align: right;
-    font-size: 11px;
-    margin-bottom: 25px;
+
+document
+    .getElementById("loginOpen")
+    .addEventListener("click", openLogin);
+
+
+document.querySelectorAll(".auth-tab").forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+        if (tab.dataset.auth === "login") {
+            openLogin();
+        } else {
+            openRegister();
+        }
+
+    });
+
+});
+
+
+registerForm.addEventListener("submit", event => {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("registerName").value.trim();
+
+    const email =
+        document.getElementById("registerEmail").value.trim();
+
+    const password =
+        document.getElementById("registerPassword").value;
+
+    const confirm =
+        document.getElementById("registerConfirm").value;
+
+    if (password !== confirm) {
+
+        showToast(
+            "Konfirmasi password tidak sama.",
+            "error"
+        );
+
+        return;
+    }
+
+    const account = {
+        name,
+        email,
+        password
+    };
+
+    writeStorage(STORAGE.account, account);
+
+    const user = {
+        name,
+        email
+    };
+
+    writeStorage(STORAGE.user, user);
+
+    updateProfile();
+
+    closeModal(authModal);
+
+    registerForm.reset();
+
+    showToast(
+        "Pendaftaran berhasil. Selamat datang!",
+        "success"
+    );
+
+});
+
+
+loginForm.addEventListener("submit", event => {
+
+    event.preventDefault();
+
+    const email =
+        document.getElementById("loginEmail").value.trim();
+
+    const password =
+        document.getElementById("loginPassword").value;
+
+    const account =
+        readStorage(STORAGE.account, null);
+
+    if (!account) {
+
+        showToast(
+            "Belum ada akun. Silakan daftar terlebih dahulu.",
+            "error"
+        );
+
+        return;
+    }
+
+    if (
+        account.email !== email ||
+        account.password !== password
+    ) {
+
+        showToast(
+            "Email atau password salah.",
+            "error"
+        );
+
+        return;
+    }
+
+    writeStorage(STORAGE.user, {
+        name: account.name,
+        email: account.email
+    });
+
+    updateProfile();
+
+    closeModal(authModal);
+
+    loginForm.reset();
+
+    showToast(
+        `Selamat datang, ${account.name}!`,
+        "success"
+    );
+
+});
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+function updateProfile() {
+
+    const user = readStorage(STORAGE.user, null);
+
+    const nameElement =
+        document.getElementById("profileName");
+
+    const emailElement =
+        document.getElementById("profileEmail");
+
+    const favoriteCount =
+        document.getElementById("profileFavoriteCount");
+
+    const readCount =
+        document.getElementById("profileReadCount");
+
+    if (user) {
+
+        nameElement.textContent =
+            user.name || "Pengguna";
+
+        emailElement.textContent =
+            user.email || "";
+
+    } else {
+
+        nameElement.textContent = "Tamu";
+
+        emailElement.textContent =
+            "Belum login";
+    }
+
+    favoriteCount.textContent =
+        favorites.length;
+
+    readCount.textContent =
+        history.length;
 }
 
-.reader-content h2 {
-    color: var(--heading);
-    font-size: 30px;
-    line-height: 1.2;
-    margin-bottom: 20px;
+
+document
+    .getElementById("editProfileBtn")
+    .addEventListener("click", () => {
+
+        const user =
+            readStorage(STORAGE.user, null);
+
+        if (!user) {
+
+            showToast(
+                "Silakan login terlebih dahulu.",
+                "error"
+            );
+
+            openLogin();
+
+            return;
+        }
+
+        const newName =
+            prompt(
+                "Masukkan nama baru:",
+                user.name
+            );
+
+        if (!newName || !newName.trim()) {
+            return;
+        }
+
+        user.name = newName.trim();
+
+        writeStorage(STORAGE.user, user);
+
+        updateProfile();
+
+        showToast(
+            "Profil berhasil diperbarui.",
+            "success"
+        );
+
+    });
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+function updateThemeIcon() {
+
+    const icon =
+        themeToggle.querySelector("i");
+
+    const dark =
+        document.body.classList.contains("dark");
+
+    icon.className =
+        dark
+            ? "fa-solid fa-sun"
+            : "fa-solid fa-moon";
 }
 
-.reader-content p {
-    color: var(--text);
-    font-size: 16px;
-    line-height: 2;
-    margin-bottom: 18px;
-    text-align: justify;
+
+function toggleDarkMode() {
+
+    const dark =
+        document.body.classList.toggle("dark");
+
+    writeStorage(STORAGE.theme, dark ? "dark" : "light");
+
+    updateThemeIcon();
 }
 
-.reader-footer {
-    min-height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    background: var(--card);
-    border-top: 1px solid var(--border);
+
+function loadTheme() {
+
+    const theme =
+        localStorage.getItem(STORAGE.theme);
+
+    if (theme === "dark") {
+        document.body.classList.add("dark");
+    }
+
+    updateThemeIcon();
 }
 
-.reader-nav-button {
-    border: none;
-    background: transparent;
-    color: var(--primary);
-    font-weight: 700;
-}
 
-.reader-nav-button:disabled {
-    color: var(--text-light);
-    cursor: not-allowed;
-}
+themeToggle.addEventListener(
+    "click",
+    toggleDarkMode
+);
 
-#readerPageCounter {
-    color: var(--text-light);
-    font-size: 13px;
-}
+
+/* =========================================================
+   READER THEME
+========================================================= */
+
+document
+    .getElementById("readerTheme")
+    .addEventListener("click", () => {
+
+        document.body.classList.toggle("dark");
+
+        const dark =
+            document.body.classList.contains("dark");
+
+        writeStorage(
+            STORAGE.theme,
+            dark ? "dark" : "light"
+        );
+
+        updateThemeIcon();
+
+    });
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+menuToggle.addEventListener("click", () => {
+
+    const opened =
+        navMenu.classList.toggle("open");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        String(opened)
+    );
+
+    const icon =
+        menuToggle.querySelector("i");
+
+    icon.className =
+        opened
+            ? "fa-solid fa-xmark"
+            : "fa-solid fa-bars";
+
+});
+
+
+document.querySelectorAll("#navMenu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navMenu.classList.remove("open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle
+            .querySelector("i")
+            .className = "fa-solid fa-bars";
+
+    });
+
+});
 
 
 /* =========================================================
    TOAST
 ========================================================= */
 
-.toast-container {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 5000;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+function showToast(message, type = "") {
 
-.toast {
-    min-width: 280px;
-    max-width: 350px;
-    padding: 14px 17px;
-    border-radius: 11px;
-    background: var(--card);
-    color: var(--text);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-lg);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    animation: toastIn 0.3s ease;
-    font-size: 13px;
-}
+    const toast =
+        document.createElement("div");
 
-.toast.success i {
-    color: var(--success);
-}
+    toast.className =
+        `toast ${type}`;
 
-.toast.error i {
-    color: var(--danger);
-}
+    toast.textContent = message;
 
-@keyframes toastIn {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
+    toastContainer.appendChild(toast);
 
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    setTimeout(() => {
+
+        toast.style.opacity = "0";
+
+        setTimeout(() => {
+            toast.remove();
+        }, 250);
+
+    }, 3000);
 }
 
 
@@ -1377,299 +1547,73 @@ img {
    BACK TO TOP
 ========================================================= */
 
-.back-to-top {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    width: 42px;
-    height: 42px;
-    border: none;
-    border-radius: 50%;
-    background: var(--primary);
-    color: white;
-    box-shadow: var(--shadow-md);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: var(--transition);
-    z-index: 100;
-}
+window.addEventListener("scroll", () => {
 
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    if (window.scrollY > 500) {
+
+        backTop.classList.add("show");
+
+    } else {
+
+        backTop.classList.remove("show");
+    }
+
+});
+
+
+backTop.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 
 
 /* =========================================================
-   FOCUS
+   INITIALIZE
 ========================================================= */
 
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible {
-    outline: 3px solid rgba(79, 70, 229, 0.35);
-    outline-offset: 2px;
+function initializeApp() {
+
+    loadTheme();
+
+    favorites =
+        readStorage(STORAGE.favorites, []);
+
+    history =
+        readStorage(STORAGE.history, []);
+
+    progress =
+        readStorage(STORAGE.progress, {});
+
+    lastPages =
+        readStorage(STORAGE.lastPages, {});
+
+    renderBooks();
+
+    renderFavorites();
+
+    renderHistory();
+
+    updateProfile();
 }
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1100px) {
-
-    .books-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .nav-menu {
-        gap: 15px;
-    }
-
-    .hero-grid {
-        gap: 30px;
-    }
-
-}
-
-@media (max-width: 900px) {
-
-    .hero-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        min-height: auto;
-    }
-
-    .hero-content {
-        padding: 70px 0 20px;
-    }
-
-    .hero-visual {
-        min-height: 420px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 76px;
-        left: 0;
-        right: 0;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 15px 20px 20px;
-        background: var(--card);
-        border-bottom: 1px solid var(--border);
-        box-shadow: var(--shadow-md);
-    }
-
-    .nav-menu.show {
-        display: flex;
-    }
-
-    .nav-link {
-        padding: 13px;
-    }
-
-    .nav-link.active::after {
-        display: none;
-    }
-
-    .mobile-menu-button {
-        display: block;
-    }
-
-}
-
-@media (max-width: 700px) {
-
-    .container {
-        width: min(100% - 28px, 1180px);
-    }
-
-    .section {
-        padding: 65px 0;
-    }
-
-    .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .section-heading h2 {
-        font-size: 28px;
-    }
-
-    .books-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-    }
-
-    .book-cover {
-        height: 220px;
-    }
-
-    .profile-header {
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
-
-    .profile-stats {
-        grid-template-columns: 1fr;
-    }
-
-    .book-detail {
-        grid-template-columns: 1fr;
-        padding: 25px;
-    }
-
-    .detail-cover {
-        width: 180px;
-        height: 260px;
-        margin: auto;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .history-card {
-        grid-template-columns: 60px 1fr;
-    }
-
-    .history-cover {
-        width: 60px;
-        height: 80px;
-    }
-
-    .history-card .btn {
-        grid-column: 1 / -1;
-        width: 100%;
-    }
-
-    .reader-paper {
-        padding: 35px 25px;
-    }
-
-    .reader-content h2 {
-        font-size: 24px;
-    }
-
-    .reader-content p {
-        font-size: 14px;
-        line-height: 1.8;
-    }
-
-}
-
-@media (max-width: 480px) {
-
-    .container {
-        width: calc(100% - 24px);
-    }
-
-    .navbar {
-        height: 68px;
-    }
-
-    .nav-menu {
-        top: 68px;
-    }
-
-    .logo {
-        font-size: 17px;
-    }
-
-    .logo-icon {
-        width: 35px;
-        height: 35px;
-    }
-
-    .btn-login {
-        padding: 9px 12px;
-        font-size: 12px;
-    }
-
-    .hero-content {
-        padding-top: 50px;
-    }
-
-    .hero h1 {
-        font-size: 39px;
-        letter-spacing: -1.5px;
-    }
-
-    .hero-content > p {
-        font-size: 15px;
-    }
-
-    .hero-search {
-        align-items: stretch;
-        flex-wrap: wrap;
-    }
-
-    .hero-search input {
-        min-width: calc(100% - 50px);
-        height: 40px;
-    }
-
-    .hero-search button {
-        width: 100%;
-    }
-
-    .hero-stats {
-        gap: 20px;
-    }
-
-    .stat strong {
-        font-size: 19px;
-    }
-
-    .hero-visual {
-        min-height: 330px;
-        transform: scale(0.8);
-    }
-
-    .books-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .book-cover {
-        height: 180px;
-    }
-
-    .book-info {
-        padding: 12px;
-    }
-
-    .book-title {
-        font-size: 14px;
-    }
-
-    .book-actions {
-        grid-template-columns: 1fr;
-    }
-
-    .auth-modal {
-        padding: 28px 20px;
-    }
-
-    .reader-footer {
-        gap: 18px;
-    }
-
-    .reader-nav-button {
-        font-size: 11px;
-    }
-
-}
+initializeApp();
