@@ -1,8 +1,4 @@
-/* =========================================================
-   PERPUSTAKAAN DIGITAL
-   Vanilla JavaScript
-========================================================= */
-
+"use strict";
 
 /* =========================================================
    DATA BUKU
@@ -16,591 +12,224 @@ const books = [
         category: "Teknologi",
         year: 2025,
         rating: 4.8,
+        description: "Panduan praktis mempelajari JavaScript modern mulai dari dasar hingga pembuatan aplikasi web interaktif.",
+        cover: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Panduan praktis mempelajari JavaScript modern dari dasar hingga konsep lanjutan untuk membangun aplikasi web interaktif.",
-        cover: "https://placehold.co/600x800/4f46e5/ffffff?text=JavaScript",
         pages: [
-            {
-                title: "Memulai Perjalanan JavaScript",
-                text: [
-                    "JavaScript merupakan salah satu bahasa pemrograman yang paling banyak digunakan dalam pengembangan web modern.",
-                    "Bahasa ini memungkinkan sebuah halaman web merespons interaksi pengguna secara dinamis. Dengan JavaScript, kita dapat membuat tombol interaktif, formulir, animasi, aplikasi web, hingga berbagai sistem yang kompleks.",
-                    "Pada buku ini kita akan memulai dari konsep paling dasar sebelum secara bertahap mempelajari konsep yang lebih lanjut."
-                ]
-            },
-            {
-                title: "Variabel dan Tipe Data",
-                text: [
-                    "Variabel digunakan untuk menyimpan sebuah nilai di dalam program. JavaScript menyediakan beberapa cara untuk mendeklarasikan variabel, seperti let dan const.",
-                    "Tipe data dasar yang sering digunakan antara lain string, number, boolean, null, undefined, object, dan array.",
-                    "Memahami tipe data merupakan fondasi penting sebelum mempelajari struktur program yang lebih kompleks."
-                ]
-            },
-            {
-                title: "Function",
-                text: [
-                    "Function atau fungsi merupakan blok kode yang dibuat untuk melakukan pekerjaan tertentu.",
-                    "Dengan function, kode dapat dibuat lebih terorganisir, mudah digunakan kembali, dan lebih mudah dirawat.",
-                    "Function dapat menerima parameter dan menghasilkan sebuah nilai melalui return."
-                ]
-            },
-            {
-                title: "DOM dan Interaksi",
-                text: [
-                    "Document Object Model atau DOM memungkinkan JavaScript berinteraksi dengan elemen HTML.",
-                    "Kita dapat memilih elemen, mengubah teks, mengubah style, membuat elemen baru, dan merespons berbagai aktivitas pengguna.",
-                    "Konsep DOM menjadi bagian penting dalam pengembangan aplikasi web interaktif."
-                ]
-            },
-            {
-                title: "Penutup",
-                text: [
-                    "JavaScript memiliki ekosistem yang sangat luas dan dapat digunakan untuk berbagai kebutuhan pengembangan perangkat lunak.",
-                    "Kunci untuk menguasai JavaScript adalah latihan secara konsisten dan membangun berbagai proyek nyata.",
-                    "Teruslah bereksperimen dan gunakan setiap proyek sebagai kesempatan untuk mempelajari sesuatu yang baru."
-                ]
-            }
+            "JavaScript merupakan salah satu bahasa pemrograman yang sangat banyak digunakan dalam pengembangan web modern.",
+            "Pada bagian ini kita mempelajari variabel, tipe data, operator, percabangan, dan perulangan.",
+            "Setelah memahami dasar JavaScript, kita dapat mulai menggunakan function untuk membuat program yang lebih terstruktur.",
+            "DOM memungkinkan JavaScript berinteraksi langsung dengan elemen HTML sehingga halaman dapat menjadi interaktif.",
+            "Event listener digunakan untuk merespons tindakan pengguna seperti klik tombol, mengetik pada input, dan melakukan submit form."
         ]
     },
 
     {
         id: 2,
-        title: "Masa Depan Kecerdasan Buatan",
-        author: "Raka Wijaya",
-        category: "Teknologi",
-        year: 2025,
-        rating: 4.9,
+        title: "Dasar-Dasar Pemrograman",
+        author: "Budi Santoso",
+        category: "Pendidikan",
+        year: 2024,
+        rating: 4.6,
+        description: "Materi dasar pemrograman untuk pemula yang ingin memahami cara berpikir komputasional.",
+        cover: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Mengenal perkembangan kecerdasan buatan, penerapannya, serta bagaimana teknologi AI memengaruhi kehidupan manusia.",
-        cover: "https://placehold.co/600x800/7c3aed/ffffff?text=AI",
         pages: [
-            {
-                title: "Mengenal AI",
-                text: [
-                    "Kecerdasan buatan merupakan bidang teknologi yang berusaha membuat komputer mampu melakukan tugas yang membutuhkan kemampuan kognitif manusia.",
-                    "AI telah berkembang dari sistem berbasis aturan sederhana menjadi model pembelajaran mesin yang mampu memproses data dalam jumlah besar.",
-                    "Perkembangan ini membuka berbagai peluang baru dalam pendidikan, kesehatan, bisnis, dan berbagai bidang lainnya."
-                ]
-            },
-            {
-                title: "Pembelajaran Mesin",
-                text: [
-                    "Machine learning merupakan salah satu cabang AI yang memungkinkan komputer belajar dari data.",
-                    "Model machine learning dapat digunakan untuk klasifikasi, prediksi, rekomendasi, dan berbagai kebutuhan lainnya.",
-                    "Kualitas data dan desain model memiliki peranan penting dalam menghasilkan sistem yang bermanfaat."
-                ]
-            },
-            {
-                title: "AI dalam Kehidupan",
-                text: [
-                    "Saat ini AI dapat ditemukan dalam mesin pencari, sistem rekomendasi, penerjemah otomatis, aplikasi produktivitas, dan berbagai layanan digital.",
-                    "Pemanfaatan teknologi tersebut perlu disertai pemahaman terhadap keamanan, privasi, dan dampaknya terhadap masyarakat."
-                ]
-            },
-            {
-                title: "Masa Depan",
-                text: [
-                    "Teknologi AI kemungkinan akan terus berkembang seiring meningkatnya kemampuan komputasi dan ketersediaan data.",
-                    "Manusia tetap memiliki peranan penting dalam menentukan bagaimana teknologi tersebut digunakan secara bertanggung jawab."
-                ]
-            },
-            {
-                title: "Kesimpulan",
-                text: [
-                    "AI merupakan teknologi yang memiliki banyak kemungkinan penggunaan.",
-                    "Pemahaman yang baik akan membantu masyarakat memanfaatkan teknologi dengan lebih bijaksana dan produktif."
-                ]
-            }
+            "Pemrograman adalah proses memberikan instruksi kepada komputer untuk menyelesaikan suatu masalah.",
+            "Algoritma membantu kita menyusun langkah penyelesaian masalah secara sistematis.",
+            "Variabel digunakan untuk menyimpan data yang diperlukan oleh program.",
+            "Struktur kontrol membantu program menentukan tindakan berdasarkan kondisi tertentu.",
+            "Dengan latihan yang konsisten, konsep pemrograman akan menjadi semakin mudah dipahami."
         ]
     },
 
     {
         id: 3,
-        title: "Filosofi Hidup Sederhana",
+        title: "Sejarah Indonesia",
         author: "Dewi Lestari",
-        category: "Fiksi",
+        category: "Sejarah",
         year: 2023,
-        rating: 4.6,
+        rating: 4.7,
+        description: "Mengenal perjalanan sejarah Indonesia dari masa kerajaan hingga era modern.",
+        cover: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Sebuah buku reflektif tentang menemukan kebahagiaan melalui kesederhanaan, kesadaran, dan hubungan dengan lingkungan sekitar.",
-        cover: "https://placehold.co/600x800/059669/ffffff?text=Filosofi",
         pages: [
-            {
-                title: "Kesederhanaan",
-                text: [
-                    "Kesederhanaan bukan berarti memiliki lebih sedikit dari orang lain. Kesederhanaan merupakan kemampuan untuk memahami apa yang benar-benar kita butuhkan.",
-                    "Dalam kehidupan yang semakin cepat, kemampuan berhenti sejenak dapat membantu kita memahami diri sendiri."
-                ]
-            },
-            {
-                title: "Waktu",
-                text: [
-                    "Waktu merupakan sumber daya yang tidak dapat dikembalikan.",
-                    "Menggunakan waktu secara sadar membantu kita memberikan perhatian kepada hal-hal yang benar-benar penting."
-                ]
-            },
-            {
-                title: "Hubungan",
-                text: [
-                    "Hubungan dengan keluarga, sahabat, dan masyarakat memberikan warna dalam perjalanan hidup.",
-                    "Mendengarkan dengan tulus sering kali lebih bermakna daripada sekadar memberikan nasihat."
-                ]
-            },
-            {
-                title: "Rasa Syukur",
-                text: [
-                    "Rasa syukur membantu seseorang menghargai hal-hal sederhana yang sering terlewatkan.",
-                    "Kebahagiaan tidak selalu berasal dari pencapaian besar."
-                ]
-            },
-            {
-                title: "Penutup",
-                text: [
-                    "Hidup sederhana adalah proses menemukan keseimbangan.",
-                    "Setiap orang dapat menentukan bentuk kesederhanaannya sendiri berdasarkan nilai dan kebutuhannya."
-                ]
-            }
+            "Sejarah Indonesia memiliki perjalanan panjang yang dipengaruhi berbagai kerajaan, perdagangan, dan kebudayaan.",
+            "Kerajaan-kerajaan Nusantara memainkan peranan penting dalam perkembangan masyarakat dan kebudayaan.",
+            "Perdagangan maritim membuat wilayah Nusantara terhubung dengan berbagai wilayah dunia.",
+            "Masa kolonial membawa perubahan besar dalam kehidupan sosial, ekonomi, dan politik.",
+            "Memahami sejarah membantu kita melihat hubungan antara masa lalu dan kehidupan masyarakat saat ini."
         ]
     },
 
     {
         id: 4,
-        title: "Sejarah Nusantara",
-        author: "Budi Santoso",
-        category: "Sejarah",
-        year: 2022,
-        rating: 4.7,
+        title: "Fisika untuk Pemula",
+        author: "Rina Wijaya",
+        category: "Sains",
+        year: 2024,
+        rating: 4.5,
+        description: "Pengantar fisika dengan penjelasan sederhana dan contoh yang dekat dengan kehidupan sehari-hari.",
+        cover: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Mengenal perjalanan panjang sejarah Nusantara dari masa kerajaan hingga perkembangan masyarakat modern.",
-        cover: "https://placehold.co/600x800/b45309/ffffff?text=Nusantara",
         pages: [
-            {
-                title: "Awal Peradaban",
-                text: [
-                    "Nusantara memiliki sejarah panjang dengan beragam kebudayaan dan masyarakat.",
-                    "Letak geografis kepulauan menjadikan wilayah ini sebagai tempat bertemunya berbagai jalur perdagangan dan budaya."
-                ]
-            },
-            {
-                title: "Kerajaan",
-                text: [
-                    "Berbagai kerajaan berkembang di kepulauan Nusantara.",
-                    "Peninggalan berupa prasasti, bangunan, karya sastra, dan artefak memberikan informasi penting tentang kehidupan masyarakat masa lalu."
-                ]
-            },
-            {
-                title: "Perdagangan",
-                text: [
-                    "Perdagangan laut memainkan peranan besar dalam perkembangan kota-kota pesisir.",
-                    "Pertukaran barang juga membawa pertukaran gagasan dan kebudayaan."
-                ]
-            },
-            {
-                title: "Perubahan Sosial",
-                text: [
-                    "Masyarakat terus mengalami perubahan akibat perkembangan ekonomi, teknologi, dan hubungan antarwilayah.",
-                    "Sejarah membantu kita memahami proses perubahan tersebut."
-                ]
-            },
-            {
-                title: "Belajar dari Sejarah",
-                text: [
-                    "Mempelajari sejarah bukan hanya mengingat tanggal dan nama.",
-                    "Sejarah dapat membantu kita memahami sebab dan akibat berbagai peristiwa."
-                ]
-            }
+            "Fisika mempelajari berbagai fenomena alam dan hubungan antara materi, energi, ruang, serta waktu.",
+            "Gerak merupakan salah satu konsep dasar dalam fisika.",
+            "Gaya dapat menyebabkan benda mengalami perubahan gerak.",
+            "Energi dapat berubah dari satu bentuk ke bentuk lainnya.",
+            "Fisika dapat kita temukan dalam berbagai aktivitas kehidupan sehari-hari."
         ]
     },
 
     {
         id: 5,
-        title: "Ensiklopedia Sains untuk Semua",
-        author: "Nadia Rahma",
-        category: "Sains",
-        year: 2024,
-        rating: 4.8,
+        title: "Membangun Bisnis Digital",
+        author: "Fajar Nugroho",
+        category: "Bisnis",
+        year: 2025,
+        rating: 4.9,
+        description: "Panduan memahami peluang, strategi, dan tantangan membangun bisnis pada era digital.",
+        cover: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Penjelasan ringan tentang berbagai fenomena alam, energi, tubuh manusia, bumi, dan luar angkasa.",
-        cover: "https://placehold.co/600x800/0284c7/ffffff?text=Sains",
         pages: [
-            {
-                title: "Apa Itu Sains?",
-                text: [
-                    "Sains merupakan cara sistematis untuk mempelajari alam melalui pengamatan, pengukuran, dan pengujian.",
-                    "Rasa ingin tahu menjadi salah satu pendorong utama perkembangan ilmu pengetahuan."
-                ]
-            },
-            {
-                title: "Energi",
-                text: [
-                    "Energi terdapat dalam berbagai bentuk seperti panas, cahaya, gerak, dan energi kimia.",
-                    "Pemahaman mengenai energi membantu manusia mengembangkan berbagai teknologi."
-                ]
-            },
-            {
-                title: "Planet Bumi",
-                text: [
-                    "Bumi merupakan planet yang memiliki kondisi yang mendukung kehidupan.",
-                    "Atmosfer, air, dan berbagai proses geologis membentuk lingkungan tempat manusia hidup."
-                ]
-            },
-            {
-                title: "Tubuh Manusia",
-                text: [
-                    "Tubuh manusia tersusun dari berbagai sistem yang bekerja bersama.",
-                    "Jantung, paru-paru, sistem saraf, dan organ lainnya memiliki fungsi yang saling berhubungan."
-                ]
-            },
-            {
-                title: "Luar Angkasa",
-                text: [
-                    "Alam semesta memiliki miliaran galaksi dan jumlah bintang yang sangat besar.",
-                    "Eksplorasi luar angkasa terus membantu manusia memahami tempat kita di alam semesta."
-                ]
-            }
+            "Transformasi digital menciptakan berbagai peluang baru bagi pelaku bisnis.",
+            "Sebuah bisnis perlu memahami masalah pelanggan sebelum membuat produk.",
+            "Strategi pemasaran digital dapat membantu bisnis menjangkau calon pelanggan.",
+            "Data dapat digunakan untuk memahami perilaku pelanggan.",
+            "Bisnis yang mampu beradaptasi dapat menghadapi perubahan pasar dengan lebih baik."
         ]
     },
 
     {
         id: 6,
-        title: "Strategi Bisnis Digital",
-        author: "Fajar Hidayat",
-        category: "Bisnis",
-        year: 2025,
-        rating: 4.7,
+        title: "Laskar Pelangi",
+        author: "Andrea Hirata",
+        category: "Novel",
+        year: 2005,
+        rating: 4.9,
+        description: "Kisah tentang persahabatan, pendidikan, dan perjuangan anak-anak Belitung.",
+        cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Panduan memahami strategi bisnis di era digital, mulai dari pemasaran hingga membangun hubungan dengan pelanggan.",
-        cover: "https://placehold.co/600x800/ea580c/ffffff?text=Bisnis",
         pages: [
-            {
-                title: "Bisnis Digital",
-                text: [
-                    "Perkembangan teknologi mengubah cara perusahaan berinteraksi dengan pelanggan.",
-                    "Bisnis digital memanfaatkan teknologi untuk menciptakan nilai dan memberikan layanan yang lebih mudah diakses."
-                ]
-            },
-            {
-                title: "Pelanggan",
-                text: [
-                    "Memahami kebutuhan pelanggan merupakan bagian penting dari strategi bisnis.",
-                    "Data dan komunikasi dapat membantu perusahaan memahami pengalaman pengguna."
-                ]
-            },
-            {
-                title: "Pemasaran",
-                text: [
-                    "Pemasaran digital memiliki berbagai kanal seperti mesin pencari, media sosial, email, dan konten.",
-                    "Strategi yang baik perlu disesuaikan dengan karakteristik target pengguna."
-                ]
-            },
-            {
-                title: "Inovasi",
-                text: [
-                    "Inovasi tidak selalu berarti menciptakan teknologi baru.",
-                    "Perbaikan kecil pada produk dan proses juga dapat memberikan manfaat besar."
-                ]
-            },
-            {
-                title: "Kesimpulan",
-                text: [
-                    "Bisnis digital membutuhkan kemampuan beradaptasi.",
-                    "Pemahaman terhadap pelanggan dan kemampuan menggunakan teknologi menjadi faktor penting."
-                ]
-            }
+            "Di sebuah sekolah sederhana, sekelompok anak bertemu dan memulai perjalanan persahabatan.",
+            "Mereka memiliki karakter yang berbeda namun saling mendukung.",
+            "Keterbatasan tidak menghentikan keinginan mereka untuk belajar.",
+            "Guru mereka memberikan inspirasi agar tidak menyerah pada keadaan.",
+            "Persahabatan membuat perjalanan pendidikan mereka menjadi penuh kenangan."
         ]
     },
 
     {
         id: 7,
-        title: "Petualangan di Hutan Ajaib",
+        title: "Petualangan di Hutan",
         author: "Maya Putri",
         category: "Anak-anak",
-        year: 2021,
-        rating: 4.9,
+        year: 2022,
+        rating: 4.4,
+        description: "Cerita petualangan anak-anak yang belajar tentang keberanian dan menjaga alam.",
+        cover: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Cerita petualangan penuh imajinasi tentang persahabatan dan keberanian di sebuah hutan misterius.",
-        cover: "https://placehold.co/600x800/16a34a/ffffff?text=Hutan",
         pages: [
-            {
-                title: "Memasuki Hutan",
-                text: [
-                    "Pada suatu pagi, Lila menemukan sebuah jalan kecil di belakang rumahnya.",
-                    "Jalan tersebut membawa Lila menuju sebuah hutan yang belum pernah ia lihat sebelumnya."
-                ]
-            },
-            {
-                title: "Teman Baru",
-                text: [
-                    "Di dalam hutan, Lila bertemu seekor burung kecil yang dapat berbicara.",
-                    "Burung itu bernama Kiko dan ia sedang mencari jalan pulang."
-                ]
-            },
-            {
-                title: "Pohon Tua",
-                text: [
-                    "Mereka menemukan sebuah pohon tua yang menyimpan peta rahasia.",
-                    "Peta tersebut menunjukkan jalan menuju sebuah taman tersembunyi."
-                ]
-            },
-            {
-                title: "Taman Rahasia",
-                text: [
-                    "Taman tersebut dipenuhi bunga berwarna-warni dan suara air yang jernih.",
-                    "Lila menyadari bahwa keberanian akan semakin kuat ketika seseorang tidak berjalan sendirian."
-                ]
-            },
-            {
-                title: "Pulang",
-                text: [
-                    "Setelah menemukan jalan pulang, Lila berjanji akan menjaga rahasia hutan tersebut.",
-                    "Petualangan itu mengajarkannya arti persahabatan dan keberanian."
-                ]
-            }
+            "Pagi itu, Raka dan teman-temannya memulai perjalanan menuju hutan.",
+            "Mereka menemukan berbagai jenis tumbuhan dan hewan.",
+            "Dalam perjalanan mereka belajar pentingnya menjaga kebersihan hutan.",
+            "Sebuah sungai kecil menjadi tempat mereka beristirahat.",
+            "Petualangan tersebut membuat mereka semakin menyayangi alam."
         ]
     },
 
     {
         id: 8,
-        title: "Pendidikan di Era Digital",
-        author: "Siti Aminah",
-        category: "Pendidikan",
-        year: 2024,
-        rating: 4.6,
+        title: "Kecerdasan Buatan untuk Semua",
+        author: "Agus Ramadhan",
+        category: "Teknologi",
+        year: 2025,
+        rating: 4.8,
+        description: "Pengenalan kecerdasan buatan dengan bahasa sederhana untuk masyarakat umum.",
+        cover: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Membahas transformasi pembelajaran dan peluang teknologi digital dalam dunia pendidikan.",
-        cover: "https://placehold.co/600x800/0891b2/ffffff?text=Pendidikan",
         pages: [
-            {
-                title: "Pembelajaran Modern",
-                text: [
-                    "Teknologi memberikan berbagai cara baru bagi siswa dan pendidik untuk mendapatkan informasi.",
-                    "Pembelajaran dapat dilakukan melalui video, aplikasi, buku digital, dan berbagai sumber interaktif."
-                ]
-            },
-            {
-                title: "Peran Guru",
-                text: [
-                    "Guru tetap memiliki peran penting dalam membantu siswa memahami informasi.",
-                    "Teknologi sebaiknya menjadi alat pendukung proses pembelajaran."
-                ]
-            },
-            {
-                title: "Literasi Digital",
-                text: [
-                    "Kemampuan menggunakan teknologi harus disertai kemampuan mengevaluasi informasi.",
-                    "Literasi digital membantu pengguna memahami kualitas dan keamanan informasi."
-                ]
-            },
-            {
-                title: "Akses Pendidikan",
-                text: [
-                    "Perpustakaan digital dapat membantu memperluas akses terhadap sumber belajar.",
-                    "Pengembangan infrastruktur dan kemampuan digital tetap diperlukan agar manfaatnya dapat dirasakan secara luas."
-                ]
-            },
-            {
-                title: "Masa Depan Pendidikan",
-                text: [
-                    "Pendidikan akan terus berubah mengikuti kebutuhan masyarakat.",
-                    "Kemampuan belajar sepanjang hayat akan menjadi semakin penting."
-                ]
-            }
+            "Kecerdasan buatan merupakan teknologi yang memungkinkan komputer melakukan tugas yang biasanya membutuhkan kecerdasan manusia.",
+            "Machine learning memungkinkan sistem belajar dari data.",
+            "Kecerdasan buatan digunakan pada berbagai bidang.",
+            "Penggunaan teknologi perlu memperhatikan keamanan dan tanggung jawab.",
+            "Pemahaman dasar AI dapat membantu masyarakat menghadapi perubahan teknologi."
         ]
     },
 
     {
         id: 9,
-        title: "Langit Senja",
-        author: "Arif Maulana",
-        category: "Novel",
-        year: 2020,
+        title: "Psikologi Pendidikan",
+        author: "Siti Rahma",
+        category: "Pendidikan",
+        year: 2023,
         rating: 4.5,
+        description: "Mengenal proses belajar, motivasi, dan perkembangan peserta didik.",
+        cover: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Novel tentang perjalanan dua sahabat yang menemukan makna keluarga, harapan, dan masa depan.",
-        cover: "https://placehold.co/600x800/db2777/ffffff?text=Senja",
         pages: [
-            {
-                title: "Pertemuan",
-                text: [
-                    "Senja sore itu membuat langit terlihat berbeda.",
-                    "Di sebuah halte kecil, dua orang yang telah lama tidak bertemu kembali berbincang tentang perjalanan hidup mereka."
-                ]
-            },
-            {
-                title: "Kenangan",
-                text: [
-                    "Kenangan masa lalu sering muncul ketika kita kembali mengunjungi tempat yang familiar.",
-                    "Namun waktu juga mengajarkan bahwa manusia selalu berubah."
-                ]
-            },
-            {
-                title: "Perjalanan",
-                text: [
-                    "Mereka memutuskan melakukan perjalanan singkat ke kota kecil tempat mereka tumbuh.",
-                    "Perjalanan tersebut membawa mereka bertemu kembali dengan banyak cerita lama."
-                ]
-            },
-            {
-                title: "Pilihan",
-                text: [
-                    "Setiap orang memiliki pilihan yang harus diambil.",
-                    "Tidak semua pilihan mudah, tetapi setiap keputusan dapat menjadi bagian dari perjalanan hidup."
-                ]
-            },
-            {
-                title: "Langit Baru",
-                text: [
-                    "Matahari akhirnya tenggelam.",
-                    "Mereka menyadari bahwa akhir sebuah hari bukanlah akhir dari segalanya, melainkan kesempatan untuk memulai hari berikutnya."
-                ]
-            }
+            "Pendidikan tidak hanya berkaitan dengan penyampaian materi.",
+            "Setiap peserta didik memiliki karakteristik dan kebutuhan yang berbeda.",
+            "Motivasi dapat memengaruhi proses belajar.",
+            "Lingkungan belajar yang baik dapat membantu peserta didik berkembang.",
+            "Guru memiliki peranan penting dalam menciptakan pengalaman belajar yang bermakna."
         ]
     },
 
     {
         id: 10,
-        title: "Dasar-Dasar Astronomi",
-        author: "Dimas Nugraha",
+        title: "Rahasia Alam Semesta",
+        author: "Arif Hidayat",
         category: "Sains",
-        year: 2023,
+        year: 2024,
         rating: 4.7,
+        description: "Perjalanan mengenal galaksi, bintang, planet, dan berbagai fenomena alam semesta.",
+        cover: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Pengenalan astronomi untuk pembaca umum yang ingin memahami planet, bintang, galaksi, dan alam semesta.",
-        cover: "https://placehold.co/600x800/1d4ed8/ffffff?text=Astronomi",
         pages: [
-            {
-                title: "Melihat Langit",
-                text: [
-                    "Manusia telah mengamati langit sejak zaman dahulu.",
-                    "Bintang dan benda langit digunakan untuk menentukan arah dan waktu."
-                ]
-            },
-            {
-                title: "Tata Surya",
-                text: [
-                    "Tata Surya terdiri dari Matahari dan berbagai benda yang mengorbitnya.",
-                    "Planet-planet memiliki karakteristik yang berbeda-beda."
-                ]
-            },
-            {
-                title: "Bintang",
-                text: [
-                    "Bintang merupakan bola gas panas yang menghasilkan energi.",
-                    "Matahari adalah salah satu bintang yang paling dekat dengan Bumi."
-                ]
-            },
-            {
-                title: "Galaksi",
-                text: [
-                    "Galaksi merupakan kumpulan besar bintang, gas, debu, dan materi lainnya.",
-                    "Bima Sakti adalah galaksi tempat Tata Surya berada."
-                ]
-            },
-            {
-                title: "Alam Semesta",
-                text: [
-                    "Alam semesta sangat luas dan masih menyimpan banyak pertanyaan.",
-                    "Astronomi membantu manusia terus mengeksplorasi dan memahami kosmos."
-                ]
-            }
+            "Alam semesta memiliki ukuran yang sangat luas dan terdiri dari berbagai objek astronomi.",
+            "Bintang merupakan objek yang menghasilkan cahaya dan energi.",
+            "Planet bergerak mengelilingi bintang dalam sistem tertentu.",
+            "Galaksi terdiri dari miliaran bintang dan berbagai objek lainnya.",
+            "Penelitian astronomi membantu manusia memahami asal-usul dan perkembangan alam semesta."
         ]
     },
 
     {
         id: 11,
-        title: "Seni Berpikir Kreatif",
-        author: "Rina Kartika",
-        category: "Pendidikan",
-        year: 2022,
+        title: "Strategi Keuangan Pribadi",
+        author: "Nadia Permata",
+        category: "Bisnis",
+        year: 2025,
         rating: 4.6,
+        description: "Panduan mengatur keuangan pribadi secara sederhana dan terencana.",
+        cover: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Latihan dan konsep untuk mengembangkan kreativitas dalam belajar, bekerja, dan memecahkan masalah.",
-        cover: "https://placehold.co/600x800/9333ea/ffffff?text=Kreatif",
         pages: [
-            {
-                title: "Apa Itu Kreativitas?",
-                text: [
-                    "Kreativitas merupakan kemampuan menghasilkan gagasan baru atau melihat sesuatu dari sudut pandang yang berbeda.",
-                    "Setiap orang memiliki kemampuan untuk mengembangkan kreativitas."
-                ]
-            },
-            {
-                title: "Rasa Ingin Tahu",
-                text: [
-                    "Pertanyaan sederhana dapat menjadi awal dari sebuah gagasan.",
-                    "Rasa ingin tahu membantu kita menemukan hubungan baru antara berbagai hal."
-                ]
-            },
-            {
-                title: "Eksperimen",
-                text: [
-                    "Tidak semua ide akan berhasil.",
-                    "Eksperimen memberikan kesempatan untuk belajar dari kegagalan dan memperbaiki pendekatan."
-                ]
-            },
-            {
-                title: "Kolaborasi",
-                text: [
-                    "Bekerja bersama orang lain dapat menghasilkan gagasan yang lebih beragam.",
-                    "Perbedaan sudut pandang dapat menjadi sumber inovasi."
-                ]
-            },
-            {
-                title: "Latihan",
-                text: [
-                    "Kreativitas dapat dilatih melalui aktivitas rutin.",
-                    "Tuliskan ide, buat sketsa, baca, diskusikan, dan terus mencoba."
-                ]
-            }
+            "Pengelolaan keuangan dimulai dengan memahami pemasukan dan pengeluaran.",
+            "Anggaran membantu kita mengetahui ke mana uang digunakan.",
+            "Dana darurat dapat membantu menghadapi kebutuhan yang tidak terduga.",
+            "Menabung secara konsisten membutuhkan kebiasaan yang terencana.",
+            "Perencanaan keuangan dapat disesuaikan dengan kondisi masing-masing individu."
         ]
     },
 
     {
         id: 12,
-        title: "Dunia Tanpa Batas",
-        author: "Kevin Aditya",
-        category: "Novel",
-        year: 2024,
-        rating: 4.8,
+        title: "Kisah di Balik Senja",
+        author: "Aulia Sari",
+        category: "Fiksi",
+        year: 2023,
+        rating: 4.3,
+        description: "Novel fiksi tentang persahabatan, keluarga, dan perjalanan menemukan makna kehidupan.",
+        cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=80",
         available: true,
-        description: "Novel inspiratif mengenai perjalanan seorang anak muda mengejar impian dan menemukan arti keberhasilan.",
-        cover: "https://placehold.co/600x800/0f766e/ffffff?text=Dunia",
         pages: [
-            {
-                title: "Impian",
-                text: [
-                    "Setiap perjalanan besar sering dimulai dari sebuah impian sederhana.",
-                    "Bagi sebagian orang, impian tersebut mungkin terlihat terlalu jauh, tetapi keyakinan memberikan keberanian untuk mencoba."
-                ]
-            },
-            {
-                title: "Langkah Pertama",
-                text: [
-                    "Tidak ada perjalanan tanpa langkah pertama.",
-                    "Memulai sering kali lebih sulit daripada melanjutkan, tetapi tindakan kecil dapat menghasilkan perubahan besar."
-                ]
-            },
-            {
-                title: "Kegagalan",
-                text: [
-                    "Kegagalan bukan selalu akhir.",
-                    "Pengalaman tersebut dapat memberikan pelajaran yang tidak bisa didapatkan hanya dari teori."
-                ]
-            },
-            {
-                title: "Perubahan",
-                text: [
-                    "Dalam perjalanan, tujuan seseorang dapat berubah.",
-                    "Perubahan bukan berarti menyerah, melainkan kesempatan untuk memahami apa yang benar-benar penting."
-                ]
-            },
-            {
-                title: "Perjalanan",
-                text: [
-                    "Pada akhirnya, keberhasilan bukan hanya tentang mencapai tujuan.",
-                    "Proses belajar, orang-orang yang ditemui, dan pengalaman yang diperoleh merupakan bagian penting dari perjalanan."
-                ]
-            }
+            "Senja selalu membawa suasana berbeda bagi tokoh utama dalam cerita.",
+            "Pertemuan dengan seorang teman lama membuat berbagai kenangan kembali muncul.",
+            "Mereka berbicara tentang keputusan yang pernah dibuat.",
+            "Perjalanan hidup tidak selalu berjalan sesuai rencana.",
+            "Pada akhirnya, menerima perubahan menjadi bagian penting dalam perjalanan mereka."
         ]
     }
 ];
@@ -610,319 +239,233 @@ const books = [
    STORAGE
 ========================================================= */
 
-const STORAGE_KEYS = {
-    favorites: "perpus_favorites",
-    history: "perpus_history",
-    progress: "perpus_progress",
-    account: "perpus_account",
-    currentUser: "perpus_current_user",
-    theme: "perpus_theme"
+const STORAGE = {
+    favorites: "pd_favorites",
+    history: "pd_history",
+    progress: "pd_progress",
+    theme: "pd_theme",
+    user: "pd_user",
+    account: "pd_account",
+    lastPages: "pd_last_pages"
 };
+
+
+function readStorage(key, fallback) {
+    try {
+        const value = localStorage.getItem(key);
+
+        if (value === null) {
+            return fallback;
+        }
+
+        return JSON.parse(value);
+    } catch (error) {
+        console.warn("Storage error:", key, error);
+        return fallback;
+    }
+}
+
+
+function writeStorage(key, value) {
+    try {
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+        console.warn("Storage write error:", key, error);
+    }
+}
 
 
 /* =========================================================
    STATE
 ========================================================= */
 
-let state = {
-    selectedCategory: "Semua",
-    searchQuery: "",
-    sort: "latest",
-    currentBook: null,
-    currentPage: 0,
-    currentReaderBook: null
-};
+let favorites = readStorage(STORAGE.favorites, []);
+let history = readStorage(STORAGE.history, []);
+let progress = readStorage(STORAGE.progress, {});
+let lastPages = readStorage(STORAGE.lastPages, {});
+
+let currentCategory = "Semua";
+let currentSearch = "";
+let currentSort = "newest";
+
+let currentReaderBook = null;
+let currentReaderPage = 0;
 
 
 /* =========================================================
-   ELEMENTS
+   DOM
 ========================================================= */
 
 const booksGrid = document.getElementById("booksGrid");
 const favoriteGrid = document.getElementById("favoriteGrid");
 const historyGrid = document.getElementById("historyGrid");
 
-const categoryFilter = document.getElementById("categoryFilter");
-const sortBooks = document.getElementById("sortBooks");
-const searchResultInfo = document.getElementById("searchResultInfo");
-
+const heroSearch = document.getElementById("heroSearch");
 const heroSearchForm = document.getElementById("heroSearchForm");
-const heroSearchInput = document.getElementById("heroSearchInput");
 
-const bookModal = document.getElementById("bookModal");
-const bookDetailContent = document.getElementById("bookDetailContent");
-const closeBookModal = document.getElementById("closeBookModal");
+const categoryList = document.getElementById("categoryList");
+const sortSelect = document.getElementById("sortSelect");
+const searchStatus = document.getElementById("searchStatus");
+
+const detailModal = document.getElementById("detailModal");
+const detailContent = document.getElementById("detailContent");
 
 const authModal = document.getElementById("authModal");
-const closeAuthModal = document.getElementById("closeAuthModal");
-
 const loginForm = document.getElementById("loginForm");
 const registerForm = document.getElementById("registerForm");
 
-const showRegisterButton = document.getElementById("showRegisterButton");
-const showLoginButton = document.getElementById("showLoginButton");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
 
-const authTitle = document.getElementById("authTitle");
-const authSubtitle = document.getElementById("authSubtitle");
-
-const profileModal = document.getElementById("profileModal");
-const profileForm = document.getElementById("profileForm");
-const closeProfileModal = document.getElementById("closeProfileModal");
-
-const editProfileButton = document.getElementById("editProfileButton");
+const themeToggle = document.getElementById("themeToggle");
 
 const reader = document.getElementById("reader");
-const closeReader = document.getElementById("closeReader");
-
-const readerBookTitle = document.getElementById("readerBookTitle");
-const readerBookAuthor = document.getElementById("readerBookAuthor");
-const readerContent = document.getElementById("readerContent");
+const readerTitle = document.getElementById("readerTitle");
+const readerAuthor = document.getElementById("readerAuthor");
+const readerText = document.getElementById("readerText");
 const readerPageNumber = document.getElementById("readerPageNumber");
-const readerPageCounter = document.getElementById("readerPageCounter");
-const readerProgress = document.getElementById("readerProgress");
-
-const previousPage = document.getElementById("previousPage");
-const nextPage = document.getElementById("nextPage");
+const readerPageInfo = document.getElementById("readerPageInfo");
+const readerProgressBar = document.getElementById("readerProgressBar");
 
 const toastContainer = document.getElementById("toastContainer");
 
-const themeToggle = document.getElementById("themeToggle");
-const readerThemeToggle = document.getElementById("readerThemeToggle");
-
-const backToTop = document.getElementById("backToTop");
-
-const mobileMenuButton = document.getElementById("mobileMenuButton");
-const navMenu = document.getElementById("navMenu");
-
-const loginButton = document.getElementById("loginButton");
-const loginButtonText = document.getElementById("loginButtonText");
+const backTop = document.getElementById("backTop");
 
 
 /* =========================================================
-   LOCAL STORAGE HELPERS
+   BOOK FUNCTIONS
 ========================================================= */
 
-function getStorage(key, fallback) {
-    try {
-        const data = localStorage.getItem(key);
-
-        if (data === null) {
-            return fallback;
-        }
-
-        return JSON.parse(data);
-    } catch (error) {
-        console.error("Storage error:", error);
-        return fallback;
-    }
+function getBook(id) {
+    return books.find(book => book.id === Number(id));
 }
 
-function setStorage(key, value) {
-    try {
-        localStorage.setItem(key, JSON.stringify(value));
-    } catch (error) {
-        console.error("Storage save error:", error);
-    }
-}
-
-
-/* =========================================================
-   FAVORITES
-========================================================= */
-
-function getFavorites() {
-    return getStorage(STORAGE_KEYS.favorites, []);
-}
-
-function saveFavorites(favorites) {
-    setStorage(STORAGE_KEYS.favorites, favorites);
-}
-
-function isFavorite(bookId) {
-    return getFavorites().includes(bookId);
-}
-
-function addToFavorite(bookId) {
-    const favorites = getFavorites();
-
-    if (!favorites.includes(bookId)) {
-        favorites.push(bookId);
-        saveFavorites(favorites);
-
-        showToast("Buku berhasil ditambahkan ke favorit.", "success");
-    }
-
-    renderAll();
-}
-
-function removeFromFavorite(bookId) {
-    let favorites = getFavorites();
-
-    favorites = favorites.filter(id => id !== bookId);
-
-    saveFavorites(favorites);
-
-    showToast("Buku dihapus dari favorit.", "success");
-
-    renderAll();
-}
-
-function toggleFavorite(bookId) {
-    if (isFavorite(bookId)) {
-        removeFromFavorite(bookId);
-    } else {
-        addToFavorite(bookId);
-    }
-}
-
-
-/* =========================================================
-   HISTORY
-========================================================= */
-
-function getHistory() {
-    return getStorage(STORAGE_KEYS.history, []);
-}
-
-function saveHistory(history) {
-    setStorage(STORAGE_KEYS.history, history);
-}
-
-function addToHistory(bookId) {
-    let history = getHistory();
-
-    history = history.filter(item => item.bookId !== bookId);
-
-    history.unshift({
-        bookId,
-        lastRead: Date.now()
-    });
-
-    history = history.slice(0, 20);
-
-    saveHistory(history);
-}
-
-function getProgress() {
-    return getStorage(STORAGE_KEYS.progress, {});
-}
-
-function saveProgress(bookId, page) {
-    const progress = getProgress();
-
-    progress[bookId] = page;
-
-    setStorage(STORAGE_KEYS.progress, progress);
-}
-
-function getBookProgress(bookId) {
-    const progress = getProgress();
-    return Number(progress[bookId] || 0);
-}
-
-
-/* =========================================================
-   FILTERING & SORTING
-========================================================= */
 
 function getFilteredBooks() {
-    let filtered = [...books];
 
-    if (state.selectedCategory !== "Semua") {
-        filtered = filtered.filter(
-            book => book.category === state.selectedCategory
+    let result = [...books];
+
+    if (currentSearch.trim()) {
+        const keyword = currentSearch.toLowerCase().trim();
+
+        result = result.filter(book =>
+            book.title.toLowerCase().includes(keyword) ||
+            book.author.toLowerCase().includes(keyword) ||
+            book.category.toLowerCase().includes(keyword)
         );
     }
 
-    if (state.searchQuery.trim()) {
-        const query = state.searchQuery.toLowerCase().trim();
-
-        filtered = filtered.filter(book => {
-            return (
-                book.title.toLowerCase().includes(query) ||
-                book.author.toLowerCase().includes(query) ||
-                book.category.toLowerCase().includes(query)
-            );
-        });
+    if (currentCategory !== "Semua") {
+        result = result.filter(
+            book => book.category === currentCategory
+        );
     }
 
-    if (state.sort === "latest") {
-        filtered.sort((a, b) => b.year - a.year);
+    if (currentSort === "newest") {
+        result.sort((a, b) => b.year - a.year);
     }
 
-    if (state.sort === "rating") {
-        filtered.sort((a, b) => b.rating - a.rating);
+    if (currentSort === "rating") {
+        result.sort((a, b) => b.rating - a.rating);
     }
 
-    if (state.sort === "title") {
-        filtered.sort((a, b) =>
+    if (currentSort === "title") {
+        result.sort((a, b) =>
             a.title.localeCompare(b.title, "id")
         );
     }
 
-    return filtered;
+    return result;
 }
 
 
-/* =========================================================
-   BOOK CARD
-========================================================= */
+function renderBooks() {
+
+    const result = getFilteredBooks();
+
+    searchStatus.textContent = currentSearch
+        ? `${result.length} buku ditemukan untuk "${currentSearch}"`
+        : `${result.length} buku tersedia`;
+
+    if (!result.length) {
+
+        booksGrid.innerHTML = `
+            <div class="empty-state">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>Tidak ada buku yang ditemukan.</h3>
+                <p>Coba gunakan kata kunci atau kategori lain.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    booksGrid.innerHTML = result
+        .map(book => createBookCard(book))
+        .join("");
+}
+
 
 function createBookCard(book) {
-    const favorite = isFavorite(book.id);
+
+    const isFavorite = favorites.includes(book.id);
 
     return `
         <article class="book-card">
 
             <div class="book-cover">
+
                 <img
                     src="${book.cover}"
-                    alt="Sampul buku ${book.title}"
-                    loading="lazy"
+                    alt="Cover ${escapeHTML(book.title)}"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
                 >
+
+                <div class="book-cover-fallback" style="display:none;">
+                    <i class="fa-solid fa-book"></i>
+                </div>
 
                 <button
-                    class="favorite-button ${favorite ? "active" : ""}"
+                    class="favorite-btn ${isFavorite ? "active" : ""}"
                     data-action="favorite"
                     data-id="${book.id}"
-                    aria-label="${favorite ? "Hapus dari favorit" : "Tambah ke favorit"}"
-                    title="${favorite ? "Hapus dari favorit" : "Tambah ke favorit"}"
+                    aria-label="${isFavorite ? "Hapus dari favorit" : "Tambah ke favorit"}"
+                    title="${isFavorite ? "Hapus dari favorit" : "Tambah ke favorit"}"
                 >
-                    <i class="${favorite ? "fa-solid" : "fa-regular"} fa-heart"></i>
+                    <i class="${isFavorite ? "fa-solid" : "fa-regular"} fa-heart"></i>
                 </button>
+
             </div>
 
-            <div class="book-info">
+            <div class="book-body">
 
                 <span class="book-category">
-                    ${book.category}
+                    ${escapeHTML(book.category)}
                 </span>
 
                 <h3 class="book-title">
-                    ${book.title}
+                    ${escapeHTML(book.title)}
                 </h3>
 
                 <p class="book-author">
-                    ${book.author}
+                    ${escapeHTML(book.author)}
                 </p>
 
                 <div class="book-meta">
-
-                    <span class="book-rating">
+                    <span class="rating">
                         <i class="fa-solid fa-star"></i>
                         ${book.rating}
                     </span>
 
-                    <span class="book-status ${book.available ? "" : "unavailable"}">
-                        <i class="fa-solid fa-circle"></i>
+                    <span class="${book.available ? "available" : "unavailable"}">
                         ${book.available ? "Tersedia" : "Dipinjam"}
                     </span>
-
                 </div>
 
                 <div class="book-actions">
 
                     <button
+                        class="btn btn-primary"
                         data-action="read"
                         data-id="${book.id}"
                     >
@@ -931,6 +474,7 @@ function createBookCard(book) {
                     </button>
 
                     <button
+                        class="btn btn-outline"
                         data-action="detail"
                         data-id="${book.id}"
                     >
@@ -940,59 +484,24 @@ function createBookCard(book) {
                 </div>
 
             </div>
-
         </article>
     `;
 }
 
 
-/* =========================================================
-   RENDER BOOKS
-========================================================= */
-
-function renderBooks() {
-    const filteredBooks = getFilteredBooks();
-
-    if (filteredBooks.length === 0) {
-        booksGrid.innerHTML = `
-            <div class="empty-state">
-                <i class="fa-solid fa-book-open"></i>
-                <h3>Tidak ada buku yang ditemukan</h3>
-                <p>Coba gunakan kata kunci atau kategori lainnya.</p>
-            </div>
-        `;
-    } else {
-        booksGrid.innerHTML = filteredBooks
-            .map(createBookCard)
-            .join("");
-    }
-
-    if (state.searchQuery) {
-        searchResultInfo.textContent =
-            `${filteredBooks.length} buku ditemukan untuk "${state.searchQuery}"`;
-    } else {
-        searchResultInfo.textContent = "";
-    }
-}
-
-
-/* =========================================================
-   RENDER FAVORITES
-========================================================= */
-
 function renderFavorites() {
-    const favoriteIds = getFavorites();
 
     const favoriteBooks = books.filter(book =>
-        favoriteIds.includes(book.id)
+        favorites.includes(book.id)
     );
 
-    if (favoriteBooks.length === 0) {
+    if (!favoriteBooks.length) {
+
         favoriteGrid.innerHTML = `
             <div class="empty-state">
                 <i class="fa-regular fa-heart"></i>
-                <h3>Belum ada buku favorit</h3>
-                <p>Klik ikon hati pada buku untuk menambahkannya.</p>
+                <h3>Belum ada buku favorit.</h3>
+                <p>Tekan ikon hati pada buku untuk menyimpannya.</p>
             </div>
         `;
 
@@ -1000,245 +509,115 @@ function renderFavorites() {
     }
 
     favoriteGrid.innerHTML = favoriteBooks
-        .map(createBookCard)
+        .map(book => createBookCard(book))
         .join("");
 }
 
 
 /* =========================================================
-   RENDER HISTORY
+   FAVORITES
 ========================================================= */
 
-function renderHistory() {
-    const history = getHistory();
+function toggleFavorite(id) {
 
-    const historyBooks = history
-        .map(item => {
-            const book = books.find(book => book.id === item.bookId);
+    id = Number(id);
 
-            if (!book) {
-                return null;
-            }
+    if (favorites.includes(id)) {
 
-            return {
-                ...book,
-                lastRead: item.lastRead
-            };
-        })
-        .filter(Boolean);
-
-    if (historyBooks.length === 0) {
-        historyGrid.innerHTML = `
-            <div class="empty-state">
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                <h3>Belum ada riwayat bacaan</h3>
-                <p>Buku yang Anda baca akan muncul di sini.</p>
-            </div>
-        `;
-
-        return;
-    }
-
-    historyGrid.innerHTML = historyBooks.map(book => {
-
-        const currentPage = getBookProgress(book.id);
-        const totalPages = book.pages.length;
-
-        const progress =
-            Math.round((currentPage / totalPages) * 100);
-
-        return `
-            <article class="history-card">
-
-                <div class="history-cover">
-                    <img
-                        src="${book.cover}"
-                        alt="Sampul ${book.title}"
-                        loading="lazy"
-                    >
-                </div>
-
-                <div class="history-info">
-
-                    <h3>${book.title}</h3>
-
-                    <p>
-                        ${book.author} · ${book.category}
-                    </p>
-
-                    <div class="progress-wrapper">
-
-                        <div class="progress-track">
-                            <div
-                                class="progress-fill"
-                                style="width:${progress}%"
-                            ></div>
-                        </div>
-
-                        <div class="progress-text">
-                            <span>Progress membaca</span>
-                            <span>${progress}%</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <button
-                    class="btn btn-primary"
-                    data-action="continue"
-                    data-id="${book.id}"
-                >
-                    <i class="fa-solid fa-play"></i>
-                    Lanjutkan
-                </button>
-
-            </article>
-        `;
-    }).join("");
-}
-
-
-/* =========================================================
-   PROFILE
-========================================================= */
-
-function getAccount() {
-    return getStorage(STORAGE_KEYS.account, null);
-}
-
-function getCurrentUser() {
-    return getStorage(STORAGE_KEYS.currentUser, null);
-}
-
-function updateProfile() {
-    const account = getAccount();
-
-    const profileName = document.getElementById("profileName");
-    const profileEmail = document.getElementById("profileEmail");
-    const profileAvatar = document.getElementById("profileAvatar");
-
-    if (account) {
-        profileName.textContent = account.name;
-        profileEmail.textContent = account.email;
-
-        profileAvatar.textContent =
-            account.name.charAt(0).toUpperCase();
-    } else {
-        profileName.textContent = "Pengunjung";
-        profileEmail.textContent =
-            "Silakan masuk untuk mengelola profil.";
-        profileAvatar.textContent = "A";
-    }
-
-    const favorites = getFavorites();
-    const history = getHistory();
-
-    document.getElementById("profileFavoriteCount").textContent =
-        favorites.length;
-
-    document.getElementById("profileHistoryCount").textContent =
-        history.length;
-
-    const progress = getProgress();
-
-    const progressValues = Object.keys(progress).map(id => {
-        const book = books.find(book => book.id === Number(id));
-
-        if (!book) {
-            return 0;
-        }
-
-        return Math.round(
-            (progress[id] / book.pages.length) * 100
+        favorites = favorites.filter(
+            favoriteId => favoriteId !== id
         );
-    });
 
-    const averageProgress = progressValues.length
-        ? Math.round(
-            progressValues.reduce((sum, value) => sum + value, 0) /
-            progressValues.length
-        )
-        : 0;
+        showToast("Buku dihapus dari favorit.", "success");
 
-    document.getElementById("profileProgress").textContent =
-        `${averageProgress}%`;
+    } else {
 
-    updateLoginButton();
+        favorites.push(id);
+
+        showToast("Buku ditambahkan ke favorit.", "success");
+    }
+
+    writeStorage(STORAGE.favorites, favorites);
+
+    renderBooks();
+    renderFavorites();
+    updateProfile();
 }
 
-function updateLoginButton() {
-    const account = getAccount();
 
-    if (account) {
-        loginButtonText.textContent = "Keluar";
-    } else {
-        loginButtonText.textContent = "Masuk";
+function loadFavorites() {
+
+    favorites = readStorage(STORAGE.favorites, []);
+
+    if (!Array.isArray(favorites)) {
+        favorites = [];
     }
+
+    renderFavorites();
 }
 
 
 /* =========================================================
-   BOOK DETAIL
+   DETAIL
 ========================================================= */
 
-function openBookDetail(bookId) {
-    const book = books.find(book => book.id === bookId);
+function openBookDetail(id) {
 
-    if (!book) {
-        return;
-    }
+    const book = getBook(id);
 
-    state.currentBook = book;
+    if (!book) return;
 
-    bookDetailContent.innerHTML = `
-        <div class="book-detail">
+    const isFavorite = favorites.includes(book.id);
 
-            <div class="detail-cover">
-                <img
-                    src="${book.cover}"
-                    alt="Sampul ${book.title}"
-                >
-            </div>
+    detailContent.innerHTML = `
+
+        <div class="detail-layout">
+
+            <img
+                class="detail-cover"
+                src="${book.cover}"
+                alt="Cover ${escapeHTML(book.title)}"
+                onerror="this.src=''; this.alt='Cover tidak tersedia';"
+            >
 
             <div class="detail-info">
 
                 <span class="book-category">
-                    ${book.category}
+                    ${escapeHTML(book.category)}
                 </span>
 
-                <h2>${book.title}</h2>
+                <h2 id="detailTitle">
+                    ${escapeHTML(book.title)}
+                </h2>
 
                 <p class="detail-author">
-                    oleh <strong>${book.author}</strong>
+                    oleh ${escapeHTML(book.author)}
                 </p>
 
                 <div class="detail-meta">
                     <span>
-                        <i class="fa-solid fa-calendar"></i>
-                        ${book.year}
+                        Tahun: ${book.year}
                     </span>
 
                     <span>
-                        <i class="fa-solid fa-star"></i>
-                        ${book.rating}
+                        Rating: ⭐ ${book.rating}
                     </span>
 
                     <span>
-                        <i class="fa-solid fa-circle"></i>
-                        ${book.available ? "Tersedia" : "Dipinjam"}
+                        ${book.available ? "Tersedia" : "Tidak tersedia"}
                     </span>
                 </div>
 
                 <p class="detail-description">
-                    ${book.description}
+                    ${escapeHTML(book.description)}
                 </p>
 
-                <div class="detail-actions">
+                <div class="detail-buttons">
 
                     <button
                         class="btn btn-primary"
-                        id="detailReadButton"
+                        data-action="read"
+                        data-id="${book.id}"
                     >
                         <i class="fa-solid fa-book-open"></i>
                         Baca Sekarang
@@ -1246,10 +625,11 @@ function openBookDetail(bookId) {
 
                     <button
                         class="btn btn-outline"
-                        id="detailFavoriteButton"
+                        data-action="favorite"
+                        data-id="${book.id}"
                     >
-                        <i class="${isFavorite(book.id) ? "fa-solid" : "fa-regular"} fa-heart"></i>
-                        ${isFavorite(book.id) ? "Hapus Favorit" : "Favorit"}
+                        <i class="${isFavorite ? "fa-solid" : "fa-regular"} fa-heart"></i>
+                        ${isFavorite ? "Hapus Favorit" : "Tambah Favorit"}
                     </button>
 
                 </div>
@@ -1259,150 +639,250 @@ function openBookDetail(bookId) {
         </div>
     `;
 
-    document.getElementById("detailReadButton")
-        .addEventListener("click", () => {
-            closeModal(bookModal);
-            openReader(book.id);
-        });
-
-    document.getElementById("detailFavoriteButton")
-        .addEventListener("click", () => {
-            toggleFavorite(book.id);
-            openBookDetail(book.id);
-        });
-
-    openModal(bookModal);
+    openModal(detailModal);
 }
 
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-function openModal(modal) {
-    modal.classList.add("show");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-}
 
 function closeModal(modal) {
+
+    if (!modal) return;
+
     modal.classList.remove("show");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
 }
 
 
 /* =========================================================
-   DIGITAL READER
+   READER
 ========================================================= */
 
-function openReader(bookId) {
-    const book = books.find(book => book.id === bookId);
+function openReader(id, page = null) {
 
-    if (!book) {
-        return;
+    const book = getBook(id);
+
+    if (!book) return;
+
+    currentReaderBook = book;
+
+    let savedPage = Number(lastPages[book.id]);
+
+    if (!Number.isInteger(savedPage) || savedPage < 0) {
+        savedPage = 0;
     }
 
-    state.currentReaderBook = book;
+    if (page !== null) {
+        savedPage = Number(page);
+    }
 
-    const savedPage = getBookProgress(book.id);
+    if (savedPage >= book.pages.length) {
+        savedPage = book.pages.length - 1;
+    }
 
-    state.currentPage = Math.min(
-        savedPage,
-        book.pages.length - 1
-    );
+    currentReaderPage = savedPage;
 
-    readerBookTitle.textContent = book.title;
-    readerBookAuthor.textContent = book.author;
+    readerTitle.textContent = book.title;
+    readerAuthor.textContent = book.author;
 
-    addToHistory(book.id);
+    reader.classList.remove("hidden");
+
+    document.body.style.overflow = "hidden";
 
     renderReaderPage();
 
-    reader.classList.add("show");
-    reader.setAttribute("aria-hidden", "false");
+    addToHistory(book.id);
 
-    document.body.style.overflow = "hidden";
-
-    showToast(`Membuka "${book.title}"`, "success");
-
-    renderAll();
+    showToast("Buku berhasil dibuka.", "success");
 }
 
-function renderReaderPage() {
-    const book = state.currentReaderBook;
 
-    if (!book) {
-        return;
+function closeReader() {
+
+    if (currentReaderBook) {
+        saveReadingProgress();
     }
 
-    const page = book.pages[state.currentPage];
-
-    readerContent.innerHTML = `
-        <h2>${page.title}</h2>
-
-        ${page.text.map(paragraph => `
-            <p>${paragraph}</p>
-        `).join("")}
-    `;
-
-    readerPageNumber.textContent =
-        `Halaman ${state.currentPage + 1}`;
-
-    readerPageCounter.textContent =
-        `${state.currentPage + 1} / ${book.pages.length}`;
-
-    const progress =
-        ((state.currentPage + 1) / book.pages.length) * 100;
-
-    readerProgress.style.width = `${progress}%`;
-
-    previousPage.disabled =
-        state.currentPage === 0;
-
-    nextPage.disabled =
-        state.currentPage === book.pages.length - 1;
-
-    saveProgress(book.id, state.currentPage);
-}
-
-function nextReaderPage() {
-    const book = state.currentReaderBook;
-
-    if (!book) {
-        return;
-    }
-
-    if (state.currentPage < book.pages.length - 1) {
-        state.currentPage++;
-        renderReaderPage();
-        renderAll();
-    } else {
-        showToast("Anda sudah sampai di halaman terakhir.", "success");
-    }
-}
-
-function previousReaderPage() {
-    const book = state.currentReaderBook;
-
-    if (!book) {
-        return;
-    }
-
-    if (state.currentPage > 0) {
-        state.currentPage--;
-        renderReaderPage();
-        renderAll();
-    }
-}
-
-function closeReaderView() {
-    reader.classList.remove("show");
-    reader.setAttribute("aria-hidden", "true");
+    reader.classList.add("hidden");
 
     document.body.style.overflow = "";
 
-    renderAll();
+    currentReaderBook = null;
+}
+
+
+function renderReaderPage() {
+
+    if (!currentReaderBook) return;
+
+    const pages = currentReaderBook.pages;
+
+    const totalPages = pages.length;
+
+    if (currentReaderPage < 0) {
+        currentReaderPage = 0;
+    }
+
+    if (currentReaderPage >= totalPages) {
+        currentReaderPage = totalPages - 1;
+    }
+
+    readerText.textContent = pages[currentReaderPage];
+
+    readerPageNumber.textContent = currentReaderPage + 1;
+
+    readerPageInfo.textContent =
+        `${currentReaderPage + 1} / ${totalPages}`;
+
+    const percent =
+        ((currentReaderPage + 1) / totalPages) * 100;
+
+    readerProgressBar.style.width = `${percent}%`;
+
+    saveReadingProgress();
+}
+
+
+function nextPage() {
+
+    if (!currentReaderBook) return;
+
+    if (currentReaderPage < currentReaderBook.pages.length - 1) {
+
+        currentReaderPage++;
+
+        renderReaderPage();
+
+    } else {
+
+        showToast("Anda sudah berada di halaman terakhir.", "success");
+
+        saveReadingProgress();
+    }
+}
+
+
+function previousPage() {
+
+    if (!currentReaderBook) return;
+
+    if (currentReaderPage > 0) {
+
+        currentReaderPage--;
+
+        renderReaderPage();
+
+    } else {
+
+        showToast("Anda sudah berada di halaman pertama.");
+    }
+}
+
+
+function saveReadingProgress() {
+
+    if (!currentReaderBook) return;
+
+    const total = currentReaderBook.pages.length;
+
+    const percentage =
+        Math.round(
+            ((currentReaderPage + 1) / total) * 100
+        );
+
+    progress[currentReaderBook.id] = percentage;
+
+    lastPages[currentReaderBook.id] = currentReaderPage;
+
+    writeStorage(STORAGE.progress, progress);
+    writeStorage(STORAGE.lastPages, lastPages);
+
+    renderHistory();
+}
+
+
+/* =========================================================
+   HISTORY
+========================================================= */
+
+function addToHistory(id) {
+
+    id = Number(id);
+
+    history = history.filter(bookId => bookId !== id);
+
+    history.unshift(id);
+
+    history = history.slice(0, 10);
+
+    writeStorage(STORAGE.history, history);
+
+    renderHistory();
+    updateProfile();
+}
+
+
+function renderHistory() {
+
+    const historyBooks = history
+        .map(id => getBook(id))
+        .filter(Boolean);
+
+    if (!historyBooks.length) {
+
+        historyGrid.innerHTML = `
+            <div class="empty-state">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <h3>Belum ada riwayat bacaan.</h3>
+                <p>Buku yang Anda baca akan muncul di sini.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    historyGrid.innerHTML = historyBooks
+        .map(book => {
+
+            const percentage = progress[book.id] || 0;
+
+            return `
+                <article class="history-card">
+
+                    <img
+                        class="history-cover"
+                        src="${book.cover}"
+                        alt="Cover ${escapeHTML(book.title)}"
+                    >
+
+                    <div class="history-info">
+
+                        <h3>${escapeHTML(book.title)}</h3>
+
+                        <p>${escapeHTML(book.author)}</p>
+
+                        <div class="history-percent">
+                            <span>Progress membaca</span>
+                            <span>${percentage}%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div style="width:${percentage}%"></div>
+                        </div>
+
+                        <button
+                            class="btn btn-primary"
+                            style="margin-top:10px; padding:7px 10px; font-size:11px;"
+                            data-action="read"
+                            data-id="${book.id}"
+                        >
+                            <i class="fa-solid fa-play"></i>
+                            Lanjutkan
+                        </button>
+
+                    </div>
+
+                </article>
+            `;
+        })
+        .join("");
 }
 
 
@@ -1410,111 +890,319 @@ function closeReaderView() {
    SEARCH
 ========================================================= */
 
-function searchBooks(query) {
-    state.searchQuery = query;
+function searchBooks(value) {
 
-    state.selectedCategory = "Semua";
+    currentSearch = value;
 
-    document.querySelectorAll(".category-button")
-        .forEach(button => {
-            button.classList.toggle(
+    renderBooks();
+}
+
+
+heroSearch.addEventListener("input", event => {
+
+    searchBooks(event.target.value);
+
+});
+
+
+heroSearchForm.addEventListener("submit", event => {
+
+    event.preventDefault();
+
+    searchBooks(heroSearch.value);
+
+    document
+        .getElementById("koleksi")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+});
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+categoryList.addEventListener("click", event => {
+
+    const button = event.target.closest("[data-category]");
+
+    if (!button) return;
+
+    currentCategory = button.dataset.category;
+
+    document
+        .querySelectorAll(".category-btn")
+        .forEach(btn => {
+            btn.classList.toggle(
                 "active",
-                button.dataset.category === "Semua"
+                btn.dataset.category === currentCategory
             );
         });
 
     renderBooks();
 
-    document.getElementById("koleksi")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-}
+});
+
+
+document.querySelectorAll(".category-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        currentCategory = card.dataset.category;
+
+        document
+            .querySelectorAll(".category-btn")
+            .forEach(btn => {
+                btn.classList.toggle(
+                    "active",
+                    btn.dataset.category === currentCategory
+                );
+            });
+
+        renderBooks();
+
+        document
+            .getElementById("koleksi")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    });
+
+});
 
 
 /* =========================================================
    SORT
 ========================================================= */
 
-function sortBooks() {
-    state.sort = sortBooks.value;
+sortSelect.addEventListener("change", event => {
+
+    currentSort = event.target.value;
 
     renderBooks();
-}
+
+});
 
 
 /* =========================================================
-   DARK MODE
+   GLOBAL BOOK ACTION
 ========================================================= */
 
-function loadTheme() {
-    const savedTheme =
-        localStorage.getItem(STORAGE_KEYS.theme);
+document.addEventListener("click", event => {
 
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark");
+    const element = event.target.closest("[data-action]");
+
+    if (!element) return;
+
+    const action = element.dataset.action;
+    const id = Number(element.dataset.id);
+
+    if (!id) return;
+
+    if (action === "favorite") {
+
+        toggleFavorite(id);
+
+        if (detailModal.classList.contains("show")) {
+            openBookDetail(id);
+        }
+
     }
 
-    updateThemeIcons();
-}
+    if (action === "detail") {
+        openBookDetail(id);
+    }
 
-function toggleDarkMode() {
-    document.body.classList.toggle("dark");
+    if (action === "read") {
 
-    const isDark =
-        document.body.classList.contains("dark");
+        closeModal(detailModal);
 
-    localStorage.setItem(
-        STORAGE_KEYS.theme,
-        isDark ? "dark" : "light"
-    );
+        openReader(id);
+    }
 
-    updateThemeIcons();
-}
-
-function updateThemeIcons() {
-    const isDark =
-        document.body.classList.contains("dark");
-
-    const icon = isDark
-        ? "fa-solid fa-sun"
-        : "fa-solid fa-moon";
-
-    themeToggle.innerHTML =
-        `<i class="${icon}"></i>`;
-
-    readerThemeToggle.innerHTML =
-        `<i class="${icon}"></i>`;
-}
+});
 
 
 /* =========================================================
-   AUTHENTICATION DEMO
+   MODAL
+========================================================= */
+
+function openModal(modal) {
+
+    if (!modal) return;
+
+    modal.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+document.querySelectorAll("[data-close]").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const modalId = button.dataset.close;
+
+        const modal = document.getElementById(modalId);
+
+        closeModal(modal);
+
+        if (!document.querySelector(".modal.show") &&
+            reader.classList.contains("hidden")) {
+
+            document.body.style.overflow = "";
+        }
+
+    });
+
+});
+
+
+[detailModal, authModal].forEach(modal => {
+
+    modal.addEventListener("click", event => {
+
+        if (event.target === modal) {
+
+            closeModal(modal);
+
+            if (reader.classList.contains("hidden")) {
+                document.body.style.overflow = "";
+            }
+
+        }
+
+    });
+
+});
+
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+
+        if (detailModal.classList.contains("show")) {
+            closeModal(detailModal);
+        }
+
+        if (authModal.classList.contains("show")) {
+            closeModal(authModal);
+        }
+
+        if (!reader.classList.contains("hidden")) {
+            closeReader();
+        }
+
+        if (reader.classList.contains("hidden")) {
+            document.body.style.overflow = "";
+        }
+    }
+
+});
+
+
+/* =========================================================
+   READER CONTROLS
+========================================================= */
+
+document
+    .getElementById("readerClose")
+    .addEventListener("click", closeReader);
+
+
+document
+    .getElementById("nextPage")
+    .addEventListener("click", nextPage);
+
+
+document
+    .getElementById("previousPage")
+    .addEventListener("click", previousPage);
+
+
+document.addEventListener("keydown", event => {
+
+    if (reader.classList.contains("hidden")) return;
+
+    if (event.key === "ArrowRight") {
+        nextPage();
+    }
+
+    if (event.key === "ArrowLeft") {
+        previousPage();
+    }
+
+});
+
+
+/* =========================================================
+   AUTH
 ========================================================= */
 
 function openLogin() {
-    authTitle.textContent = "Selamat Datang";
-    authSubtitle.textContent =
-        "Masuk untuk menikmati pengalaman membaca.";
+
+    authModal.classList.add("show");
 
     loginForm.classList.remove("hidden");
     registerForm.classList.add("hidden");
 
-    openModal(authModal);
+    document
+        .querySelectorAll(".auth-tab")
+        .forEach(tab => {
+            tab.classList.toggle(
+                "active",
+                tab.dataset.auth === "login"
+            );
+        });
+
+    document.body.style.overflow = "hidden";
 }
 
+
 function openRegister() {
-    authTitle.textContent = "Buat Akun";
-    authSubtitle.textContent =
-        "Daftar untuk menyimpan koleksi dan riwayat bacaan.";
+
+    authModal.classList.add("show");
 
     loginForm.classList.add("hidden");
     registerForm.classList.remove("hidden");
 
-    openModal(authModal);
+    document
+        .querySelectorAll(".auth-tab")
+        .forEach(tab => {
+            tab.classList.toggle(
+                "active",
+                tab.dataset.auth === "register"
+            );
+        });
+
+    document.body.style.overflow = "hidden";
 }
 
-function handleRegister(event) {
+
+document
+    .getElementById("loginOpen")
+    .addEventListener("click", openLogin);
+
+
+document.querySelectorAll(".auth-tab").forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+        if (tab.dataset.auth === "login") {
+            openLogin();
+        } else {
+            openRegister();
+        }
+
+    });
+
+});
+
+
+registerForm.addEventListener("submit", event => {
+
     event.preventDefault();
 
     const name =
@@ -1526,22 +1214,16 @@ function handleRegister(event) {
     const password =
         document.getElementById("registerPassword").value;
 
-    const confirmPassword =
-        document.getElementById("registerConfirmPassword").value;
+    const confirm =
+        document.getElementById("registerConfirm").value;
 
-    if (password.length < 6) {
+    if (password !== confirm) {
+
         showToast(
-            "Password minimal terdiri dari 6 karakter.",
+            "Konfirmasi password tidak sama.",
             "error"
         );
-        return;
-    }
 
-    if (password !== confirmPassword) {
-        showToast(
-            "Konfirmasi password tidak cocok.",
-            "error"
-        );
         return;
     }
 
@@ -1551,24 +1233,31 @@ function handleRegister(event) {
         password
     };
 
-    setStorage(STORAGE_KEYS.account, account);
-    setStorage(STORAGE_KEYS.currentUser, {
+    writeStorage(STORAGE.account, account);
+
+    const user = {
+        name,
         email
-    });
+    };
+
+    writeStorage(STORAGE.user, user);
+
+    updateProfile();
 
     closeModal(authModal);
 
     registerForm.reset();
 
-    updateProfile();
-
     showToast(
-        "Akun berhasil dibuat. Selamat datang!",
+        "Pendaftaran berhasil. Selamat datang!",
         "success"
     );
-}
 
-function handleLogin(event) {
+});
+
+
+loginForm.addEventListener("submit", event => {
+
     event.preventDefault();
 
     const email =
@@ -1577,13 +1266,16 @@ function handleLogin(event) {
     const password =
         document.getElementById("loginPassword").value;
 
-    const account = getAccount();
+    const account =
+        readStorage(STORAGE.account, null);
 
     if (!account) {
+
         showToast(
-            "Akun belum ditemukan. Silakan daftar terlebih dahulu.",
+            "Belum ada akun. Silakan daftar terlebih dahulu.",
             "error"
         );
+
         return;
     }
 
@@ -1591,446 +1283,163 @@ function handleLogin(event) {
         account.email !== email ||
         account.password !== password
     ) {
+
         showToast(
             "Email atau password salah.",
             "error"
         );
+
         return;
     }
 
-    setStorage(STORAGE_KEYS.currentUser, {
-        email
+    writeStorage(STORAGE.user, {
+        name: account.name,
+        email: account.email
     });
+
+    updateProfile();
 
     closeModal(authModal);
 
     loginForm.reset();
 
-    updateProfile();
-
     showToast(
-        `Selamat datang kembali, ${account.name}!`,
+        `Selamat datang, ${account.name}!`,
         "success"
     );
-}
 
-function logout() {
-    localStorage.removeItem(STORAGE_KEYS.currentUser);
-
-    updateProfile();
-
-    showToast(
-        "Anda telah keluar dari akun.",
-        "success"
-    );
-}
-
-
-/* =========================================================
-   PROFILE EDIT
-========================================================= */
-
-function openProfileEditor() {
-    const account = getAccount();
-
-    if (!account) {
-        showToast(
-            "Silakan masuk terlebih dahulu.",
-            "error"
-        );
-
-        openLogin();
-        return;
-    }
-
-    document.getElementById("profileEditName").value =
-        account.name;
-
-    document.getElementById("profileEditEmail").value =
-        account.email;
-
-    openModal(profileModal);
-}
-
-function handleProfileUpdate(event) {
-    event.preventDefault();
-
-    const account = getAccount();
-
-    if (!account) {
-        return;
-    }
-
-    account.name =
-        document.getElementById("profileEditName").value.trim();
-
-    account.email =
-        document.getElementById("profileEditEmail").value.trim();
-
-    setStorage(STORAGE_KEYS.account, account);
-
-    setStorage(STORAGE_KEYS.currentUser, {
-        email: account.email
-    });
-
-    closeModal(profileModal);
-
-    updateProfile();
-
-    showToast(
-        "Profil berhasil diperbarui.",
-        "success"
-    );
-}
-
-
-/* =========================================================
-   TOAST
-========================================================= */
-
-function showToast(message, type = "success") {
-    const toast = document.createElement("div");
-
-    toast.className = `toast ${type}`;
-
-    const icon =
-        type === "error"
-            ? "fa-circle-exclamation"
-            : "fa-circle-check";
-
-    toast.innerHTML = `
-        <i class="fa-solid ${icon}"></i>
-        <span>${message}</span>
-    `;
-
-    toastContainer.appendChild(toast);
-
-    setTimeout(() => {
-        toast.style.opacity = "0";
-        toast.style.transform = "translateX(20px)";
-
-        setTimeout(() => {
-            toast.remove();
-        }, 300);
-
-    }, 3000);
-}
-
-
-/* =========================================================
-   RENDER ALL
-========================================================= */
-
-function renderAll() {
-    renderBooks();
-    renderFavorites();
-    renderHistory();
-    updateProfile();
-}
-
-
-/* =========================================================
-   EVENT: BOOK GRID
-========================================================= */
-
-function handleBookActions(event) {
-    const button =
-        event.target.closest("[data-action]");
-
-    if (!button) {
-        return;
-    }
-
-    const action = button.dataset.action;
-    const bookId = Number(button.dataset.id);
-
-    if (action === "favorite") {
-        toggleFavorite(bookId);
-    }
-
-    if (action === "detail") {
-        openBookDetail(bookId);
-    }
-
-    if (action === "read") {
-        openReader(bookId);
-    }
-
-    if (action === "continue") {
-        openReader(bookId);
-    }
-}
-
-booksGrid.addEventListener(
-    "click",
-    handleBookActions
-);
-
-favoriteGrid.addEventListener(
-    "click",
-    handleBookActions
-);
-
-historyGrid.addEventListener(
-    "click",
-    handleBookActions
-);
-
-
-/* =========================================================
-   EVENT: CATEGORY
-========================================================= */
-
-categoryFilter.addEventListener("click", event => {
-    const button =
-        event.target.closest(".category-button");
-
-    if (!button) {
-        return;
-    }
-
-    state.selectedCategory =
-        button.dataset.category;
-
-    state.searchQuery = "";
-
-    heroSearchInput.value = "";
-
-    document.querySelectorAll(".category-button")
-        .forEach(item => {
-            item.classList.remove("active");
-        });
-
-    button.classList.add("active");
-
-    renderBooks();
 });
 
 
 /* =========================================================
-   EVENT: SORT
+   PROFILE
 ========================================================= */
 
-sortBooks.addEventListener(
-    "change",
-    sortBooks
-);
+function updateProfile() {
 
+    const user = readStorage(STORAGE.user, null);
 
-/* =========================================================
-   EVENT: HERO SEARCH
-========================================================= */
+    const nameElement =
+        document.getElementById("profileName");
 
-heroSearchForm.addEventListener("submit", event => {
-    event.preventDefault();
+    const emailElement =
+        document.getElementById("profileEmail");
 
-    searchBooks(heroSearchInput.value);
-});
+    const favoriteCount =
+        document.getElementById("profileFavoriteCount");
 
+    const readCount =
+        document.getElementById("profileReadCount");
 
-/* =========================================================
-   REALTIME SEARCH
-========================================================= */
+    if (user) {
 
-heroSearchInput.addEventListener("input", () => {
-    state.searchQuery =
-        heroSearchInput.value;
+        nameElement.textContent =
+            user.name || "Pengguna";
 
-    state.selectedCategory = "Semua";
+        emailElement.textContent =
+            user.email || "";
 
-    document.querySelectorAll(".category-button")
-        .forEach(button => {
-            button.classList.toggle(
-                "active",
-                button.dataset.category === "Semua"
-            );
-        });
-
-    renderBooks();
-});
-
-
-/* =========================================================
-   POPULAR SEARCH
-========================================================= */
-
-document.querySelectorAll(".search-tag")
-    .forEach(tag => {
-
-        tag.addEventListener("click", () => {
-
-            const query =
-                tag.dataset.search;
-
-            heroSearchInput.value = query;
-
-            searchBooks(query);
-        });
-
-    });
-
-
-/* =========================================================
-   AUTH EVENTS
-========================================================= */
-
-loginButton.addEventListener("click", () => {
-
-    const account = getAccount();
-
-    if (account) {
-        logout();
     } else {
-        openLogin();
+
+        nameElement.textContent = "Tamu";
+
+        emailElement.textContent =
+            "Belum login";
     }
 
-});
+    favoriteCount.textContent =
+        favorites.length;
 
-loginForm.addEventListener(
-    "submit",
-    handleLogin
-);
-
-registerForm.addEventListener(
-    "submit",
-    handleRegister
-);
-
-showRegisterButton.addEventListener(
-    "click",
-    openRegister
-);
-
-showLoginButton.addEventListener(
-    "click",
-    openLogin
-);
+    readCount.textContent =
+        history.length;
+}
 
 
-/* =========================================================
-   MODAL EVENTS
-========================================================= */
+document
+    .getElementById("editProfileBtn")
+    .addEventListener("click", () => {
 
-closeBookModal.addEventListener(
-    "click",
-    () => closeModal(bookModal)
-);
+        const user =
+            readStorage(STORAGE.user, null);
 
-closeAuthModal.addEventListener(
-    "click",
-    () => closeModal(authModal)
-);
+        if (!user) {
 
-closeProfileModal.addEventListener(
-    "click",
-    () => closeModal(profileModal)
-);
+            showToast(
+                "Silakan login terlebih dahulu.",
+                "error"
+            );
 
-bookModal.addEventListener("click", event => {
+            openLogin();
 
-    if (event.target === bookModal) {
-        closeModal(bookModal);
-    }
-
-});
-
-authModal.addEventListener("click", event => {
-
-    if (event.target === authModal) {
-        closeModal(authModal);
-    }
-
-});
-
-profileModal.addEventListener("click", event => {
-
-    if (event.target === profileModal) {
-        closeModal(profileModal);
-    }
-
-});
-
-document.addEventListener("keydown", event => {
-
-    if (event.key === "Escape") {
-
-        closeModal(bookModal);
-        closeModal(authModal);
-        closeModal(profileModal);
-
-        if (reader.classList.contains("show")) {
-            closeReaderView();
+            return;
         }
 
-    }
+        const newName =
+            prompt(
+                "Masukkan nama baru:",
+                user.name
+            );
 
-});
+        if (!newName || !newName.trim()) {
+            return;
+        }
 
+        user.name = newName.trim();
 
-/* =========================================================
-   PROFILE EVENTS
-========================================================= */
+        writeStorage(STORAGE.user, user);
 
-editProfileButton.addEventListener(
-    "click",
-    openProfileEditor
-);
+        updateProfile();
 
-profileForm.addEventListener(
-    "submit",
-    handleProfileUpdate
-);
+        showToast(
+            "Profil berhasil diperbarui.",
+            "success"
+        );
 
-
-/* =========================================================
-   READER EVENTS
-========================================================= */
-
-closeReader.addEventListener(
-    "click",
-    closeReaderView
-);
-
-nextPage.addEventListener(
-    "click",
-    nextReaderPage
-);
-
-previousPage.addEventListener(
-    "click",
-    previousReaderPage
-);
-
-readerThemeToggle.addEventListener(
-    "click",
-    toggleDarkMode
-);
+    });
 
 
 /* =========================================================
-   READER KEYBOARD NAVIGATION
+   DARK MODE
 ========================================================= */
 
-document.addEventListener("keydown", event => {
+function updateThemeIcon() {
 
-    if (!reader.classList.contains("show")) {
-        return;
+    const icon =
+        themeToggle.querySelector("i");
+
+    const dark =
+        document.body.classList.contains("dark");
+
+    icon.className =
+        dark
+            ? "fa-solid fa-sun"
+            : "fa-solid fa-moon";
+}
+
+
+function toggleDarkMode() {
+
+    const dark =
+        document.body.classList.toggle("dark");
+
+    writeStorage(STORAGE.theme, dark ? "dark" : "light");
+
+    updateThemeIcon();
+}
+
+
+function loadTheme() {
+
+    const theme =
+        localStorage.getItem(STORAGE.theme);
+
+    if (theme === "dark") {
+        document.body.classList.add("dark");
     }
 
-    if (event.key === "ArrowRight") {
-        nextReaderPage();
-    }
+    updateThemeIcon();
+}
 
-    if (event.key === "ArrowLeft") {
-        previousReaderPage();
-    }
-
-});
-
-
-/* =========================================================
-   THEME
-========================================================= */
 
 themeToggle.addEventListener(
     "click",
@@ -2039,84 +1448,99 @@ themeToggle.addEventListener(
 
 
 /* =========================================================
-   MOBILE MENU
+   READER THEME
 ========================================================= */
 
-mobileMenuButton.addEventListener("click", () => {
+document
+    .getElementById("readerTheme")
+    .addEventListener("click", () => {
 
-    const isOpen =
-        navMenu.classList.toggle("show");
+        document.body.classList.toggle("dark");
 
-    mobileMenuButton.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-    );
+        const dark =
+            document.body.classList.contains("dark");
 
-    mobileMenuButton.innerHTML = isOpen
-        ? `<i class="fa-solid fa-xmark"></i>`
-        : `<i class="fa-solid fa-bars"></i>`;
+        writeStorage(
+            STORAGE.theme,
+            dark ? "dark" : "light"
+        );
 
-});
-
-document.querySelectorAll(".nav-link")
-    .forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            navMenu.classList.remove("show");
-
-            mobileMenuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            mobileMenuButton.innerHTML =
-                `<i class="fa-solid fa-bars"></i>`;
-
-        });
+        updateThemeIcon();
 
     });
 
 
 /* =========================================================
-   ACTIVE NAVIGATION
+   MOBILE MENU
 ========================================================= */
 
-const sections =
-    document.querySelectorAll("main section");
+menuToggle.addEventListener("click", () => {
 
-const navLinks =
-    document.querySelectorAll(".nav-link");
+    const opened =
+        navMenu.classList.toggle("open");
 
-window.addEventListener("scroll", () => {
+    menuToggle.setAttribute(
+        "aria-expanded",
+        String(opened)
+    );
 
-    let current = "";
+    const icon =
+        menuToggle.querySelector("i");
 
-    sections.forEach(section => {
+    icon.className =
+        opened
+            ? "fa-solid fa-xmark"
+            : "fa-solid fa-bars";
 
-        const sectionTop =
-            section.offsetTop - 120;
+});
 
-        if (window.scrollY >= sectionTop) {
-            current = section.id;
-        }
 
-    });
+document.querySelectorAll("#navMenu a").forEach(link => {
 
-    navLinks.forEach(link => {
+    link.addEventListener("click", () => {
 
-        link.classList.remove("active");
+        navMenu.classList.remove("open");
 
-        if (
-            link.getAttribute("href") ===
-            `#${current}`
-        ) {
-            link.classList.add("active");
-        }
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle
+            .querySelector("i")
+            .className = "fa-solid fa-bars";
 
     });
 
 });
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function showToast(message, type = "") {
+
+    const toast =
+        document.createElement("div");
+
+    toast.className =
+        `toast ${type}`;
+
+    toast.textContent = message;
+
+    toastContainer.appendChild(toast);
+
+    setTimeout(() => {
+
+        toast.style.opacity = "0";
+
+        setTimeout(() => {
+            toast.remove();
+        }, 250);
+
+    }, 3000);
+}
 
 
 /* =========================================================
@@ -2126,14 +1550,18 @@ window.addEventListener("scroll", () => {
 window.addEventListener("scroll", () => {
 
     if (window.scrollY > 500) {
-        backToTop.classList.add("show");
+
+        backTop.classList.add("show");
+
     } else {
-        backToTop.classList.remove("show");
+
+        backTop.classList.remove("show");
     }
 
 });
 
-backToTop.addEventListener("click", () => {
+
+backTop.addEventListener("click", () => {
 
     window.scrollTo({
         top: 0,
@@ -2144,19 +1572,48 @@ backToTop.addEventListener("click", () => {
 
 
 /* =========================================================
-   INITIALIZATION
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* =========================================================
+   INITIALIZE
 ========================================================= */
 
 function initializeApp() {
 
     loadTheme();
 
-    renderAll();
+    favorites =
+        readStorage(STORAGE.favorites, []);
 
-    console.log(
-        "Perpustakaan Digital berhasil dimuat."
-    );
+    history =
+        readStorage(STORAGE.history, []);
 
+    progress =
+        readStorage(STORAGE.progress, {});
+
+    lastPages =
+        readStorage(STORAGE.lastPages, {});
+
+    renderBooks();
+
+    renderFavorites();
+
+    renderHistory();
+
+    updateProfile();
 }
+
 
 initializeApp();
