@@ -1,4 +1,10 @@
+/* =========================================================
+   PERPUSTAKAAN DIGITAL
+   Vanilla JavaScript
+========================================================= */
+
 "use strict";
+
 
 /* =========================================================
    DATA BUKU
@@ -12,1567 +18,422 @@ const books = [
         category: "Teknologi",
         year: 2025,
         rating: 4.8,
-        description: "Panduan praktis mempelajari JavaScript modern mulai dari dasar hingga pembuatan aplikasi web interaktif.",
-        cover: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=500&q=80",
+        description:
+            "Panduan praktis mempelajari JavaScript modern dari dasar hingga membangun aplikasi web interaktif.",
+        cover:
+            "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "JavaScript merupakan salah satu bahasa pemrograman yang sangat banyak digunakan dalam pengembangan web modern.",
-            "Pada bagian ini kita mempelajari variabel, tipe data, operator, percabangan, dan perulangan.",
-            "Setelah memahami dasar JavaScript, kita dapat mulai menggunakan function untuk membuat program yang lebih terstruktur.",
-            "DOM memungkinkan JavaScript berinteraksi langsung dengan elemen HTML sehingga halaman dapat menjadi interaktif.",
-            "Event listener digunakan untuk merespons tindakan pengguna seperti klik tombol, mengetik pada input, dan melakukan submit form."
+            "JavaScript merupakan salah satu bahasa pemrograman paling populer untuk membangun aplikasi web modern. Bahasa ini memungkinkan halaman web memberikan pengalaman yang interaktif kepada pengguna.",
+            "Dalam mempelajari JavaScript, penting untuk memahami variabel, tipe data, operator, kondisi, perulangan, fungsi, dan struktur data. Setelah dasar tersebut dipahami, kita dapat melanjutkan ke konsep yang lebih kompleks.",
+            "DOM atau Document Object Model memungkinkan JavaScript berinteraksi dengan HTML. Dengan DOM, kita dapat mengubah teks, menambahkan elemen, merespons klik pengguna, dan membuat aplikasi web yang dinamis.",
+            "Konsep modern seperti module, asynchronous programming, Promise, dan async/await sangat penting untuk membangun aplikasi yang terstruktur dan mudah dipelihara.",
+            "Pada akhirnya, kemampuan JavaScript berkembang melalui latihan. Buatlah proyek kecil secara rutin dan terus eksplorasi teknologi web yang baru."
         ]
     },
 
     {
         id: 2,
-        title: "Dasar-Dasar Pemrograman",
-        author: "Budi Santoso",
-        category: "Pendidikan",
-        year: 2024,
-        rating: 4.6,
-        description: "Materi dasar pemrograman untuk pemula yang ingin memahami cara berpikir komputasional.",
-        cover: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=500&q=80",
+        title: "Dasar-Dasar Kecerdasan Buatan",
+        author: "Rina Lestari",
+        category: "Teknologi",
+        year: 2025,
+        rating: 4.9,
+        description:
+            "Pengenalan konsep kecerdasan buatan, machine learning, data, dan penerapannya dalam kehidupan sehari-hari.",
+        cover:
+            "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "Pemrograman adalah proses memberikan instruksi kepada komputer untuk menyelesaikan suatu masalah.",
-            "Algoritma membantu kita menyusun langkah penyelesaian masalah secara sistematis.",
-            "Variabel digunakan untuk menyimpan data yang diperlukan oleh program.",
-            "Struktur kontrol membantu program menentukan tindakan berdasarkan kondisi tertentu.",
-            "Dengan latihan yang konsisten, konsep pemrograman akan menjadi semakin mudah dipahami."
+            "Kecerdasan buatan adalah bidang ilmu komputer yang mempelajari cara membuat sistem mampu melakukan tugas yang biasanya membutuhkan kemampuan manusia.",
+            "Machine learning merupakan salah satu bagian penting dari kecerdasan buatan. Sistem belajar dari data untuk menemukan pola dan membuat prediksi.",
+            "Data menjadi salah satu komponen terpenting dalam pengembangan sistem kecerdasan buatan. Kualitas data sangat memengaruhi kualitas hasil model.",
+            "Kecerdasan buatan digunakan pada berbagai bidang seperti kesehatan, pendidikan, transportasi, bisnis, dan layanan publik.",
+            "Pengembangan AI yang baik juga membutuhkan perhatian terhadap keamanan, privasi, transparansi, dan dampak teknologi terhadap masyarakat."
         ]
     },
 
     {
         id: 3,
-        title: "Sejarah Indonesia",
-        author: "Dewi Lestari",
+        title: "Sejarah Indonesia Modern",
+        author: "Budi Santoso",
         category: "Sejarah",
         year: 2023,
         rating: 4.7,
-        description: "Mengenal perjalanan sejarah Indonesia dari masa kerajaan hingga era modern.",
-        cover: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=500&q=80",
+        description:
+            "Membahas perjalanan sejarah Indonesia dari masa pergerakan nasional hingga perkembangan Indonesia modern.",
+        cover:
+            "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "Sejarah Indonesia memiliki perjalanan panjang yang dipengaruhi berbagai kerajaan, perdagangan, dan kebudayaan.",
-            "Kerajaan-kerajaan Nusantara memainkan peranan penting dalam perkembangan masyarakat dan kebudayaan.",
-            "Perdagangan maritim membuat wilayah Nusantara terhubung dengan berbagai wilayah dunia.",
-            "Masa kolonial membawa perubahan besar dalam kehidupan sosial, ekonomi, dan politik.",
-            "Memahami sejarah membantu kita melihat hubungan antara masa lalu dan kehidupan masyarakat saat ini."
+            "Sejarah Indonesia modern merupakan perjalanan panjang yang melibatkan berbagai kelompok masyarakat dan perubahan sosial yang besar.",
+            "Pergerakan nasional menjadi salah satu periode penting dalam sejarah Indonesia. Pendidikan dan organisasi modern berperan dalam berkembangnya kesadaran kebangsaan.",
+            "Proklamasi kemerdekaan pada tahun 1945 menjadi tonggak penting dalam perjalanan bangsa Indonesia.",
+            "Setelah kemerdekaan, Indonesia menghadapi berbagai tantangan dalam membangun pemerintahan, ekonomi, pendidikan, dan kehidupan sosial.",
+            "Memahami sejarah membantu masyarakat melihat perubahan masa lalu dan mengambil pelajaran untuk masa depan."
         ]
     },
 
     {
         id: 4,
-        title: "Fisika untuk Pemula",
-        author: "Rina Wijaya",
+        title: "Fisika Untuk Semua",
+        author: "Dewi Anggraini",
         category: "Sains",
         year: 2024,
-        rating: 4.5,
-        description: "Pengantar fisika dengan penjelasan sederhana dan contoh yang dekat dengan kehidupan sehari-hari.",
-        cover: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=500&q=80",
+        rating: 4.6,
+        description:
+            "Penjelasan sederhana mengenai konsep fisika yang sering ditemui dalam kehidupan sehari-hari.",
+        cover:
+            "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "Fisika mempelajari berbagai fenomena alam dan hubungan antara materi, energi, ruang, serta waktu.",
-            "Gerak merupakan salah satu konsep dasar dalam fisika.",
-            "Gaya dapat menyebabkan benda mengalami perubahan gerak.",
-            "Energi dapat berubah dari satu bentuk ke bentuk lainnya.",
-            "Fisika dapat kita temukan dalam berbagai aktivitas kehidupan sehari-hari."
+            "Fisika mempelajari berbagai fenomena alam mulai dari gerak benda hingga energi dan gelombang.",
+            "Gerak merupakan salah satu konsep dasar fisika. Kecepatan menjelaskan seberapa cepat posisi sebuah benda berubah terhadap waktu.",
+            "Energi dapat hadir dalam berbagai bentuk. Energi tidak hilang begitu saja, tetapi dapat berubah dari satu bentuk ke bentuk lainnya.",
+            "Gelombang dapat ditemukan dalam suara, cahaya, dan berbagai fenomena lainnya.",
+            "Fisika menjadi dasar bagi banyak teknologi modern yang digunakan manusia setiap hari."
         ]
     },
 
     {
         id: 5,
-        title: "Membangun Bisnis Digital",
+        title: "Strategi Bisnis Digital",
         author: "Fajar Nugroho",
         category: "Bisnis",
         year: 2025,
-        rating: 4.9,
-        description: "Panduan memahami peluang, strategi, dan tantangan membangun bisnis pada era digital.",
-        cover: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=80",
+        rating: 4.8,
+        description:
+            "Strategi membangun dan mengembangkan bisnis pada era digital.",
+        cover:
+            "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "Transformasi digital menciptakan berbagai peluang baru bagi pelaku bisnis.",
-            "Sebuah bisnis perlu memahami masalah pelanggan sebelum membuat produk.",
-            "Strategi pemasaran digital dapat membantu bisnis menjangkau calon pelanggan.",
-            "Data dapat digunakan untuk memahami perilaku pelanggan.",
-            "Bisnis yang mampu beradaptasi dapat menghadapi perubahan pasar dengan lebih baik."
+            "Transformasi digital mengubah cara perusahaan berkomunikasi dengan pelanggan dan mengelola bisnis.",
+            "Pemahaman terhadap kebutuhan pelanggan menjadi dasar penting dalam membuat produk yang relevan.",
+            "Media digital memberikan banyak peluang untuk menjangkau pelanggan dengan biaya yang lebih efisien.",
+            "Data dapat digunakan untuk memahami perilaku pelanggan dan membantu proses pengambilan keputusan.",
+            "Bisnis yang mampu beradaptasi dengan perubahan teknologi memiliki kesempatan untuk berkembang bersama perubahan pasar."
         ]
     },
 
     {
         id: 6,
-        title: "Laskar Pelangi",
-        author: "Andrea Hirata",
-        category: "Novel",
-        year: 2005,
-        rating: 4.9,
-        description: "Kisah tentang persahabatan, pendidikan, dan perjuangan anak-anak Belitung.",
-        cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=500&q=80",
+        title: "Metode Belajar Efektif",
+        author: "Siti Rahma",
+        category: "Pendidikan",
+        year: 2024,
+        rating: 4.7,
+        description:
+            "Berbagai teknik belajar yang dapat membantu meningkatkan pemahaman dan konsistensi belajar.",
+        cover:
+            "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "Di sebuah sekolah sederhana, sekelompok anak bertemu dan memulai perjalanan persahabatan.",
-            "Mereka memiliki karakter yang berbeda namun saling mendukung.",
-            "Keterbatasan tidak menghentikan keinginan mereka untuk belajar.",
-            "Guru mereka memberikan inspirasi agar tidak menyerah pada keadaan.",
-            "Persahabatan membuat perjalanan pendidikan mereka menjadi penuh kenangan."
+            "Belajar efektif bukan hanya tentang berapa lama seseorang belajar, tetapi bagaimana proses belajar dilakukan.",
+            "Tujuan belajar yang jelas membantu seseorang menentukan materi dan strategi yang tepat.",
+            "Belajar secara aktif dengan membuat rangkuman, menjelaskan kembali materi, dan mengerjakan latihan dapat membantu memperkuat pemahaman.",
+            "Istirahat juga menjadi bagian penting dari proses belajar karena otak membutuhkan waktu untuk memproses informasi.",
+            "Konsistensi merupakan salah satu faktor penting dalam membangun kebiasaan belajar yang baik."
         ]
     },
 
     {
         id: 7,
-        title: "Petualangan di Hutan",
-        author: "Maya Putri",
-        category: "Anak-anak",
+        title: "Petualangan di Pulau Awan",
+        author: "Maya Kirana",
+        category: "Fiksi",
         year: 2022,
-        rating: 4.4,
-        description: "Cerita petualangan anak-anak yang belajar tentang keberanian dan menjaga alam.",
-        cover: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=500&q=80",
+        rating: 4.5,
+        description:
+            "Kisah petualangan seorang anak yang menemukan pulau misterius di balik awan.",
+        cover:
+            "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "Pagi itu, Raka dan teman-temannya memulai perjalanan menuju hutan.",
-            "Mereka menemukan berbagai jenis tumbuhan dan hewan.",
-            "Dalam perjalanan mereka belajar pentingnya menjaga kebersihan hutan.",
-            "Sebuah sungai kecil menjadi tempat mereka beristirahat.",
-            "Petualangan tersebut membuat mereka semakin menyayangi alam."
+            "Pagi itu, Arka menemukan sebuah peta tua di dalam kotak kayu milik kakeknya.",
+            "Peta tersebut menunjukkan sebuah tempat yang tidak pernah ia lihat sebelumnya, yaitu Pulau Awan.",
+            "Dengan keberanian yang besar, Arka memulai perjalanan bersama sahabatnya.",
+            "Di perjalanan mereka menemukan banyak hal yang tidak pernah mereka bayangkan.",
+            "Petualangan tersebut membuat Arka memahami bahwa keberanian bukan berarti tidak memiliki rasa takut."
         ]
     },
 
     {
         id: 8,
-        title: "Kecerdasan Buatan untuk Semua",
-        author: "Agus Ramadhan",
-        category: "Teknologi",
-        year: 2025,
-        rating: 4.8,
-        description: "Pengenalan kecerdasan buatan dengan bahasa sederhana untuk masyarakat umum.",
-        cover: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=500&q=80",
+        title: "Rahasia Taman Senja",
+        author: "Nadia Putri",
+        category: "Novel",
+        year: 2021,
+        rating: 4.4,
+        description:
+            "Novel tentang persahabatan, keluarga, dan sebuah rahasia yang tersimpan di taman tua.",
+        cover:
+            "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "Kecerdasan buatan merupakan teknologi yang memungkinkan komputer melakukan tugas yang biasanya membutuhkan kecerdasan manusia.",
-            "Machine learning memungkinkan sistem belajar dari data.",
-            "Kecerdasan buatan digunakan pada berbagai bidang.",
-            "Penggunaan teknologi perlu memperhatikan keamanan dan tanggung jawab.",
-            "Pemahaman dasar AI dapat membantu masyarakat menghadapi perubahan teknologi."
+            "Taman senja selalu menjadi tempat favorit Lila sejak kecil.",
+            "Suatu sore, ia menemukan sebuah surat lama yang tersembunyi di bawah bangku taman.",
+            "Surat tersebut membuka cerita lama tentang keluarganya.",
+            "Lila kemudian mulai mencari jawaban dengan bantuan sahabatnya.",
+            "Perjalanan tersebut mengajarkan Lila bahwa masa lalu tidak selalu harus dilupakan."
         ]
     },
 
     {
         id: 9,
-        title: "Psikologi Pendidikan",
-        author: "Siti Rahma",
-        category: "Pendidikan",
+        title: "Mengenal Planet Kita",
+        author: "Arif Maulana",
+        category: "Sains",
         year: 2023,
-        rating: 4.5,
-        description: "Mengenal proses belajar, motivasi, dan perkembangan peserta didik.",
-        cover: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=500&q=80",
+        rating: 4.6,
+        description:
+            "Pengenalan bumi, tata surya, lingkungan, dan fenomena alam dengan bahasa sederhana.",
+        cover:
+            "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "Pendidikan tidak hanya berkaitan dengan penyampaian materi.",
-            "Setiap peserta didik memiliki karakteristik dan kebutuhan yang berbeda.",
-            "Motivasi dapat memengaruhi proses belajar.",
-            "Lingkungan belajar yang baik dapat membantu peserta didik berkembang.",
-            "Guru memiliki peranan penting dalam menciptakan pengalaman belajar yang bermakna."
+            "Bumi adalah salah satu planet dalam tata surya yang memiliki kondisi yang mendukung kehidupan.",
+            "Permukaan bumi terdiri dari berbagai ekosistem yang saling berhubungan.",
+            "Atmosfer berperan penting dalam menjaga kondisi bumi dan melindungi kehidupan.",
+            "Perubahan lingkungan dapat memberikan dampak besar bagi manusia dan makhluk hidup lainnya.",
+            "Menjaga lingkungan merupakan tanggung jawab bersama."
         ]
     },
 
     {
         id: 10,
-        title: "Rahasia Alam Semesta",
-        author: "Arif Hidayat",
-        category: "Sains",
+        title: "Belajar Bersama",
+        author: "Lina Wulandari",
+        category: "Anak-anak",
         year: 2024,
-        rating: 4.7,
-        description: "Perjalanan mengenal galaksi, bintang, planet, dan berbagai fenomena alam semesta.",
-        cover: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=500&q=80",
+        rating: 4.8,
+        description:
+            "Buku anak-anak yang mengajarkan pentingnya membaca, belajar, dan bekerja sama.",
+        cover:
+            "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "Alam semesta memiliki ukuran yang sangat luas dan terdiri dari berbagai objek astronomi.",
-            "Bintang merupakan objek yang menghasilkan cahaya dan energi.",
-            "Planet bergerak mengelilingi bintang dalam sistem tertentu.",
-            "Galaksi terdiri dari miliaran bintang dan berbagai objek lainnya.",
-            "Penelitian astronomi membantu manusia memahami asal-usul dan perkembangan alam semesta."
+            "Dina sangat suka membaca buku di perpustakaan sekolah.",
+            "Suatu hari guru mengajak seluruh murid membuat kelompok belajar.",
+            "Dina belajar bahwa setiap teman memiliki kemampuan yang berbeda.",
+            "Mereka saling membantu menyelesaikan tugas.",
+            "Sejak hari itu, Dina semakin senang belajar bersama teman-temannya."
         ]
     },
 
     {
         id: 11,
-        title: "Strategi Keuangan Pribadi",
-        author: "Nadia Permata",
-        category: "Bisnis",
-        year: 2025,
-        rating: 4.6,
-        description: "Panduan mengatur keuangan pribadi secara sederhana dan terencana.",
-        cover: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=500&q=80",
+        title: "Panduan Menulis Kreatif",
+        author: "Yoga Saputra",
+        category: "Pendidikan",
+        year: 2022,
+        rating: 4.5,
+        description:
+            "Panduan praktis untuk mengembangkan ide dan menulis cerita yang menarik.",
+        cover:
+            "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "Pengelolaan keuangan dimulai dengan memahami pemasukan dan pengeluaran.",
-            "Anggaran membantu kita mengetahui ke mana uang digunakan.",
-            "Dana darurat dapat membantu menghadapi kebutuhan yang tidak terduga.",
-            "Menabung secara konsisten membutuhkan kebiasaan yang terencana.",
-            "Perencanaan keuangan dapat disesuaikan dengan kondisi masing-masing individu."
+            "Menulis kreatif dimulai dari kemampuan mengamati lingkungan dan menemukan ide.",
+            "Ide dapat muncul dari pengalaman sehari-hari, percakapan, buku, maupun imajinasi.",
+            "Tokoh yang kuat membuat pembaca lebih mudah terhubung dengan cerita.",
+            "Konflik membantu membuat cerita menjadi lebih menarik.",
+            "Latihan menulis secara rutin merupakan cara terbaik untuk meningkatkan kemampuan."
         ]
     },
 
     {
         id: 12,
-        title: "Kisah di Balik Senja",
-        author: "Aulia Sari",
-        category: "Fiksi",
-        year: 2023,
-        rating: 4.3,
-        description: "Novel fiksi tentang persahabatan, keluarga, dan perjalanan menemukan makna kehidupan.",
-        cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=80",
+        title: "Ekonomi Untuk Pemula",
+        author: "Rizky Hidayat",
+        category: "Bisnis",
+        year: 2024,
+        rating: 4.6,
+        description:
+            "Pengenalan ekonomi untuk memahami kebutuhan, pasar, uang, dan kegiatan ekonomi.",
+        cover:
+            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80",
         available: true,
         pages: [
-            "Senja selalu membawa suasana berbeda bagi tokoh utama dalam cerita.",
-            "Pertemuan dengan seorang teman lama membuat berbagai kenangan kembali muncul.",
-            "Mereka berbicara tentang keputusan yang pernah dibuat.",
-            "Perjalanan hidup tidak selalu berjalan sesuai rencana.",
-            "Pada akhirnya, menerima perubahan menjadi bagian penting dalam perjalanan mereka."
+            "Ekonomi mempelajari bagaimana manusia menggunakan sumber daya yang terbatas untuk memenuhi kebutuhan.",
+            "Kebutuhan manusia sangat beragam sedangkan sumber daya yang tersedia memiliki keterbatasan.",
+            "Pasar mempertemukan penjual dan pembeli dalam kegiatan pertukaran barang dan jasa.",
+            "Uang mempermudah proses pertukaran dan menjadi alat untuk mengukur nilai.",
+            "Pemahaman ekonomi dapat membantu seseorang mengambil keputusan keuangan dengan lebih baik."
         ]
     }
 ];
 
 
 /* =========================================================
-   STORAGE
+   LOCAL STORAGE
 ========================================================= */
 
 const STORAGE = {
-    favorites: "pd_favorites",
-    history: "pd_history",
-    progress: "pd_progress",
-    theme: "pd_theme",
-    user: "pd_user",
-    account: "pd_account",
-    lastPages: "pd_last_pages"
+    favorites: "digitalLibraryFavorites",
+    history: "digitalLibraryHistory",
+    progress: "digitalLibraryProgress",
+    users: "digitalLibraryUsers",
+    currentUser: "digitalLibraryCurrentUser",
+    theme: "digitalLibraryTheme",
+    profile: "digitalLibraryProfile"
 };
 
 
-function readStorage(key, fallback) {
+function getStorage(key, fallback) {
     try {
-        const value = localStorage.getItem(key);
+        const data = localStorage.getItem(key);
 
-        if (value === null) {
+        if (data === null) {
             return fallback;
         }
 
-        return JSON.parse(value);
+        return JSON.parse(data);
+
     } catch (error) {
-        console.warn("Storage error:", key, error);
+        console.error("Gagal membaca localStorage:", error);
+
         return fallback;
     }
 }
 
 
-function writeStorage(key, value) {
+function setStorage(key, value) {
     try {
-        localStorage.setItem(key, JSON.stringify(value));
+        localStorage.setItem(
+            key,
+            JSON.stringify(value)
+        );
+
+        return true;
+
     } catch (error) {
-        console.warn("Storage write error:", key, error);
+        console.error("Gagal menyimpan localStorage:", error);
+
+        return false;
     }
 }
 
 
 /* =========================================================
-   STATE
+   APPLICATION STATE
 ========================================================= */
 
-let favorites = readStorage(STORAGE.favorites, []);
-let history = readStorage(STORAGE.history, []);
-let progress = readStorage(STORAGE.progress, {});
-let lastPages = readStorage(STORAGE.lastPages, {});
-
-let currentCategory = "Semua";
-let currentSearch = "";
-let currentSort = "newest";
-
-let currentReaderBook = null;
-let currentReaderPage = 0;
+const state = {
+    search: "",
+    category: "Semua",
+    sort: "latest",
+    currentBookId: null,
+    currentPage: 1
+};
 
 
 /* =========================================================
-   DOM
+   DOM ELEMENTS
 ========================================================= */
 
-const booksGrid = document.getElementById("booksGrid");
-const favoriteGrid = document.getElementById("favoriteGrid");
-const historyGrid = document.getElementById("historyGrid");
+const booksGrid =
+    document.getElementById("booksGrid");
 
-const heroSearch = document.getElementById("heroSearch");
-const heroSearchForm = document.getElementById("heroSearchForm");
+const booksEmpty =
+    document.getElementById("booksEmpty");
 
-const categoryList = document.getElementById("categoryList");
-const sortSelect = document.getElementById("sortSelect");
-const searchStatus = document.getElementById("searchStatus");
+const favoriteGrid =
+    document.getElementById("favoriteGrid");
 
-const detailModal = document.getElementById("detailModal");
-const detailContent = document.getElementById("detailContent");
+const favoriteEmpty =
+    document.getElementById("favoriteEmpty");
 
-const authModal = document.getElementById("authModal");
-const loginForm = document.getElementById("loginForm");
-const registerForm = document.getElementById("registerForm");
+const historyGrid =
+    document.getElementById("historyGrid");
 
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
+const historyEmpty =
+    document.getElementById("historyEmpty");
 
-const themeToggle = document.getElementById("themeToggle");
+const categoryFilter =
+    document.getElementById("categoryFilter");
 
-const reader = document.getElementById("reader");
-const readerTitle = document.getElementById("readerTitle");
-const readerAuthor = document.getElementById("readerAuthor");
-const readerText = document.getElementById("readerText");
-const readerPageNumber = document.getElementById("readerPageNumber");
-const readerPageInfo = document.getElementById("readerPageInfo");
-const readerProgressBar = document.getElementById("readerProgressBar");
+const sortSelect =
+    document.getElementById("sortSelect");
 
-const toastContainer = document.getElementById("toastContainer");
+const searchResultInfo =
+    document.getElementById("searchResultInfo");
 
-const backTop = document.getElementById("backTop");
+const heroSearchForm =
+    document.getElementById("heroSearchForm");
 
+const heroSearchInput =
+    document.getElementById("heroSearchInput");
 
-/* =========================================================
-   BOOK FUNCTIONS
-========================================================= */
+const bookModal =
+    document.getElementById("bookModal");
 
-function getBook(id) {
-    return books.find(book => book.id === Number(id));
-}
+const bookModalContent =
+    document.getElementById("bookModalContent");
 
+const reader =
+    document.getElementById("reader");
 
-function getFilteredBooks() {
+const readerTitle =
+    document.getElementById("readerTitle");
 
-    let result = [...books];
+const readerAuthor =
+    document.getElementById("readerAuthor");
 
-    if (currentSearch.trim()) {
-        const keyword = currentSearch.toLowerCase().trim();
+const readerText =
+    document.getElementById("readerText");
 
-        result = result.filter(book =>
-            book.title.toLowerCase().includes(keyword) ||
-            book.author.toLowerCase().includes(keyword) ||
-            book.category.toLowerCase().includes(keyword)
-        );
-    }
+const currentPage =
+    document.getElementById("currentPage");
 
-    if (currentCategory !== "Semua") {
-        result = result.filter(
-            book => book.category === currentCategory
-        );
-    }
+const pageIndicator =
+    document.getElementById("pageIndicator");
 
-    if (currentSort === "newest") {
-        result.sort((a, b) => b.year - a.year);
-    }
+const readerProgressBar =
+    document.getElementById("readerProgressBar");
 
-    if (currentSort === "rating") {
-        result.sort((a, b) => b.rating - a.rating);
-    }
+const readerProgressText =
+    document.getElementById("readerProgressText");
 
-    if (currentSort === "title") {
-        result.sort((a, b) =>
-            a.title.localeCompare(b.title, "id")
-        );
-    }
+const prevPageBtn =
+    document.getElementById("prevPageBtn");
 
-    return result;
-}
+const nextPageBtn =
+    document.getElementById("nextPageBtn");
 
+const readerFavoriteBtn =
+    document.getElementById("readerFavoriteBtn");
 
-function renderBooks() {
+const authModal =
+    document.getElementById("authModal");
 
-    const result = getFilteredBooks();
+const loginForm =
+    document.getElementById("loginForm");
 
-    searchStatus.textContent = currentSearch
-        ? `${result.length} buku ditemukan untuk "${currentSearch}"`
-        : `${result.length} buku tersedia`;
+const registerForm =
+    document.getElementById("registerForm");
 
-    if (!result.length) {
+const toast =
+    document.getElementById("toast");
 
-        booksGrid.innerHTML = `
-            <div class="empty-state">
-                <i class="fa-solid fa-book-open"></i>
-                <h3>Tidak ada buku yang ditemukan.</h3>
-                <p>Coba gunakan kata kunci atau kategori lain.</p>
-            </div>
-        `;
+const toastMessage =
+    document.getElementById("toastMessage");
 
-        return;
-    }
+const themeBtn =
+    document.getElementById("themeBtn");
 
-    booksGrid.innerHTML = result
-        .map(book => createBookCard(book))
-        .join("");
-}
+const backToTop =
+    document.getElementById("backToTop");
 
+const mobileMenuBtn =
+    document.getElementById("mobileMenuBtn");
 
-function createBookCard(book) {
-
-    const isFavorite = favorites.includes(book.id);
-
-    return `
-        <article class="book-card">
-
-            <div class="book-cover">
-
-                <img
-                    src="${book.cover}"
-                    alt="Cover ${escapeHTML(book.title)}"
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
-                >
-
-                <div class="book-cover-fallback" style="display:none;">
-                    <i class="fa-solid fa-book"></i>
-                </div>
-
-                <button
-                    class="favorite-btn ${isFavorite ? "active" : ""}"
-                    data-action="favorite"
-                    data-id="${book.id}"
-                    aria-label="${isFavorite ? "Hapus dari favorit" : "Tambah ke favorit"}"
-                    title="${isFavorite ? "Hapus dari favorit" : "Tambah ke favorit"}"
-                >
-                    <i class="${isFavorite ? "fa-solid" : "fa-regular"} fa-heart"></i>
-                </button>
-
-            </div>
-
-            <div class="book-body">
-
-                <span class="book-category">
-                    ${escapeHTML(book.category)}
-                </span>
-
-                <h3 class="book-title">
-                    ${escapeHTML(book.title)}
-                </h3>
-
-                <p class="book-author">
-                    ${escapeHTML(book.author)}
-                </p>
-
-                <div class="book-meta">
-                    <span class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        ${book.rating}
-                    </span>
-
-                    <span class="${book.available ? "available" : "unavailable"}">
-                        ${book.available ? "Tersedia" : "Dipinjam"}
-                    </span>
-                </div>
-
-                <div class="book-actions">
-
-                    <button
-                        class="btn btn-primary"
-                        data-action="read"
-                        data-id="${book.id}"
-                    >
-                        <i class="fa-solid fa-book-open"></i>
-                        Baca
-                    </button>
-
-                    <button
-                        class="btn btn-outline"
-                        data-action="detail"
-                        data-id="${book.id}"
-                    >
-                        Detail
-                    </button>
-
-                </div>
-
-            </div>
-        </article>
-    `;
-}
-
-
-function renderFavorites() {
-
-    const favoriteBooks = books.filter(book =>
-        favorites.includes(book.id)
-    );
-
-    if (!favoriteBooks.length) {
-
-        favoriteGrid.innerHTML = `
-            <div class="empty-state">
-                <i class="fa-regular fa-heart"></i>
-                <h3>Belum ada buku favorit.</h3>
-                <p>Tekan ikon hati pada buku untuk menyimpannya.</p>
-            </div>
-        `;
-
-        return;
-    }
-
-    favoriteGrid.innerHTML = favoriteBooks
-        .map(book => createBookCard(book))
-        .join("");
-}
+const navMenu =
+    document.getElementById("navMenu");
 
 
 /* =========================================================
-   FAVORITES
-========================================================= */
-
-function toggleFavorite(id) {
-
-    id = Number(id);
-
-    if (favorites.includes(id)) {
-
-        favorites = favorites.filter(
-            favoriteId => favoriteId !== id
-        );
-
-        showToast("Buku dihapus dari favorit.", "success");
-
-    } else {
-
-        favorites.push(id);
-
-        showToast("Buku ditambahkan ke favorit.", "success");
-    }
-
-    writeStorage(STORAGE.favorites, favorites);
-
-    renderBooks();
-    renderFavorites();
-    updateProfile();
-}
-
-
-function loadFavorites() {
-
-    favorites = readStorage(STORAGE.favorites, []);
-
-    if (!Array.isArray(favorites)) {
-        favorites = [];
-    }
-
-    renderFavorites();
-}
-
-
-/* =========================================================
-   DETAIL
-========================================================= */
-
-function openBookDetail(id) {
-
-    const book = getBook(id);
-
-    if (!book) return;
-
-    const isFavorite = favorites.includes(book.id);
-
-    detailContent.innerHTML = `
-
-        <div class="detail-layout">
-
-            <img
-                class="detail-cover"
-                src="${book.cover}"
-                alt="Cover ${escapeHTML(book.title)}"
-                onerror="this.src=''; this.alt='Cover tidak tersedia';"
-            >
-
-            <div class="detail-info">
-
-                <span class="book-category">
-                    ${escapeHTML(book.category)}
-                </span>
-
-                <h2 id="detailTitle">
-                    ${escapeHTML(book.title)}
-                </h2>
-
-                <p class="detail-author">
-                    oleh ${escapeHTML(book.author)}
-                </p>
-
-                <div class="detail-meta">
-                    <span>
-                        Tahun: ${book.year}
-                    </span>
-
-                    <span>
-                        Rating: ⭐ ${book.rating}
-                    </span>
-
-                    <span>
-                        ${book.available ? "Tersedia" : "Tidak tersedia"}
-                    </span>
-                </div>
-
-                <p class="detail-description">
-                    ${escapeHTML(book.description)}
-                </p>
-
-                <div class="detail-buttons">
-
-                    <button
-                        class="btn btn-primary"
-                        data-action="read"
-                        data-id="${book.id}"
-                    >
-                        <i class="fa-solid fa-book-open"></i>
-                        Baca Sekarang
-                    </button>
-
-                    <button
-                        class="btn btn-outline"
-                        data-action="favorite"
-                        data-id="${book.id}"
-                    >
-                        <i class="${isFavorite ? "fa-solid" : "fa-regular"} fa-heart"></i>
-                        ${isFavorite ? "Hapus Favorit" : "Tambah Favorit"}
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-    `;
-
-    openModal(detailModal);
-}
-
-
-function closeModal(modal) {
-
-    if (!modal) return;
-
-    modal.classList.remove("show");
-}
-
-
-/* =========================================================
-   READER
-========================================================= */
-
-function openReader(id, page = null) {
-
-    const book = getBook(id);
-
-    if (!book) return;
-
-    currentReaderBook = book;
-
-    let savedPage = Number(lastPages[book.id]);
-
-    if (!Number.isInteger(savedPage) || savedPage < 0) {
-        savedPage = 0;
-    }
-
-    if (page !== null) {
-        savedPage = Number(page);
-    }
-
-    if (savedPage >= book.pages.length) {
-        savedPage = book.pages.length - 1;
-    }
-
-    currentReaderPage = savedPage;
-
-    readerTitle.textContent = book.title;
-    readerAuthor.textContent = book.author;
-
-    reader.classList.remove("hidden");
-
-    document.body.style.overflow = "hidden";
-
-    renderReaderPage();
-
-    addToHistory(book.id);
-
-    showToast("Buku berhasil dibuka.", "success");
-}
-
-
-function closeReader() {
-
-    if (currentReaderBook) {
-        saveReadingProgress();
-    }
-
-    reader.classList.add("hidden");
-
-    document.body.style.overflow = "";
-
-    currentReaderBook = null;
-}
-
-
-function renderReaderPage() {
-
-    if (!currentReaderBook) return;
-
-    const pages = currentReaderBook.pages;
-
-    const totalPages = pages.length;
-
-    if (currentReaderPage < 0) {
-        currentReaderPage = 0;
-    }
-
-    if (currentReaderPage >= totalPages) {
-        currentReaderPage = totalPages - 1;
-    }
-
-    readerText.textContent = pages[currentReaderPage];
-
-    readerPageNumber.textContent = currentReaderPage + 1;
-
-    readerPageInfo.textContent =
-        `${currentReaderPage + 1} / ${totalPages}`;
-
-    const percent =
-        ((currentReaderPage + 1) / totalPages) * 100;
-
-    readerProgressBar.style.width = `${percent}%`;
-
-    saveReadingProgress();
-}
-
-
-function nextPage() {
-
-    if (!currentReaderBook) return;
-
-    if (currentReaderPage < currentReaderBook.pages.length - 1) {
-
-        currentReaderPage++;
-
-        renderReaderPage();
-
-    } else {
-
-        showToast("Anda sudah berada di halaman terakhir.", "success");
-
-        saveReadingProgress();
-    }
-}
-
-
-function previousPage() {
-
-    if (!currentReaderBook) return;
-
-    if (currentReaderPage > 0) {
-
-        currentReaderPage--;
-
-        renderReaderPage();
-
-    } else {
-
-        showToast("Anda sudah berada di halaman pertama.");
-    }
-}
-
-
-function saveReadingProgress() {
-
-    if (!currentReaderBook) return;
-
-    const total = currentReaderBook.pages.length;
-
-    const percentage =
-        Math.round(
-            ((currentReaderPage + 1) / total) * 100
-        );
-
-    progress[currentReaderBook.id] = percentage;
-
-    lastPages[currentReaderBook.id] = currentReaderPage;
-
-    writeStorage(STORAGE.progress, progress);
-    writeStorage(STORAGE.lastPages, lastPages);
-
-    renderHistory();
-}
-
-
-/* =========================================================
-   HISTORY
-========================================================= */
-
-function addToHistory(id) {
-
-    id = Number(id);
-
-    history = history.filter(bookId => bookId !== id);
-
-    history.unshift(id);
-
-    history = history.slice(0, 10);
-
-    writeStorage(STORAGE.history, history);
-
-    renderHistory();
-    updateProfile();
-}
-
-
-function renderHistory() {
-
-    const historyBooks = history
-        .map(id => getBook(id))
-        .filter(Boolean);
-
-    if (!historyBooks.length) {
-
-        historyGrid.innerHTML = `
-            <div class="empty-state">
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                <h3>Belum ada riwayat bacaan.</h3>
-                <p>Buku yang Anda baca akan muncul di sini.</p>
-            </div>
-        `;
-
-        return;
-    }
-
-    historyGrid.innerHTML = historyBooks
-        .map(book => {
-
-            const percentage = progress[book.id] || 0;
-
-            return `
-                <article class="history-card">
-
-                    <img
-                        class="history-cover"
-                        src="${book.cover}"
-                        alt="Cover ${escapeHTML(book.title)}"
-                    >
-
-                    <div class="history-info">
-
-                        <h3>${escapeHTML(book.title)}</h3>
-
-                        <p>${escapeHTML(book.author)}</p>
-
-                        <div class="history-percent">
-                            <span>Progress membaca</span>
-                            <span>${percentage}%</span>
-                        </div>
-
-                        <div class="progress">
-                            <div style="width:${percentage}%"></div>
-                        </div>
-
-                        <button
-                            class="btn btn-primary"
-                            style="margin-top:10px; padding:7px 10px; font-size:11px;"
-                            data-action="read"
-                            data-id="${book.id}"
-                        >
-                            <i class="fa-solid fa-play"></i>
-                            Lanjutkan
-                        </button>
-
-                    </div>
-
-                </article>
-            `;
-        })
-        .join("");
-}
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-function searchBooks(value) {
-
-    currentSearch = value;
-
-    renderBooks();
-}
-
-
-heroSearch.addEventListener("input", event => {
-
-    searchBooks(event.target.value);
-
-});
-
-
-heroSearchForm.addEventListener("submit", event => {
-
-    event.preventDefault();
-
-    searchBooks(heroSearch.value);
-
-    document
-        .getElementById("koleksi")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-});
-
-
-/* =========================================================
-   CATEGORY
-========================================================= */
-
-categoryList.addEventListener("click", event => {
-
-    const button = event.target.closest("[data-category]");
-
-    if (!button) return;
-
-    currentCategory = button.dataset.category;
-
-    document
-        .querySelectorAll(".category-btn")
-        .forEach(btn => {
-            btn.classList.toggle(
-                "active",
-                btn.dataset.category === currentCategory
-            );
-        });
-
-    renderBooks();
-
-});
-
-
-document.querySelectorAll(".category-card").forEach(card => {
-
-    card.addEventListener("click", () => {
-
-        currentCategory = card.dataset.category;
-
-        document
-            .querySelectorAll(".category-btn")
-            .forEach(btn => {
-                btn.classList.toggle(
-                    "active",
-                    btn.dataset.category === currentCategory
-                );
-            });
-
-        renderBooks();
-
-        document
-            .getElementById("koleksi")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
-
-    });
-
-});
-
-
-/* =========================================================
-   SORT
-========================================================= */
-
-sortSelect.addEventListener("change", event => {
-
-    currentSort = event.target.value;
-
-    renderBooks();
-
-});
-
-
-/* =========================================================
-   GLOBAL BOOK ACTION
-========================================================= */
-
-document.addEventListener("click", event => {
-
-    const element = event.target.closest("[data-action]");
-
-    if (!element) return;
-
-    const action = element.dataset.action;
-    const id = Number(element.dataset.id);
-
-    if (!id) return;
-
-    if (action === "favorite") {
-
-        toggleFavorite(id);
-
-        if (detailModal.classList.contains("show")) {
-            openBookDetail(id);
-        }
-
-    }
-
-    if (action === "detail") {
-        openBookDetail(id);
-    }
-
-    if (action === "read") {
-
-        closeModal(detailModal);
-
-        openReader(id);
-    }
-
-});
-
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-function openModal(modal) {
-
-    if (!modal) return;
-
-    modal.classList.add("show");
-
-    document.body.style.overflow = "hidden";
-}
-
-
-document.querySelectorAll("[data-close]").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const modalId = button.dataset.close;
-
-        const modal = document.getElementById(modalId);
-
-        closeModal(modal);
-
-        if (!document.querySelector(".modal.show") &&
-            reader.classList.contains("hidden")) {
-
-            document.body.style.overflow = "";
-        }
-
-    });
-
-});
-
-
-[detailModal, authModal].forEach(modal => {
-
-    modal.addEventListener("click", event => {
-
-        if (event.target === modal) {
-
-            closeModal(modal);
-
-            if (reader.classList.contains("hidden")) {
-                document.body.style.overflow = "";
-            }
-
-        }
-
-    });
-
-});
-
-
-document.addEventListener("keydown", event => {
-
-    if (event.key === "Escape") {
-
-        if (detailModal.classList.contains("show")) {
-            closeModal(detailModal);
-        }
-
-        if (authModal.classList.contains("show")) {
-            closeModal(authModal);
-        }
-
-        if (!reader.classList.contains("hidden")) {
-            closeReader();
-        }
-
-        if (reader.classList.contains("hidden")) {
-            document.body.style.overflow = "";
-        }
-    }
-
-});
-
-
-/* =========================================================
-   READER CONTROLS
-========================================================= */
-
-document
-    .getElementById("readerClose")
-    .addEventListener("click", closeReader);
-
-
-document
-    .getElementById("nextPage")
-    .addEventListener("click", nextPage);
-
-
-document
-    .getElementById("previousPage")
-    .addEventListener("click", previousPage);
-
-
-document.addEventListener("keydown", event => {
-
-    if (reader.classList.contains("hidden")) return;
-
-    if (event.key === "ArrowRight") {
-        nextPage();
-    }
-
-    if (event.key === "ArrowLeft") {
-        previousPage();
-    }
-
-});
-
-
-/* =========================================================
-   AUTH
-========================================================= */
-
-function openLogin() {
-
-    authModal.classList.add("show");
-
-    loginForm.classList.remove("hidden");
-    registerForm.classList.add("hidden");
-
-    document
-        .querySelectorAll(".auth-tab")
-        .forEach(tab => {
-            tab.classList.toggle(
-                "active",
-                tab.dataset.auth === "login"
-            );
-        });
-
-    document.body.style.overflow = "hidden";
-}
-
-
-function openRegister() {
-
-    authModal.classList.add("show");
-
-    loginForm.classList.add("hidden");
-    registerForm.classList.remove("hidden");
-
-    document
-        .querySelectorAll(".auth-tab")
-        .forEach(tab => {
-            tab.classList.toggle(
-                "active",
-                tab.dataset.auth === "register"
-            );
-        });
-
-    document.body.style.overflow = "hidden";
-}
-
-
-document
-    .getElementById("loginOpen")
-    .addEventListener("click", openLogin);
-
-
-document.querySelectorAll(".auth-tab").forEach(tab => {
-
-    tab.addEventListener("click", () => {
-
-        if (tab.dataset.auth === "login") {
-            openLogin();
-        } else {
-            openRegister();
-        }
-
-    });
-
-});
-
-
-registerForm.addEventListener("submit", event => {
-
-    event.preventDefault();
-
-    const name =
-        document.getElementById("registerName").value.trim();
-
-    const email =
-        document.getElementById("registerEmail").value.trim();
-
-    const password =
-        document.getElementById("registerPassword").value;
-
-    const confirm =
-        document.getElementById("registerConfirm").value;
-
-    if (password !== confirm) {
-
-        showToast(
-            "Konfirmasi password tidak sama.",
-            "error"
-        );
-
-        return;
-    }
-
-    const account = {
-        name,
-        email,
-        password
-    };
-
-    writeStorage(STORAGE.account, account);
-
-    const user = {
-        name,
-        email
-    };
-
-    writeStorage(STORAGE.user, user);
-
-    updateProfile();
-
-    closeModal(authModal);
-
-    registerForm.reset();
-
-    showToast(
-        "Pendaftaran berhasil. Selamat datang!",
-        "success"
-    );
-
-});
-
-
-loginForm.addEventListener("submit", event => {
-
-    event.preventDefault();
-
-    const email =
-        document.getElementById("loginEmail").value.trim();
-
-    const password =
-        document.getElementById("loginPassword").value;
-
-    const account =
-        readStorage(STORAGE.account, null);
-
-    if (!account) {
-
-        showToast(
-            "Belum ada akun. Silakan daftar terlebih dahulu.",
-            "error"
-        );
-
-        return;
-    }
-
-    if (
-        account.email !== email ||
-        account.password !== password
-    ) {
-
-        showToast(
-            "Email atau password salah.",
-            "error"
-        );
-
-        return;
-    }
-
-    writeStorage(STORAGE.user, {
-        name: account.name,
-        email: account.email
-    });
-
-    updateProfile();
-
-    closeModal(authModal);
-
-    loginForm.reset();
-
-    showToast(
-        `Selamat datang, ${account.name}!`,
-        "success"
-    );
-
-});
-
-
-/* =========================================================
-   PROFILE
-========================================================= */
-
-function updateProfile() {
-
-    const user = readStorage(STORAGE.user, null);
-
-    const nameElement =
-        document.getElementById("profileName");
-
-    const emailElement =
-        document.getElementById("profileEmail");
-
-    const favoriteCount =
-        document.getElementById("profileFavoriteCount");
-
-    const readCount =
-        document.getElementById("profileReadCount");
-
-    if (user) {
-
-        nameElement.textContent =
-            user.name || "Pengguna";
-
-        emailElement.textContent =
-            user.email || "";
-
-    } else {
-
-        nameElement.textContent = "Tamu";
-
-        emailElement.textContent =
-            "Belum login";
-    }
-
-    favoriteCount.textContent =
-        favorites.length;
-
-    readCount.textContent =
-        history.length;
-}
-
-
-document
-    .getElementById("editProfileBtn")
-    .addEventListener("click", () => {
-
-        const user =
-            readStorage(STORAGE.user, null);
-
-        if (!user) {
-
-            showToast(
-                "Silakan login terlebih dahulu.",
-                "error"
-            );
-
-            openLogin();
-
-            return;
-        }
-
-        const newName =
-            prompt(
-                "Masukkan nama baru:",
-                user.name
-            );
-
-        if (!newName || !newName.trim()) {
-            return;
-        }
-
-        user.name = newName.trim();
-
-        writeStorage(STORAGE.user, user);
-
-        updateProfile();
-
-        showToast(
-            "Profil berhasil diperbarui.",
-            "success"
-        );
-
-    });
-
-
-/* =========================================================
-   DARK MODE
-========================================================= */
-
-function updateThemeIcon() {
-
-    const icon =
-        themeToggle.querySelector("i");
-
-    const dark =
-        document.body.classList.contains("dark");
-
-    icon.className =
-        dark
-            ? "fa-solid fa-sun"
-            : "fa-solid fa-moon";
-}
-
-
-function toggleDarkMode() {
-
-    const dark =
-        document.body.classList.toggle("dark");
-
-    writeStorage(STORAGE.theme, dark ? "dark" : "light");
-
-    updateThemeIcon();
-}
-
-
-function loadTheme() {
-
-    const theme =
-        localStorage.getItem(STORAGE.theme);
-
-    if (theme === "dark") {
-        document.body.classList.add("dark");
-    }
-
-    updateThemeIcon();
-}
-
-
-themeToggle.addEventListener(
-    "click",
-    toggleDarkMode
-);
-
-
-/* =========================================================
-   READER THEME
-========================================================= */
-
-document
-    .getElementById("readerTheme")
-    .addEventListener("click", () => {
-
-        document.body.classList.toggle("dark");
-
-        const dark =
-            document.body.classList.contains("dark");
-
-        writeStorage(
-            STORAGE.theme,
-            dark ? "dark" : "light"
-        );
-
-        updateThemeIcon();
-
-    });
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-menuToggle.addEventListener("click", () => {
-
-    const opened =
-        navMenu.classList.toggle("open");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        String(opened)
-    );
-
-    const icon =
-        menuToggle.querySelector("i");
-
-    icon.className =
-        opened
-            ? "fa-solid fa-xmark"
-            : "fa-solid fa-bars";
-
-});
-
-
-document.querySelectorAll("#navMenu a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        navMenu.classList.remove("open");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        menuToggle
-            .querySelector("i")
-            .className = "fa-solid fa-bars";
-
-    });
-
-});
-
-
-/* =========================================================
-   TOAST
-========================================================= */
-
-function showToast(message, type = "") {
-
-    const toast =
-        document.createElement("div");
-
-    toast.className =
-        `toast ${type}`;
-
-    toast.textContent = message;
-
-    toastContainer.appendChild(toast);
-
-    setTimeout(() => {
-
-        toast.style.opacity = "0";
-
-        setTimeout(() => {
-            toast.remove();
-        }, 250);
-
-    }, 3000);
-}
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 500) {
-
-        backTop.classList.add("show");
-
-    } else {
-
-        backTop.classList.remove("show");
-    }
-
-});
-
-
-backTop.addEventListener("click", () => {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
-
-/* =========================================================
-   ESCAPE HTML
+   UTILITY
 ========================================================= */
 
 function escapeHTML(value) {
@@ -1586,25 +447,334 @@ function escapeHTML(value) {
 }
 
 
+function getBookById(id) {
+    return books.find(
+        book => book.id === Number(id)
+    );
+}
+
+
+function getFavorites() {
+    return getStorage(
+        STORAGE.favorites,
+        []
+    );
+}
+
+
+function saveFavorites(favorites) {
+    setStorage(
+        STORAGE.favorites,
+        favorites
+    );
+}
+
+
+function getHistory() {
+    return getStorage(
+        STORAGE.history,
+        []
+    );
+}
+
+
+function saveHistory(history) {
+    setStorage(
+        STORAGE.history,
+        history
+    );
+}
+
+
+function getProgress() {
+    return getStorage(
+        STORAGE.progress,
+        {}
+    );
+}
+
+
+function saveProgress(progress) {
+    setStorage(
+        STORAGE.progress,
+        progress
+    );
+}
+
+
+function isFavorite(bookId) {
+
+    return getFavorites().includes(
+        Number(bookId)
+    );
+}
+
+
 /* =========================================================
-   INITIALIZE
+   TOAST
 ========================================================= */
 
-function initializeApp() {
+let toastTimer = null;
 
-    loadTheme();
+function showToast(message, type = "success") {
 
-    favorites =
-        readStorage(STORAGE.favorites, []);
+    toastMessage.textContent = message;
 
-    history =
-        readStorage(STORAGE.history, []);
+    const icon = toast.querySelector("i");
 
-    progress =
-        readStorage(STORAGE.progress, {});
+    if (type === "error") {
+        icon.className =
+            "fa-solid fa-circle-exclamation";
+    } else {
+        icon.className =
+            "fa-solid fa-circle-check";
+    }
 
-    lastPages =
-        readStorage(STORAGE.lastPages, {});
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+}
+
+
+/* =========================================================
+   BOOK CARD
+========================================================= */
+
+function createBookCard(book) {
+
+    const favorite = isFavorite(book.id);
+
+    return `
+        <article class="book-card">
+
+            <div class="book-cover">
+
+                <img
+                    src="${escapeHTML(book.cover)}"
+                    alt="Cover buku ${escapeHTML(book.title)}"
+                    loading="lazy"
+                >
+
+                <button
+                    class="favorite-btn ${favorite ? "active" : ""}"
+                    type="button"
+                    data-action="favorite"
+                    data-id="${book.id}"
+                    aria-label="${
+                        favorite
+                            ? "Hapus dari favorit"
+                            : "Tambah ke favorit"
+                    }"
+                >
+                    <i class="${
+                        favorite
+                            ? "fa-solid"
+                            : "fa-regular"
+                    } fa-heart"></i>
+                </button>
+
+                <span class="book-status ${
+                    book.available ? "available" : ""
+                }">
+                    ${
+                        book.available
+                            ? "Tersedia"
+                            : "Tidak tersedia"
+                    }
+                </span>
+
+            </div>
+
+
+            <div class="book-info">
+
+                <span class="book-category">
+                    ${escapeHTML(book.category)}
+                </span>
+
+                <h3 class="book-title">
+                    ${escapeHTML(book.title)}
+                </h3>
+
+                <p class="book-author">
+                    ${escapeHTML(book.author)}
+                </p>
+
+                <div class="book-rating">
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <strong>
+                        ${book.rating}
+                    </strong>
+
+                    <span>
+                        / 5
+                    </span>
+
+                </div>
+
+
+                <div class="book-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        type="button"
+                        data-action="read"
+                        data-id="${book.id}"
+                    >
+                        <i class="fa-solid fa-book-open"></i>
+                        Baca
+                    </button>
+
+                    <button
+                        class="btn btn-outline"
+                        type="button"
+                        data-action="detail"
+                        data-id="${book.id}"
+                    >
+                        Detail
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+    `;
+}
+
+
+/* =========================================================
+   FILTER + SORT
+========================================================= */
+
+function getFilteredBooks() {
+
+    let result = [...books];
+
+    const keyword =
+        state.search.trim().toLowerCase();
+
+    if (keyword) {
+
+        result = result.filter(book => {
+
+            return (
+                book.title.toLowerCase().includes(keyword) ||
+                book.author.toLowerCase().includes(keyword) ||
+                book.category.toLowerCase().includes(keyword)
+            );
+
+        });
+    }
+
+
+    if (state.category !== "Semua") {
+
+        result = result.filter(
+            book =>
+                book.category === state.category
+        );
+    }
+
+
+    if (state.sort === "latest") {
+
+        result.sort(
+            (a, b) => b.year - a.year
+        );
+
+    } else if (state.sort === "rating") {
+
+        result.sort(
+            (a, b) => b.rating - a.rating
+        );
+
+    } else if (state.sort === "title") {
+
+        result.sort(
+            (a, b) =>
+                a.title.localeCompare(
+                    b.title,
+                    "id"
+                )
+        );
+    }
+
+
+    return result;
+}
+
+
+/* =========================================================
+   RENDER BOOKS
+========================================================= */
+
+function renderBooks() {
+
+    const result =
+        getFilteredBooks();
+
+    booksGrid.innerHTML = result
+        .map(createBookCard)
+        .join("");
+
+    booksEmpty.classList.toggle(
+        "hidden",
+        result.length > 0
+    );
+
+
+    if (state.search || state.category !== "Semua") {
+
+        searchResultInfo.textContent =
+            `${result.length} buku ditemukan`;
+
+    } else {
+
+        searchResultInfo.textContent =
+            "Jelajahi koleksi buku digital kami.";
+    }
+}
+
+
+/* =========================================================
+   FAVORITES
+========================================================= */
+
+function toggleFavorite(bookId) {
+
+    const id = Number(bookId);
+
+    let favorites =
+        getFavorites();
+
+    if (favorites.includes(id)) {
+
+        favorites =
+            favorites.filter(
+                favoriteId => favoriteId !== id
+            );
+
+        showToast(
+            "Buku dihapus dari favorit."
+        );
+
+    } else {
+
+        favorites.push(id);
+
+        showToast(
+            "Buku ditambahkan ke favorit."
+        );
+    }
+
+    saveFavorites(favorites);
 
     renderBooks();
 
@@ -1612,8 +782,1936 @@ function initializeApp() {
 
     renderHistory();
 
+    updateProfileStats();
+    updateReaderFavoriteButton();
+}
+
+
+function renderFavorites() {
+
+    const favorites =
+        getFavorites();
+
+    const favoriteBooks =
+        books.filter(
+            book => favorites.includes(book.id)
+        );
+
+    favoriteGrid.innerHTML =
+        favoriteBooks
+            .map(createBookCard)
+            .join("");
+
+    favoriteEmpty.classList.toggle(
+        "hidden",
+        favoriteBooks.length > 0
+    );
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function performSearch(keyword) {
+
+    state.search =
+        keyword.trim();
+
+    renderBooks();
+
+    document
+        .getElementById("koleksi")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+function setCategory(category) {
+
+    state.category = category;
+
+    categoryFilter.value =
+        category;
+
+    document
+        .querySelectorAll(".category-chip")
+        .forEach(button => {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.category === category
+            );
+
+        });
+
+    renderBooks();
+}
+
+
+/* =========================================================
+   BOOK DETAIL
+========================================================= */
+
+function openBookDetail(bookId) {
+
+    const book =
+        getBookById(bookId);
+
+    if (!book) {
+        return;
+    }
+
+    const favorite =
+        isFavorite(book.id);
+
+    bookModalContent.innerHTML = `
+
+        <div class="book-detail">
+
+            <div>
+
+                <img
+                    class="book-detail-cover"
+                    src="${escapeHTML(book.cover)}"
+                    alt="Cover ${escapeHTML(book.title)}"
+                >
+
+            </div>
+
+
+            <div class="book-detail-info">
+
+                <span class="book-category">
+                    ${escapeHTML(book.category)}
+                </span>
+
+                <h2 id="modalBookTitle">
+                    ${escapeHTML(book.title)}
+                </h2>
+
+                <p class="book-detail-author">
+                    Oleh ${escapeHTML(book.author)}
+                </p>
+
+
+                <div class="book-detail-meta">
+
+                    <span class="meta-item">
+                        Tahun ${book.year}
+                    </span>
+
+                    <span class="meta-item">
+                        Rating ${book.rating}/5
+                    </span>
+
+                    <span class="meta-item">
+                        ${
+                            book.available
+                                ? "Tersedia"
+                                : "Tidak tersedia"
+                        }
+                    </span>
+
+                </div>
+
+
+                <p class="book-detail-description">
+                    ${escapeHTML(book.description)}
+                </p>
+
+
+                <div class="book-detail-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        id="modalReadBtn"
+                        type="button"
+                    >
+                        <i class="fa-solid fa-book-open"></i>
+                        Baca Sekarang
+                    </button>
+
+                    <button
+                        class="btn btn-outline"
+                        id="modalFavoriteBtn"
+                        type="button"
+                    >
+                        <i class="${
+                            favorite
+                                ? "fa-solid"
+                                : "fa-regular"
+                        } fa-heart"></i>
+
+                        ${
+                            favorite
+                                ? "Hapus Favorit"
+                                : "Tambah Favorit"
+                        }
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+
+    bookModal.classList.remove("hidden");
+
+    document.body.style.overflow =
+        "hidden";
+
+
+    document
+        .getElementById("modalReadBtn")
+        .addEventListener(
+            "click",
+            () => {
+
+                closeBookModal();
+
+                openReader(book.id);
+            }
+        );
+
+
+    document
+        .getElementById("modalFavoriteBtn")
+        .addEventListener(
+            "click",
+            () => {
+
+                toggleFavorite(book.id);
+
+                openBookDetail(book.id);
+            }
+        );
+}
+
+
+function closeBookModal() {
+
+    bookModal.classList.add("hidden");
+
+    if (reader.classList.contains("hidden")) {
+        document.body.style.overflow = "";
+    }
+}
+
+
+/* =========================================================
+   READING HISTORY
+========================================================= */
+
+function addToHistory(bookId) {
+
+    const id =
+        Number(bookId);
+
+    let history =
+        getHistory();
+
+    history =
+        history.filter(
+            item => item.bookId !== id
+        );
+
+    history.unshift({
+        bookId: id,
+        lastPage: getProgress()[id] || 1,
+        updatedAt: Date.now()
+    });
+
+    history =
+        history.slice(0, 20);
+
+    saveHistory(history);
+}
+
+
+function renderHistory() {
+
+    const history =
+        getHistory();
+
+    if (!history.length) {
+
+        historyGrid.innerHTML = "";
+
+        historyEmpty.classList.remove(
+            "hidden"
+        );
+
+        return;
+    }
+
+
+    historyEmpty.classList.add(
+        "hidden"
+    );
+
+
+    const progress =
+        getProgress();
+
+
+    historyGrid.innerHTML =
+        history
+            .map(item => {
+
+                const book =
+                    getBookById(item.bookId);
+
+                if (!book) {
+                    return "";
+                }
+
+                const page =
+                    progress[book.id] || 1;
+
+                const total =
+                    book.pages.length;
+
+                const percent =
+                    Math.round(
+                        (page / total) * 100
+                    );
+
+                return `
+
+                    <article class="history-card">
+
+                        <img
+                            class="history-cover"
+                            src="${escapeHTML(book.cover)}"
+                            alt="${escapeHTML(book.title)}"
+                        >
+
+                        <div class="history-info">
+
+                            <h3>
+                                ${escapeHTML(book.title)}
+                            </h3>
+
+                            <p>
+                                ${escapeHTML(book.author)}
+                            </p>
+
+                            <div class="history-progress">
+
+                                <div class="history-percent">
+
+                                    <span>
+                                        Progress membaca
+                                    </span>
+
+                                    <strong>
+                                        ${percent}%
+                                    </strong>
+
+                                </div>
+
+                                <div class="progress-track">
+
+                                    <div
+                                        class="progress-bar"
+                                        style="width:${percent}%"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="btn btn-primary"
+                            type="button"
+                            data-action="read"
+                            data-id="${book.id}"
+                        >
+                            <i class="fa-solid fa-play"></i>
+                            Lanjutkan
+                        </button>
+
+                    </article>
+                `;
+
+            })
+            .join("");
+}
+
+
+/* =========================================================
+   READER
+========================================================= */
+
+function openReader(bookId) {
+
+    const book =
+        getBookById(bookId);
+
+    if (!book) {
+        return;
+    }
+
+    state.currentBookId =
+        book.id;
+
+
+    const progress =
+        getProgress();
+
+    const savedPage =
+        Number(progress[book.id] || 1);
+
+
+    state.currentPage =
+        Math.min(
+            Math.max(savedPage, 1),
+            book.pages.length
+        );
+
+
+    readerTitle.textContent =
+        book.title;
+
+    readerAuthor.textContent =
+        book.author;
+
+
+    addToHistory(book.id);
+
+    renderReaderPage();
+
+    updateReaderFavoriteButton();
+
+
+    reader.classList.remove(
+        "hidden"
+    );
+
+    document.body.style.overflow =
+        "hidden";
+
+    renderHistory();
+
+    updateProfileStats();
+
+    showToast(
+        "Buku berhasil dibuka."
+    );
+}
+
+
+function closeReader() {
+
+    reader.classList.add(
+        "hidden"
+    );
+
+    state.currentBookId =
+        null;
+
+    document.body.style.overflow = "";
+
+    renderHistory();
+}
+
+
+function renderReaderPage() {
+
+    const book =
+        getBookById(
+            state.currentBookId
+        );
+
+    if (!book) {
+        return;
+    }
+
+
+    const totalPages =
+        book.pages.length;
+
+    const page =
+        state.currentPage;
+
+
+    readerText.innerHTML = `
+        <p>
+            ${escapeHTML(book.pages[page - 1])}
+        </p>
+    `;
+
+
+    currentPage.textContent =
+        page;
+
+    pageIndicator.textContent =
+        `${page} / ${totalPages}`;
+
+
+    const percent =
+        Math.round(
+            (page / totalPages) * 100
+        );
+
+
+    readerProgressBar.style.width =
+        `${percent}%`;
+
+    readerProgressText.textContent =
+        `${percent}%`;
+
+
+    prevPageBtn.disabled =
+        page <= 1;
+
+    nextPageBtn.disabled =
+        page >= totalPages;
+
+
+    saveReadingProgress();
+}
+
+
+function saveReadingProgress() {
+
+    if (!state.currentBookId) {
+        return;
+    }
+
+
+    const progress =
+        getProgress();
+
+
+    progress[state.currentBookId] =
+        state.currentPage;
+
+
+    saveProgress(progress);
+
+
+    let history =
+        getHistory();
+
+    history =
+        history.map(item => {
+
+            if (
+                item.bookId ===
+                state.currentBookId
+            ) {
+                return {
+                    ...item,
+                    lastPage:
+                        state.currentPage,
+                    updatedAt:
+                        Date.now()
+                };
+            }
+
+            return item;
+        });
+
+
+    saveHistory(history);
+}
+
+
+function nextPage() {
+
+    const book =
+        getBookById(
+            state.currentBookId
+        );
+
+    if (!book) {
+        return;
+    }
+
+
+    if (
+        state.currentPage <
+        book.pages.length
+    ) {
+
+        state.currentPage++;
+
+        renderReaderPage();
+
+        renderHistory();
+    }
+}
+
+
+function previousPage() {
+
+    if (
+        state.currentPage > 1
+    ) {
+
+        state.currentPage--;
+
+        renderReaderPage();
+
+        renderHistory();
+    }
+}
+
+
+function updateReaderFavoriteButton() {
+
+    if (!state.currentBookId) {
+        return;
+    }
+
+
+    const favorite =
+        isFavorite(
+            state.currentBookId
+        );
+
+
+    readerFavoriteBtn.innerHTML = `
+        <i class="${
+            favorite
+                ? "fa-solid"
+                : "fa-regular"
+        } fa-heart"></i>
+    `;
+
+    readerFavoriteBtn.classList.toggle(
+        "active",
+        favorite
+    );
+}
+
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+function getUsers() {
+
+    return getStorage(
+        STORAGE.users,
+        []
+    );
+}
+
+
+function saveUsers(users) {
+
+    setStorage(
+        STORAGE.users,
+        users
+    );
+}
+
+
+function getCurrentUser() {
+
+    return getStorage(
+        STORAGE.currentUser,
+        null
+    );
+}
+
+
+function saveCurrentUser(user) {
+
+    if (user) {
+
+        setStorage(
+            STORAGE.currentUser,
+            user
+        );
+
+    } else {
+
+        localStorage.removeItem(
+            STORAGE.currentUser
+        );
+    }
+}
+
+
+function openLogin() {
+
+    authModal.classList.remove(
+        "hidden"
+    );
+
+    showAuthTab("login");
+
+    document.body.style.overflow =
+        "hidden";
+}
+
+
+function openRegister() {
+
+    authModal.classList.remove(
+        "hidden"
+    );
+
+    showAuthTab("register");
+
+    document.body.style.overflow =
+        "hidden";
+}
+
+
+function closeAuth() {
+
+    authModal.classList.add(
+        "hidden"
+    );
+
+    document.body.style.overflow = "";
+}
+
+
+function showAuthTab(tab) {
+
+    document
+        .querySelectorAll(".auth-tab")
+        .forEach(button => {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.authTab === tab
+            );
+
+        });
+
+
+    loginForm.classList.toggle(
+        "hidden",
+        tab !== "login"
+    );
+
+    registerForm.classList.toggle(
+        "hidden",
+        tab !== "register"
+    );
+}
+
+
+function registerUser(event) {
+
+    event.preventDefault();
+
+
+    const name =
+        document
+            .getElementById("registerName")
+            .value
+            .trim();
+
+    const email =
+        document
+            .getElementById("registerEmail")
+            .value
+            .trim()
+            .toLowerCase();
+
+    const password =
+        document
+            .getElementById("registerPassword")
+            .value;
+
+    const confirmPassword =
+        document
+            .getElementById("registerConfirmPassword")
+            .value;
+
+
+    if (
+        name.length < 2
+    ) {
+
+        showToast(
+            "Nama minimal 2 karakter.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    if (
+        password.length < 6
+    ) {
+
+        showToast(
+            "Password minimal 6 karakter.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    if (
+        password !==
+        confirmPassword
+    ) {
+
+        showToast(
+            "Konfirmasi password tidak cocok.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    const users =
+        getUsers();
+
+
+    const exists =
+        users.some(
+            user =>
+                user.email === email
+        );
+
+
+    if (exists) {
+
+        showToast(
+            "Email sudah terdaftar.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    const newUser = {
+        id: Date.now(),
+        name,
+        email,
+        password
+    };
+
+
+    users.push(newUser);
+
+    saveUsers(users);
+
+
+    const profile = {
+        name,
+        email
+    };
+
+    setStorage(
+        STORAGE.profile,
+        profile
+    );
+
+
+    saveCurrentUser({
+        id: newUser.id,
+        name,
+        email
+    });
+
+
+    registerForm.reset();
+
+    closeAuth();
+
+    updateUserInterface();
+
+    showToast(
+        "Pendaftaran berhasil."
+    );
+}
+
+
+function loginUser(event) {
+
+    event.preventDefault();
+
+
+    const email =
+        document
+            .getElementById("loginEmail")
+            .value
+            .trim()
+            .toLowerCase();
+
+    const password =
+        document
+            .getElementById("loginPassword")
+            .value;
+
+
+    const users =
+        getUsers();
+
+
+    const user =
+        users.find(
+            item =>
+                item.email === email &&
+                item.password === password
+        );
+
+
+    if (!user) {
+
+        showToast(
+            "Email atau password salah.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    saveCurrentUser({
+        id: user.id,
+        name: user.name,
+        email: user.email
+    });
+
+
+    setStorage(
+        STORAGE.profile,
+        {
+            name: user.name,
+            email: user.email
+        }
+    );
+
+
+    loginForm.reset();
+
+    closeAuth();
+
+    updateUserInterface();
+
+    showToast(
+        `Selamat datang, ${user.name}.`
+    );
+}
+
+
+function logoutUser() {
+
+    saveCurrentUser(null);
+
+    updateUserInterface();
+
+    showToast(
+        "Anda telah keluar dari akun."
+    );
+}
+
+
+function updateUserInterface() {
+
+    const user =
+        getCurrentUser();
+
+    const loginBtn =
+        document.getElementById(
+            "loginBtn"
+        );
+
+    const profileMiniBtn =
+        document.getElementById(
+            "profileMiniBtn"
+        );
+
+    const miniAvatar =
+        document.getElementById(
+            "miniAvatar"
+        );
+
+
+    if (user) {
+
+        loginBtn.classList.add(
+            "hidden"
+        );
+
+        profileMiniBtn.classList.remove(
+            "hidden"
+        );
+
+        miniAvatar.textContent =
+            user.name
+                .charAt(0)
+                .toUpperCase();
+
+    } else {
+
+        loginBtn.classList.remove(
+            "hidden"
+        );
+
+        profileMiniBtn.classList.add(
+            "hidden"
+        );
+    }
+
+
     updateProfile();
 }
 
 
-initializeApp();
+/* =========================================================
+   PROFILE
+========================================================= */
+
+function updateProfile() {
+
+    const user =
+        getCurrentUser();
+
+    const profile =
+        getStorage(
+            STORAGE.profile,
+            null
+        );
+
+
+    const name =
+        user?.name ||
+        profile?.name ||
+        "Pengunjung";
+
+    const email =
+        user?.email ||
+        profile?.email ||
+        "Belum login";
+
+
+    document.getElementById(
+        "profileName"
+    ).textContent = name;
+
+
+    document.getElementById(
+        "profileEmail"
+    ).textContent = email;
+
+
+    document.getElementById(
+        "profileAvatar"
+    ).textContent =
+        name
+            .charAt(0)
+            .toUpperCase();
+
+
+    document.getElementById(
+        "profileEditName"
+    ).value =
+        user?.name ||
+        profile?.name ||
+        "";
+
+
+    document.getElementById(
+        "profileEditEmail"
+    ).value =
+        user?.email ||
+        profile?.email ||
+        "";
+
+
+    updateProfileStats();
+}
+
+
+function updateProfileStats() {
+
+    const favorites =
+        getFavorites();
+
+    const history =
+        getHistory();
+
+    const progress =
+        getProgress();
+
+
+    document.getElementById(
+        "profileFavoriteCount"
+    ).textContent =
+        favorites.length;
+
+
+    document.getElementById(
+        "profileReadCount"
+    ).textContent =
+        history.length;
+
+
+    if (!history.length) {
+
+        document.getElementById(
+            "profileProgress"
+        ).textContent = "0%";
+
+        return;
+    }
+
+
+    let total = 0;
+
+    let count = 0;
+
+
+    history.forEach(item => {
+
+        const book =
+            getBookById(item.bookId);
+
+        if (!book) {
+            return;
+        }
+
+        const page =
+            progress[item.bookId] || 1;
+
+        total +=
+            Math.round(
+                (page / book.pages.length) *
+                100
+            );
+
+        count++;
+    });
+
+
+    const average =
+        count
+            ? Math.round(total / count)
+            : 0;
+
+
+    document.getElementById(
+        "profileProgress"
+    ).textContent =
+        `${average}%`;
+}
+
+
+function openProfileModal() {
+
+    updateProfile();
+
+    document
+        .getElementById(
+            "profileModal"
+        )
+        .classList.remove(
+            "hidden"
+        );
+
+    document.body.style.overflow =
+        "hidden";
+}
+
+
+function closeProfileModal() {
+
+    document
+        .getElementById(
+            "profileModal"
+        )
+        .classList.add(
+            "hidden"
+        );
+
+    document.body.style.overflow = "";
+}
+
+
+function saveProfile(event) {
+
+    event.preventDefault();
+
+
+    const name =
+        document
+            .getElementById(
+                "profileEditName"
+            )
+            .value
+            .trim();
+
+    const email =
+        document
+            .getElementById(
+                "profileEditEmail"
+            )
+            .value
+            .trim()
+            .toLowerCase();
+
+
+    if (
+        name.length < 2
+    ) {
+
+        showToast(
+            "Nama tidak valid.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    const currentUser =
+        getCurrentUser();
+
+
+    if (currentUser) {
+
+        const users =
+            getUsers();
+
+
+        const index =
+            users.findIndex(
+                user =>
+                    user.id ===
+                    currentUser.id
+            );
+
+
+        if (index !== -1) {
+
+            users[index].name =
+                name;
+
+            users[index].email =
+                email;
+
+            saveUsers(users);
+        }
+
+
+        saveCurrentUser({
+            ...currentUser,
+            name,
+            email
+        });
+    }
+
+
+    setStorage(
+        STORAGE.profile,
+        {
+            name,
+            email
+        }
+    );
+
+
+    updateUserInterface();
+
+    closeProfileModal();
+
+    showToast(
+        "Profil berhasil diperbarui."
+    );
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+function loadTheme() {
+
+    const theme =
+        localStorage.getItem(
+            STORAGE.theme
+        );
+
+
+    if (theme === "dark") {
+
+        document.body.classList.add(
+            "dark"
+        );
+
+    } else {
+
+        document.body.classList.remove(
+            "dark"
+        );
+    }
+
+
+    updateThemeIcon();
+}
+
+
+function toggleDarkMode() {
+
+    document.body.classList.toggle(
+        "dark"
+    );
+
+
+    const isDark =
+        document.body.classList.contains(
+            "dark"
+        );
+
+
+    localStorage.setItem(
+        STORAGE.theme,
+        isDark
+            ? "dark"
+            : "light"
+    );
+
+
+    updateThemeIcon();
+}
+
+
+function updateThemeIcon() {
+
+    const icon =
+        themeBtn.querySelector("i");
+
+    const isDark =
+        document.body.classList.contains(
+            "dark"
+        );
+
+
+    icon.className =
+        isDark
+            ? "fa-solid fa-sun"
+            : "fa-solid fa-moon";
+
+
+    themeBtn.setAttribute(
+        "aria-label",
+        isDark
+            ? "Aktifkan mode terang"
+            : "Aktifkan mode gelap"
+    );
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMobileMenu() {
+
+    const open =
+        navMenu.classList.toggle(
+            "open"
+        );
+
+
+    mobileMenuBtn.setAttribute(
+        "aria-expanded",
+        String(open)
+    );
+
+
+    const icon =
+        mobileMenuBtn.querySelector("i");
+
+
+    icon.className =
+        open
+            ? "fa-solid fa-xmark"
+            : "fa-solid fa-bars";
+}
+
+
+function closeMobileMenu() {
+
+    navMenu.classList.remove(
+        "open"
+    );
+
+    mobileMenuBtn.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+
+    mobileMenuBtn
+        .querySelector("i")
+        .className =
+        "fa-solid fa-bars";
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+function updateBackToTop() {
+
+    if (window.scrollY > 500) {
+
+        backToTop.classList.add(
+            "show"
+        );
+
+    } else {
+
+        backToTop.classList.remove(
+            "show"
+        );
+    }
+}
+
+
+/* =========================================================
+   EVENT DELEGATION
+========================================================= */
+
+function handleBookAction(event) {
+
+    const button =
+        event.target.closest(
+            "[data-action]"
+        );
+
+    if (!button) {
+        return;
+    }
+
+
+    const action =
+        button.dataset.action;
+
+    const id =
+        Number(button.dataset.id);
+
+
+    if (action === "favorite") {
+
+        toggleFavorite(id);
+
+    } else if (action === "detail") {
+
+        openBookDetail(id);
+
+    } else if (action === "read") {
+
+        openReader(id);
+    }
+}
+
+
+/* =========================================================
+   NAVIGATION ACTIVE STATE
+========================================================= */
+
+function updateActiveNavigation() {
+
+    const sections =
+        document.querySelectorAll(
+            "main section[id]"
+        );
+
+    const links =
+        document.querySelectorAll(
+            ".nav-link"
+        );
+
+
+    let current =
+        "home";
+
+
+    sections.forEach(section => {
+
+        const rect =
+            section.getBoundingClientRect();
+
+        if (
+            rect.top <= 150 &&
+            rect.bottom >= 150
+        ) {
+            current =
+                section.id;
+        }
+    });
+
+
+    links.forEach(link => {
+
+        const href =
+            link.getAttribute("href");
+
+        link.classList.toggle(
+            "active",
+            href === `#${current}`
+        );
+    });
+}
+
+
+/* =========================================================
+   EVENT LISTENERS
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        /* INITIAL */
+
+        loadTheme();
+
+        renderBooks();
+
+        renderFavorites();
+
+        renderHistory();
+
+        updateUserInterface();
+
+        updateProfileStats();
+
+
+        /* SEARCH */
+
+        heroSearchForm.addEventListener(
+            "submit",
+            event => {
+
+                event.preventDefault();
+
+                performSearch(
+                    heroSearchInput.value
+                );
+            }
+        );
+
+
+        heroSearchInput.addEventListener(
+            "input",
+            event => {
+
+                state.search =
+                    event.target.value;
+
+                renderBooks();
+            }
+        );
+
+
+        /* CATEGORY SELECT */
+
+        categoryFilter.addEventListener(
+            "change",
+            event => {
+
+                setCategory(
+                    event.target.value
+                );
+            }
+        );
+
+
+        /* SORT */
+
+        sortSelect.addEventListener(
+            "change",
+            event => {
+
+                state.sort =
+                    event.target.value;
+
+                renderBooks();
+            }
+        );
+
+
+        /* CATEGORY BUTTONS */
+
+        document
+            .querySelectorAll(
+                ".category-chip"
+            )
+            .forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        setCategory(
+                            button.dataset.category
+                        );
+
+                        document
+                            .getElementById(
+                                "koleksi"
+                            )
+                            .scrollIntoView({
+                                behavior:
+                                    "smooth"
+                            });
+                    }
+                );
+
+            });
+
+
+        /* BOOK GRID EVENTS */
+
+        booksGrid.addEventListener(
+            "click",
+            handleBookAction
+        );
+
+
+        favoriteGrid.addEventListener(
+            "click",
+            handleBookAction
+        );
+
+
+        historyGrid.addEventListener(
+            "click",
+            handleBookAction
+        );
+
+
+        /* BOOK MODAL */
+
+        bookModal.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target ===
+                    bookModal ||
+                    event.target.closest(
+                        "[data-close-modal]"
+                    )
+                ) {
+                    closeBookModal();
+                }
+            }
+        );
+
+
+        /* READER */
+
+        closeReaderBtn.addEventListener(
+            "click",
+            closeReader
+        );
+
+
+        prevPageBtn.addEventListener(
+            "click",
+            previousPage
+        );
+
+
+        nextPageBtn.addEventListener(
+            "click",
+            nextPage
+        );
+
+
+        readerFavoriteBtn.addEventListener(
+            "click",
+            () => {
+
+                if (
+                    state.currentBookId
+                ) {
+
+                    toggleFavorite(
+                        state.currentBookId
+                    );
+                }
+            }
+        );
+
+
+        /* AUTH */
+
+        document
+            .querySelectorAll(
+                ".auth-tab"
+            )
+            .forEach(tab => {
+
+                tab.addEventListener(
+                    "click",
+                    () => {
+
+                        showAuthTab(
+                            tab.dataset.authTab
+                        );
+                    }
+                );
+
+            });
+
+
+        loginForm.addEventListener(
+            "submit",
+            loginUser
+        );
+
+
+        registerForm.addEventListener(
+            "submit",
+            registerUser
+        );
+
+
+        document
+            .getElementById(
+                "loginBtn"
+            )
+            .addEventListener(
+                "click",
+                openLogin
+            );
+
+
+        document
+            .getElementById(
+                "closeAuthBtn"
+            )
+            .addEventListener(
+                "click",
+                closeAuth
+            );
+
+
+        /* PROFILE */
+
+        document
+            .getElementById(
+                "editProfileBtn"
+            )
+            .addEventListener(
+                "click",
+                openProfileModal
+            );
+
+
+        document
+            .getElementById(
+                "profileMiniBtn"
+            )
+            .addEventListener(
+                "click",
+                openProfileModal
+            );
+
+
+        document
+            .getElementById(
+                "closeProfileBtn"
+            )
+            .addEventListener(
+                "click",
+                closeProfileModal
+            );
+
+
+        document
+            .getElementById(
+                "profileForm"
+            )
+            .addEventListener(
+                "submit",
+                saveProfile
+            );
+
+
+        /* THEME */
+
+        themeBtn.addEventListener(
+            "click",
+            toggleDarkMode
+        );
+
+
+        /* MOBILE MENU */
+
+        mobileMenuBtn.addEventListener(
+            "click",
+            toggleMobileMenu
+        );
+
+
+        document
+            .querySelectorAll(
+                ".nav-link"
+            )
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    closeMobileMenu
+                );
+            });
+
+
+        /* BACK TO TOP */
+
+        backToTop.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+        );
+
+
+        /* SCROLL */
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                updateBackToTop();
+
+                updateActiveNavigation();
+            }
+        );
+
+
+        /* ESCAPE */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    if (
+                        !bookModal.classList.contains(
+                            "hidden"
+                        )
+                    ) {
+                        closeBookModal();
+                    }
+
+
+                    if (
+                        !authModal.classList.contains(
+                            "hidden"
+                        )
+                    ) {
+                        closeAuth();
+                    }
+
+
+                    const profileModal =
+                        document.getElementById(
+                            "profileModal"
+                        );
+
+
+                    if (
+                        !profileModal.classList.contains(
+                            "hidden"
+                        )
+                    ) {
+                        closeProfileModal();
+                    }
+                }
+
+
+                /* READER KEYBOARD */
+
+                if (
+                    !reader.classList.contains(
+                        "hidden"
+                    )
+                ) {
+
+                    if (
+                        event.key ===
+                        "ArrowRight"
+                    ) {
+                        nextPage();
+                    }
+
+                    if (
+                        event.key ===
+                        "ArrowLeft"
+                    ) {
+                        previousPage();
+                    }
+                }
+            }
+        );
+
+
+        /* MODAL OUTSIDE CLICK */
+
+        authModal.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target ===
+                    authModal
+                ) {
+                    closeAuth();
+                }
+            }
+        );
+
+
+        document
+            .getElementById(
+                "profileModal"
+            )
+            .addEventListener(
+                "click",
+                event => {
+
+                    if (
+                        event.target.id ===
+                        "profileModal"
+                    ) {
+                        closeProfileModal();
+                    }
+                }
+            );
+
+    }
+);
