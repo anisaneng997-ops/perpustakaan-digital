@@ -2,216 +2,487 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="Perpustakaan Digital - Temukan dan baca buku digital dengan mudah."
+        content="Perpustakaan Digital - Temukan dan baca buku secara digital."
     >
 
     <title>Perpustakaan Digital</title>
 
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-<!-- =========================================================
-     HEADER / NAVBAR
-========================================================= -->
-<header class="header">
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container navbar-content">
 
-    <nav class="navbar container">
-
-        <a href="#home" class="logo">
-            <span class="logo-icon">
-                <i class="fa-solid fa-book-open"></i>
-            </span>
-
-            <span>
-                Perpustakaan<span class="logo-highlight">Digital</span>
-            </span>
-        </a>
-
-        <button
-            class="mobile-menu-btn"
-            id="mobileMenuBtn"
-            type="button"
-            aria-label="Buka menu"
-            aria-expanded="false"
-        >
-            <i class="fa-solid fa-bars"></i>
-        </button>
-
-        <div class="nav-menu" id="navMenu">
-
-            <a href="#home" class="nav-link active">
-                Beranda
+            <a href="#" class="logo">
+                📚 Perpustakaan Digital
             </a>
 
-            <a href="#koleksi" class="nav-link">
-                Koleksi
-            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#beranda">Beranda</a>
+                <a href="#koleksi">Koleksi</a>
+                <a href="#kategori">Kategori</a>
+                <a href="#favorit">Favorit</a>
+                <a href="#riwayat">Riwayat</a>
+                <a href="#profil">Profil</a>
+            </nav>
 
-            <a href="#kategori" class="nav-link">
-                Kategori
-            </a>
-
-            <a href="#favorit" class="nav-link">
-                Favorit
-            </a>
-
-            <a href="#riwayat" class="nav-link">
-                Riwayat
-            </a>
-
-            <a href="#profil" class="nav-link">
-                Profil
-            </a>
-
-            <div class="nav-actions">
-
+            <div class="navbar-actions">
                 <button
-                    class="theme-btn"
-                    id="themeBtn"
                     type="button"
+                    class="theme-button"
+                    id="themeButton"
                     aria-label="Ubah tema"
                 >
-                    <i class="fa-solid fa-moon"></i>
+                    🌙
                 </button>
 
                 <button
-                    class="btn btn-primary btn-login"
-                    id="loginBtn"
                     type="button"
+                    class="login-button"
+                    id="loginButton"
                 >
-                    <i class="fa-solid fa-right-to-bracket"></i>
                     Login
                 </button>
 
                 <button
-                    class="profile-mini hidden"
-                    id="profileMiniBtn"
                     type="button"
-                    aria-label="Profil pengguna"
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Buka menu"
                 >
-                    <span id="miniAvatar">A</span>
+                    ☰
                 </button>
-
             </div>
 
         </div>
-
-    </nav>
-
-</header>
+    </header>
 
 
-<main>
+    <main>
 
-<!-- =========================================================
-     HERO
-========================================================= -->
-<section class="hero" id="home">
+        <!-- HERO -->
+        <section class="hero" id="beranda">
 
-    <div class="container hero-content">
+            <div class="container hero-content">
 
-        <div class="hero-text">
+                <div class="hero-text">
 
-            <span class="hero-badge">
-                <i class="fa-solid fa-book-open"></i>
-                Perpustakaan Digital Modern
-            </span>
+                    <span class="hero-label">
+                        📖 PERPUSTAKAAN DIGITAL
+                    </span>
 
-            <h1>
-                Temukan Dunia
-                <span>Melalui Buku</span>
-            </h1>
+                    <h1>
+                        Temukan Dunia
+                        <span>Melalui Buku</span>
+                    </h1>
 
-            <p>
-                Jelajahi ribuan koleksi buku digital, temukan bacaan
-                favorit Anda, dan baca kapan saja dari perangkat apa pun.
-            </p>
+                    <p>
+                        Jelajahi berbagai koleksi buku digital,
+                        temukan pengetahuan baru, dan baca kapan saja
+                        dari perangkat Anda.
+                    </p>
 
-            <form class="hero-search" id="heroSearchForm">
+                    <div class="search-box">
 
-                <i class="fa-solid fa-magnifying-glass"></i>
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Cari judul, penulis, atau kategori..."
+                            aria-label="Cari buku"
+                        >
 
-                <input
-                    type="search"
-                    id="heroSearchInput"
-                    placeholder="Cari judul buku, penulis, atau kategori..."
-                    autocomplete="off"
-                >
+                        <button
+                            type="button"
+                            id="searchButton"
+                        >
+                            🔍 Cari Buku
+                        </button>
 
-                <button
-                    type="submit"
-                    class="btn btn-primary"
-                >
-                    Cari Buku
-                </button>
+                    </div>
 
-            </form>
-
-            <div class="hero-stats">
-
-                <div class="stat-item">
-                    <strong>10.000+</strong>
-                    <span>Buku Digital</span>
                 </div>
 
-                <div class="stat-item">
-                    <strong>5.000+</strong>
-                    <span>Pengguna</span>
-                </div>
+                <div class="hero-illustration">
 
-                <div class="stat-item">
-                    <strong>25+</strong>
-                    <span>Kategori</span>
+                    <div class="book-illustration">
+                        📚
+                    </div>
+
+                    <div class="floating-card card-one">
+                        ⭐ 4.8 Rating
+                    </div>
+
+                    <div class="floating-card card-two">
+                        📖 10.000+ Buku
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
+        </section>
 
-        <div class="hero-visual">
 
-            <div class="book-scene">
+        <!-- STATISTIK -->
+        <section class="statistics">
 
-                <div class="floating-book book-one">
-                    <i class="fa-solid fa-book"></i>
+            <div class="container statistics-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div>
+                        <strong>10.000+</strong>
+                        <span>Buku</span>
+                    </div>
                 </div>
 
-                <div class="floating-book book-two">
-                    <i class="fa-solid fa-book-open"></i>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div>
+                        <strong>5.000+</strong>
+                        <span>Pengguna</span>
+                    </div>
                 </div>
 
-                <div class="floating-book book-three">
-                    <i class="fa-solid fa-bookmark"></i>
+                <div class="stat-card">
+                    <div class="stat-icon">🏷️</div>
+                    <div>
+                        <strong>25+</strong>
+                        <span>Kategori</span>
+                    </div>
                 </div>
 
-                <div class="main-book">
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div>
+                        <strong>4.8</strong>
+                        <span>Rating</span>
+                    </div>
+                </div>
 
-                    <div class="book-cover-design">
+            </div>
 
-                        <span>PERPUSTAKAAN</span>
+        </section>
 
-                        <strong>
-                            DIGITAL
-                        </strong>
 
-                        <i class="fa-solid fa-book-open"></i>
+        <!-- KOLEKSI -->
+        <section class="collection section" id="koleksi">
 
-                        <small>
-                            Membaca Tanpa Batas
-                        </small>
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+                        <span class="section-label">
+                            KOLEKSI
+                        </span>
+
+                        <h2>
+                            Buku Pilihan
+                        </h2>
+
+                        <p>
+                            Temukan buku yang sesuai dengan minat Anda.
+                        </p>
+                    </div>
+
+                    <div class="sorting">
+
+                        <label for="sortSelect">
+                            Urutkan:
+                        </label>
+
+                        <select id="sortSelect">
+
+                            <option value="newest">
+                                Terbaru
+                            </option>
+
+                            <option value="rating">
+                                Rating Tertinggi
+                            </option>
+
+                            <option value="title">
+                                Judul A-Z
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- KATEGORI -->
+                <div
+                    class="category-filter"
+                    id="kategori"
+                >
+
+                    <button
+                        class="category-button active"
+                        data-category="Semua"
+                    >
+                        Semua
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Fiksi"
+                    >
+                        Fiksi
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Teknologi"
+                    >
+                        Teknologi
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Pendidikan"
+                    >
+                        Pendidikan
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Sejarah"
+                    >
+                        Sejarah
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Sains"
+                    >
+                        Sains
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Bisnis"
+                    >
+                        Bisnis
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Novel"
+                    >
+                        Novel
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Anak-anak"
+                    >
+                        Anak-anak
+                    </button>
+
+                </div>
+
+
+                <!-- BOOK LIST -->
+                <div
+                    class="book-grid"
+                    id="bookGrid"
+                >
+                    <!-- Buku akan dibuat oleh JavaScript -->
+                </div>
+
+
+                <!-- EMPTY STATE -->
+                <div
+                    class="empty-state hidden"
+                    id="emptyState"
+                >
+                    <div>📚</div>
+
+                    <h3>
+                        Tidak ada buku yang ditemukan
+                    </h3>
+
+                    <p>
+                        Coba gunakan kata kunci atau kategori lain.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FAVORIT -->
+        <section
+            class="section alternate-section"
+            id="favorit"
+        >
+
+            <div class="container">
+
+                <div class="section-header">
+                    <div>
+
+                        <span class="section-label">
+                            FAVORIT
+                        </span>
+
+                        <h2>
+                            Buku Favorit Saya
+                        </h2>
+
+                        <p>
+                            Buku yang Anda simpan sebagai favorit.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div
+                    class="book-grid"
+                    id="favoriteGrid"
+                >
+                </div>
+
+                <div
+                    class="empty-state"
+                    id="favoriteEmpty"
+                >
+                    <div>❤️</div>
+
+                    <h3>
+                        Belum ada buku favorit
+                    </h3>
+
+                    <p>
+                        Klik ikon hati pada buku untuk menambahkannya
+                        ke favorit.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIWAYAT -->
+        <section
+            class="section"
+            id="riwayat"
+        >
+
+            <div class="container">
+
+                <div class="section-header">
+                    <div>
+
+                        <span class="section-label">
+                            RIWAYAT
+                        </span>
+
+                        <h2>
+                            Riwayat Bacaan
+                        </h2>
+
+                        <p>
+                            Lanjutkan buku yang pernah Anda baca.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div
+                    class="history-list"
+                    id="historyList"
+                >
+                </div>
+
+                <div
+                    class="empty-state"
+                    id="historyEmpty"
+                >
+                    <div>📖</div>
+
+                    <h3>
+                        Belum ada riwayat bacaan
+                    </h3>
+
+                    <p>
+                        Buku yang Anda baca akan muncul di sini.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROFIL -->
+        <section
+            class="section alternate-section"
+            id="profil"
+        >
+
+            <div class="container">
+
+                <div class="profile-card">
+
+                    <div class="profile-avatar">
+                        👤
+                    </div>
+
+                    <div class="profile-information">
+
+                        <span class="section-label">
+                            PROFIL
+                        </span>
+
+                        <h2 id="profileName">
+                            Pengguna
+                        </h2>
+
+                        <p id="profileEmail">
+                            pengguna@example.com
+                        </p>
+
+                        <div class="profile-stats">
+
+                            <div>
+                                <strong id="profileFavoriteCount">
+                                    0
+                                </strong>
+                                <span>Favorit</span>
+                            </div>
+
+                            <div>
+                                <strong id="profileHistoryCount">
+                                    0
+                                </strong>
+                                <span>Dibaca</span>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            id="editProfileButton"
+                        >
+                            Edit Profil
+                        </button>
 
                     </div>
 
@@ -219,878 +490,173 @@
 
             </div>
 
-        </div>
+        </section>
 
-    </div>
-
-</section>
+    </main>
 
 
-<!-- =========================================================
-     KOLEKSI
-========================================================= -->
-<section class="section" id="koleksi">
+    <!-- FOOTER -->
+    <footer class="footer">
 
-    <div class="container">
-
-        <div class="section-heading">
+        <div class="container footer-content">
 
             <div>
-                <span class="section-label">
-                    KOLEKSI
-                </span>
-
-                <h2>
-                    Buku Pilihan Untuk Anda
-                </h2>
-
-                <p id="searchResultInfo">
-                    Jelajahi koleksi buku digital kami.
-                </p>
-            </div>
-
-            <div class="collection-controls">
-
-                <select
-                    id="categoryFilter"
-                    aria-label="Filter kategori"
-                >
-                    <option value="Semua">Semua Kategori</option>
-                    <option value="Fiksi">Fiksi</option>
-                    <option value="Teknologi">Teknologi</option>
-                    <option value="Pendidikan">Pendidikan</option>
-                    <option value="Sejarah">Sejarah</option>
-                    <option value="Sains">Sains</option>
-                    <option value="Bisnis">Bisnis</option>
-                    <option value="Novel">Novel</option>
-                    <option value="Anak-anak">Anak-anak</option>
-                </select>
-
-                <select
-                    id="sortSelect"
-                    aria-label="Urutkan buku"
-                >
-                    <option value="latest">
-                        Terbaru
-                    </option>
-
-                    <option value="rating">
-                        Rating Tertinggi
-                    </option>
-
-                    <option value="title">
-                        Judul A-Z
-                    </option>
-                </select>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="category-list"
-            id="kategori"
-        >
-
-            <button
-                class="category-chip active"
-                data-category="Semua"
-                type="button"
-            >
-                Semua
-            </button>
-
-            <button
-                class="category-chip"
-                data-category="Fiksi"
-                type="button"
-            >
-                Fiksi
-            </button>
-
-            <button
-                class="category-chip"
-                data-category="Teknologi"
-                type="button"
-            >
-                Teknologi
-            </button>
-
-            <button
-                class="category-chip"
-                data-category="Pendidikan"
-                type="button"
-            >
-                Pendidikan
-            </button>
-
-            <button
-                class="category-chip"
-                data-category="Sejarah"
-                type="button"
-            >
-                Sejarah
-            </button>
-
-            <button
-                class="category-chip"
-                data-category="Sains"
-                type="button"
-            >
-                Sains
-            </button>
-
-            <button
-                class="category-chip"
-                data-category="Bisnis"
-                type="button"
-            >
-                Bisnis
-            </button>
-
-            <button
-                class="category-chip"
-                data-category="Novel"
-                type="button"
-            >
-                Novel
-            </button>
-
-            <button
-                class="category-chip"
-                data-category="Anak-anak"
-                type="button"
-            >
-                Anak-anak
-            </button>
-
-        </div>
-
-
-        <div
-            class="books-grid"
-            id="booksGrid"
-        ></div>
-
-
-        <div
-            class="empty-state hidden"
-            id="booksEmpty"
-        >
-            <div class="empty-icon">
-                <i class="fa-solid fa-book-open"></i>
-            </div>
-
-            <h3>Tidak ada buku yang ditemukan</h3>
-
-            <p>
-                Coba gunakan kata kunci atau kategori lainnya.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     FAVORIT
-========================================================= -->
-<section class="section section-alt" id="favorit">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div>
-                <span class="section-label">
-                    FAVORIT
-                </span>
-
-                <h2>
-                    Buku Favorit Anda
-                </h2>
+                <h3>
+                    📚 Perpustakaan Digital
+                </h3>
 
                 <p>
-                    Koleksi buku yang Anda simpan.
+                    Membuka akses pengetahuan untuk semua.
                 </p>
             </div>
 
+            <p>
+                © 2026 Perpustakaan Digital
+            </p>
+
         </div>
 
-        <div
-            class="books-grid"
-            id="favoriteGrid"
-        ></div>
+    </footer>
 
-        <div
-            class="empty-state"
-            id="favoriteEmpty"
-        >
-            <div class="empty-icon">
-                <i class="fa-regular fa-heart"></i>
+
+    <!-- MODAL DETAIL BUKU -->
+    <div
+        class="modal hidden"
+        id="bookModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalBookTitle"
+    >
+
+        <div class="modal-content">
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeBookModal"
+                aria-label="Tutup"
+            >
+                ×
+            </button>
+
+            <div id="bookModalContent">
             </div>
 
-            <h3>Belum ada buku favorit</h3>
-
-            <p>
-                Tekan ikon hati pada buku untuk menambahkannya ke favorit.
-            </p>
         </div>
 
     </div>
 
-</section>
 
+    <!-- MODAL LOGIN -->
+    <div
+        class="modal hidden"
+        id="loginModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="loginTitle"
+    >
 
-<!-- =========================================================
-     RIWAYAT
-========================================================= -->
-<section class="section" id="riwayat">
+        <div class="modal-content auth-modal">
 
-    <div class="container">
+            <button
+                type="button"
+                class="modal-close"
+                id="closeLoginModal"
+                aria-label="Tutup"
+            >
+                ×
+            </button>
 
-        <div class="section-heading">
-
-            <div>
-                <span class="section-label">
-                    RIWAYAT
-                </span>
-
-                <h2>
-                    Lanjutkan Bacaan
-                </h2>
-
-                <p>
-                    Buku yang terakhir Anda baca.
-                </p>
-            </div>
-
-        </div>
-
-        <div
-            class="history-list"
-            id="historyGrid"
-        ></div>
-
-        <div
-            class="empty-state"
-            id="historyEmpty"
-        >
-            <div class="empty-icon">
-                <i class="fa-solid fa-clock-rotate-left"></i>
-            </div>
-
-            <h3>Belum ada riwayat bacaan</h3>
+            <h2 id="loginTitle">
+                Login
+            </h2>
 
             <p>
-                Buku yang Anda baca akan muncul di sini.
+                Masuk ke akun perpustakaan Anda.
             </p>
-        </div>
 
-    </div>
+            <form id="loginForm">
 
-</section>
+                <div class="form-group">
 
+                    <label for="loginEmail">
+                        Email
+                    </label>
 
-<!-- =========================================================
-     PROFIL
-========================================================= -->
-<section class="section section-alt" id="profil">
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        required
+                    >
 
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div>
-                <span class="section-label">
-                    PROFIL
-                </span>
-
-                <h2>
-                    Profil Pengguna
-                </h2>
-
-                <p>
-                    Kelola informasi akun dan aktivitas membaca Anda.
-                </p>
-            </div>
-
-        </div>
-
-
-        <div class="profile-card">
-
-            <div class="profile-header">
-
-                <div
-                    class="profile-avatar"
-                    id="profileAvatar"
-                >
-                    A
                 </div>
 
-                <div class="profile-info">
+                <div class="form-group">
 
-                    <h3 id="profileName">
-                        Pengunjung
-                    </h3>
+                    <label for="loginPassword">
+                        Password
+                    </label>
 
-                    <p id="profileEmail">
-                        Belum login
-                    </p>
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        required
+                        minlength="6"
+                    >
 
                 </div>
 
                 <button
-                    class="btn btn-outline"
-                    id="editProfileBtn"
-                    type="button"
+                    type="submit"
+                    class="primary-button full-width"
                 >
-                    <i class="fa-solid fa-pen"></i>
-                    Edit Profil
+                    Login
                 </button>
 
-            </div>
+            </form>
 
+            <p class="auth-switch">
 
-            <div class="profile-stat-grid">
+                Belum memiliki akun?
 
-                <div class="profile-stat">
-                    <i class="fa-regular fa-heart"></i>
-                    <strong id="profileFavoriteCount">0</strong>
-                    <span>Buku Favorit</span>
-                </div>
+                <button
+                    type="button"
+                    id="showRegisterButton"
+                >
+                    Daftar
+                </button>
 
-                <div class="profile-stat">
-                    <i class="fa-solid fa-book-open"></i>
-                    <strong id="profileReadCount">0</strong>
-                    <span>Buku Dibaca</span>
-                </div>
-
-                <div class="profile-stat">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <strong id="profileProgress">0%</strong>
-                    <span>Progress</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-<footer class="footer">
-
-    <div class="container footer-content">
-
-        <div class="footer-brand">
-
-            <a href="#home" class="logo">
-                <span class="logo-icon">
-                    <i class="fa-solid fa-book-open"></i>
-                </span>
-
-                <span>
-                    Perpustakaan<span class="logo-highlight">Digital</span>
-                </span>
-            </a>
-
-            <p>
-                Membuka akses pengetahuan untuk semua orang,
-                kapan saja dan di mana saja.
             </p>
 
         </div>
 
-        <div class="footer-links">
-
-            <a href="#home">Beranda</a>
-            <a href="#koleksi">Koleksi</a>
-            <a href="#favorit">Favorit</a>
-            <a href="#riwayat">Riwayat</a>
-
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-
-        <p>
-            &copy; 2026 Perpustakaan Digital.
-            Semua hak dilindungi.
-        </p>
-
-    </div>
-
-</footer>
-
-
-<!-- =========================================================
-     BOOK DETAIL MODAL
-========================================================= -->
-<div
-    class="modal hidden"
-    id="bookModal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modalBookTitle"
->
-
-    <div class="modal-content book-modal">
-
-        <button
-            class="modal-close"
-            data-close-modal
-            type="button"
-            aria-label="Tutup"
-        >
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-
-        <div id="bookModalContent"></div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     READER
-========================================================= -->
-<div
-    class="reader hidden"
-    id="reader"
->
-
-    <div class="reader-header">
-
-        <div class="reader-book-info">
-
-            <button
-                id="closeReaderBtn"
-                class="reader-close"
-                type="button"
-                aria-label="Keluar dari pembaca"
-            >
-                <i class="fa-solid fa-arrow-left"></i>
-            </button>
-
-            <div>
-                <h2 id="readerTitle">
-                    Judul Buku
-                </h2>
-
-                <p id="readerAuthor">
-                    Penulis
-                </p>
-            </div>
-
-        </div>
-
-        <button
-            id="readerFavoriteBtn"
-            class="icon-btn"
-            type="button"
-            aria-label="Tambah favorit"
-        >
-            <i class="fa-regular fa-heart"></i>
-        </button>
-
     </div>
 
 
-    <div class="reader-progress">
-
-        <div class="progress-track">
-            <div
-                class="progress-bar"
-                id="readerProgressBar"
-            ></div>
-        </div>
-
-        <span id="readerProgressText">
-            0%
-        </span>
-
+    <!-- TOAST -->
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+        Berhasil!
     </div>
 
 
-    <div class="reader-body">
-
-        <article class="reader-page">
-
-            <div class="reader-page-number">
-                Halaman <span id="currentPage">1</span>
-            </div>
-
-            <div
-                class="reader-text"
-                id="readerText"
-            ></div>
-
-        </article>
-
-    </div>
-
-
-    <div class="reader-footer">
-
-        <button
-            class="btn btn-outline"
-            id="prevPageBtn"
-            type="button"
-        >
-            <i class="fa-solid fa-arrow-left"></i>
-            Sebelumnya
-        </button>
-
-        <span id="pageIndicator">
-            1 / 1
-        </span>
-
-        <button
-            class="btn btn-primary"
-            id="nextPageBtn"
-            type="button"
-        >
-            Berikutnya
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     AUTH MODAL
-========================================================= -->
-<div
-    class="modal hidden"
-    id="authModal"
-    role="dialog"
-    aria-modal="true"
->
-
-    <div class="modal-content auth-modal">
-
-        <button
-            class="modal-close"
-            id="closeAuthBtn"
-            type="button"
-            aria-label="Tutup"
-        >
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-
-
-        <div class="auth-tabs">
-
-            <button
-                class="auth-tab active"
-                data-auth-tab="login"
-                type="button"
-            >
-                Login
-            </button>
-
-            <button
-                class="auth-tab"
-                data-auth-tab="register"
-                type="button"
-            >
-                Daftar
-            </button>
-
-        </div>
-
-
-        <!-- LOGIN -->
-
-        <form
-            id="loginForm"
-            class="auth-form"
-        >
-
-            <div class="auth-heading">
-
-                <h2>
-                    Selamat Datang
-                </h2>
-
-                <p>
-                    Login untuk melanjutkan membaca.
-                </p>
-
-            </div>
-
-            <div class="form-group">
-
-                <label for="loginEmail">
-                    Email
-                </label>
-
-                <input
-                    type="email"
-                    id="loginEmail"
-                    required
-                    autocomplete="email"
-                    placeholder="nama@email.com"
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="loginPassword">
-                    Password
-                </label>
-
-                <input
-                    type="password"
-                    id="loginPassword"
-                    required
-                    autocomplete="current-password"
-                    placeholder="Masukkan password"
-                >
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="btn btn-primary btn-full"
-            >
-                Login
-            </button>
-
-        </form>
-
-
-        <!-- REGISTER -->
-
-        <form
-            id="registerForm"
-            class="auth-form hidden"
-        >
-
-            <div class="auth-heading">
-
-                <h2>
-                    Buat Akun
-                </h2>
-
-                <p>
-                    Daftar untuk mendapatkan pengalaman membaca yang lebih baik.
-                </p>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="registerName">
-                    Nama
-                </label>
-
-                <input
-                    type="text"
-                    id="registerName"
-                    required
-                    autocomplete="name"
-                    placeholder="Nama lengkap"
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="registerEmail">
-                    Email
-                </label>
-
-                <input
-                    type="email"
-                    id="registerEmail"
-                    required
-                    autocomplete="email"
-                    placeholder="nama@email.com"
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="registerPassword">
-                    Password
-                </label>
-
-                <input
-                    type="password"
-                    id="registerPassword"
-                    required
-                    minlength="6"
-                    autocomplete="new-password"
-                    placeholder="Minimal 6 karakter"
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="registerConfirmPassword">
-                    Konfirmasi Password
-                </label>
-
-                <input
-                    type="password"
-                    id="registerConfirmPassword"
-                    required
-                    minlength="6"
-                    autocomplete="new-password"
-                    placeholder="Ulangi password"
-                >
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="btn btn-primary btn-full"
-            >
-                Daftar
-            </button>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     PROFILE MODAL
-========================================================= -->
-<div
-    class="modal hidden"
-    id="profileModal"
-    role="dialog"
-    aria-modal="true"
->
-
-    <div class="modal-content">
-
-        <button
-            class="modal-close"
-            id="closeProfileBtn"
-            type="button"
-            aria-label="Tutup"
-        >
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-
-        <div class="auth-heading">
-
-            <h2>
-                Edit Profil
-            </h2>
-
-            <p>
-                Perbarui informasi profil Anda.
-            </p>
-
-        </div>
-
-        <form id="profileForm">
-
-            <div class="form-group">
-
-                <label for="profileEditName">
-                    Nama
-                </label>
-
-                <input
-                    type="text"
-                    id="profileEditName"
-                    required
-                >
-
-            </div>
-
-            <div class="form-group">
-
-                <label for="profileEditEmail">
-                    Email
-                </label>
-
-                <input
-                    type="email"
-                    id="profileEditEmail"
-                    required
-                >
-
-            </div>
-
-            <button
-                class="btn btn-primary btn-full"
-                type="submit"
-            >
-                Simpan Perubahan
-            </button>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     TOAST
-========================================================= -->
-<div
-    class="toast"
-    id="toast"
-    role="status"
-    aria-live="polite"
->
-
-    <i class="fa-solid fa-circle-check"></i>
-
-    <span id="toastMessage">
-        Berhasil
-    </span>
-
-</div>
-
-
-<!-- BACK TO TOP -->
-<button
-    class="back-to-top"
-    id="backToTop"
-    type="button"
-    aria-label="Kembali ke atas"
->
-    <i class="fa-solid fa-arrow-up"></i>
-</button>
-
-
-<!-- JAVASCRIPT -->
-<script src="script.js"></script>
+    <!-- BACK TO TOP -->
+    <button
+        type="button"
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Kembali ke atas"
+    >
+        ↑
+    </button>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="./script.js"></script>
 
 </body>
 </html>
