@@ -1,772 +1,1411 @@
 /* =====================================================
-   RESET
+   DATA BUKU
 ===================================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+const books = [
+    {
+        id: 1,
+        title: "Belajar JavaScript Modern",
+        author: "Andi Pratama",
+        category: "Teknologi",
+        year: 2025,
+        rating: 4.8,
+        description:
+            "Panduan lengkap untuk memahami JavaScript modern dari dasar hingga tingkat lanjut.",
+        available: true
+    },
 
-html {
-    scroll-behavior: smooth;
-}
+    {
+        id: 2,
+        title: "Pemrograman Web untuk Pemula",
+        author: "Budi Santoso",
+        category: "Teknologi",
+        year: 2024,
+        rating: 4.7,
+        description:
+            "Belajar HTML, CSS, dan JavaScript dengan pendekatan praktis.",
+        available: true
+    },
 
-body {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    {
+        id: 3,
+        title: "Sejarah Indonesia",
+        author: "Dewi Lestari",
+        category: "Sejarah",
+        year: 2023,
+        rating: 4.6,
+        description:
+            "Mengenal perjalanan panjang sejarah Indonesia dari masa ke masa.",
+        available: true
+    },
 
-    background: #f5f7fb;
-    color: #172033;
-    line-height: 1.6;
-}
+    {
+        id: 4,
+        title: "Pengantar Ilmu Sains",
+        author: "Rina Wijaya",
+        category: "Sains",
+        year: 2024,
+        rating: 4.5,
+        description:
+            "Pengenalan konsep dasar sains dengan bahasa yang mudah dipahami.",
+        available: true
+    },
 
-body.dark {
-    background: #101522;
-    color: #f1f5f9;
-}
+    {
+        id: 5,
+        title: "Strategi Bisnis Digital",
+        author: "Fajar Nugroho",
+        category: "Bisnis",
+        year: 2025,
+        rating: 4.9,
+        description:
+            "Strategi membangun dan mengembangkan bisnis di era digital.",
+        available: true
+    },
 
-button,
-input,
-select {
-    font: inherit;
-}
+    {
+        id: 6,
+        title: "Membangun Kebiasaan Baik",
+        author: "Sinta Maharani",
+        category: "Pendidikan",
+        year: 2022,
+        rating: 4.4,
+        description:
+            "Buku tentang membangun kebiasaan positif untuk kehidupan sehari-hari.",
+        available: true
+    },
 
-button {
-    cursor: pointer;
-}
+    {
+        id: 7,
+        title: "Petualangan di Negeri Awan",
+        author: "Maya Putri",
+        category: "Anak-anak",
+        year: 2024,
+        rating: 4.8,
+        description:
+            "Cerita petualangan penuh imajinasi untuk pembaca muda.",
+        available: true
+    },
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+    {
+        id: 8,
+        title: "Langit Senja",
+        author: "Arif Rahman",
+        category: "Novel",
+        year: 2021,
+        rating: 4.7,
+        description:
+            "Novel tentang persahabatan, keluarga, dan perjalanan menemukan diri sendiri.",
+        available: true
+    },
 
-img {
-    max-width: 100%;
-    display: block;
+    {
+        id: 9,
+        title: "Rahasia Kota Tua",
+        author: "Nadia Permata",
+        category: "Fiksi",
+        year: 2023,
+        rating: 4.5,
+        description:
+            "Kisah misteri yang terjadi di sebuah kota tua penuh rahasia.",
+        available: true
+    },
+
+    {
+        id: 10,
+        title: "Dasar-Dasar Kecerdasan Buatan",
+        author: "Rizky Hidayat",
+        category: "Teknologi",
+        year: 2025,
+        rating: 4.9,
+        description:
+            "Mengenal konsep dasar artificial intelligence dan penerapannya.",
+        available: true
+    },
+
+    {
+        id: 11,
+        title: "Matematika Menyenangkan",
+        author: "Tina Sari",
+        category: "Pendidikan",
+        year: 2023,
+        rating: 4.3,
+        description:
+            "Belajar matematika melalui contoh dan latihan yang menyenangkan.",
+        available: true
+    },
+
+    {
+        id: 12,
+        title: "Dunia Hewan",
+        author: "Agus Setiawan",
+        category: "Sains",
+        year: 2024,
+        rating: 4.6,
+        description:
+            "Mengenal berbagai jenis hewan dan kehidupan mereka di alam.",
+        available: true
+    }
+];
+
+
+/* =====================================================
+   STATE
+===================================================== */
+
+let currentCategory = "Semua";
+
+let currentSearch = "";
+
+let currentSort = "newest";
+
+let favorites =
+    JSON.parse(
+        localStorage.getItem("favorites")
+    ) || [];
+
+let history =
+    JSON.parse(
+        localStorage.getItem("readingHistory")
+    ) || [];
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const bookGrid =
+    document.getElementById("bookGrid");
+
+const favoriteGrid =
+    document.getElementById("favoriteGrid");
+
+const favoriteEmpty =
+    document.getElementById("favoriteEmpty");
+
+const historyList =
+    document.getElementById("historyList");
+
+const historyEmpty =
+    document.getElementById("historyEmpty");
+
+const emptyState =
+    document.getElementById("emptyState");
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const searchButton =
+    document.getElementById("searchButton");
+
+const sortSelect =
+    document.getElementById("sortSelect");
+
+const categoryButtons =
+    document.querySelectorAll(
+        ".category-button"
+    );
+
+const bookModal =
+    document.getElementById("bookModal");
+
+const bookModalContent =
+    document.getElementById(
+        "bookModalContent"
+    );
+
+const closeBookModal =
+    document.getElementById(
+        "closeBookModal"
+    );
+
+const loginModal =
+    document.getElementById("loginModal");
+
+const loginButton =
+    document.getElementById("loginButton");
+
+const closeLoginModal =
+    document.getElementById(
+        "closeLoginModal"
+    );
+
+const loginForm =
+    document.getElementById("loginForm");
+
+const toast =
+    document.getElementById("toast");
+
+const themeButton =
+    document.getElementById("themeButton");
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const navMenu =
+    document.getElementById("navMenu");
+
+const backToTop =
+    document.getElementById("backToTop");
+
+const profileFavoriteCount =
+    document.getElementById(
+        "profileFavoriteCount"
+    );
+
+const profileHistoryCount =
+    document.getElementById(
+        "profileHistoryCount"
+    );
+
+
+/* =====================================================
+   INITIALIZATION
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        loadTheme();
+
+        renderBooks();
+
+        renderFavorites();
+
+        renderHistory();
+
+        updateProfileStats();
+
+        setupEvents();
+
+    }
+);
+
+
+/* =====================================================
+   EVENTS
+===================================================== */
+
+function setupEvents() {
+
+    searchInput.addEventListener(
+        "input",
+        function () {
+
+            currentSearch =
+                this.value
+                    .trim()
+                    .toLowerCase();
+
+            renderBooks();
+
+        }
+    );
+
+
+    searchButton.addEventListener(
+        "click",
+        function () {
+
+            currentSearch =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
+
+            renderBooks();
+
+            document
+                .getElementById("koleksi")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+    );
+
+
+    sortSelect.addEventListener(
+        "change",
+        function () {
+
+            currentSort =
+                this.value;
+
+            renderBooks();
+
+        }
+    );
+
+
+    categoryButtons.forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    categoryButtons.forEach(
+                        function (item) {
+                            item.classList.remove(
+                                "active"
+                            );
+                        }
+                    );
+
+                    this.classList.add(
+                        "active"
+                    );
+
+                    currentCategory =
+                        this.dataset.category;
+
+                    renderBooks();
+
+                }
+            );
+
+        }
+    );
+
+
+    closeBookModal.addEventListener(
+        "click",
+        closeModal
+    );
+
+
+    bookModal.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target ===
+                bookModal
+            ) {
+                closeModal();
+            }
+
+        }
+    );
+
+
+    loginButton.addEventListener(
+        "click",
+        openLogin
+    );
+
+
+    closeLoginModal.addEventListener(
+        "click",
+        closeLogin
+    );
+
+
+    loginModal.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target ===
+                loginModal
+            ) {
+                closeLogin();
+            }
+
+        }
+    );
+
+
+    loginForm.addEventListener(
+        "submit",
+        handleLogin
+    );
+
+
+    themeButton.addEventListener(
+        "click",
+        toggleDarkMode
+    );
+
+
+    menuButton.addEventListener(
+        "click",
+        function () {
+
+            navMenu.classList.toggle(
+                "open"
+            );
+
+        }
+    );
+
+
+    backToTop.addEventListener(
+        "click",
+        function () {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+    );
+
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            if (window.scrollY > 400) {
+
+                backToTop.classList.add(
+                    "show"
+                );
+
+            } else {
+
+                backToTop.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeModal();
+
+                closeLogin();
+
+            }
+
+        }
+    );
+
 }
 
 
 /* =====================================================
-   VARIABLES
+   FILTER + SEARCH + SORT
 ===================================================== */
 
-:root {
+function getFilteredBooks() {
 
-    --primary: #4f46e5;
-    --primary-dark: #3730a3;
-    --primary-light: #eef2ff;
+    let result =
+        [...books];
 
-    --text: #172033;
-    --muted: #64748b;
 
-    --background: #f5f7fb;
-    --surface: #ffffff;
+    if (
+        currentCategory !==
+        "Semua"
+    ) {
 
-    --border: #e2e8f0;
+        result =
+            result.filter(
+                function (book) {
 
-    --success: #16a34a;
-    --danger: #dc2626;
+                    return (
+                        book.category ===
+                        currentCategory
+                    );
 
-    --shadow:
-        0 10px 30px rgba(15, 23, 42, 0.08);
+                }
+            );
 
-    --radius: 18px;
-}
-
-
-/* =====================================================
-   CONTAINER
-===================================================== */
-
-.container {
-    width: min(1180px, calc(100% - 40px));
-    margin: 0 auto;
-}
-
-
-/* =====================================================
-   NAVBAR
-===================================================== */
-
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid var(--border);
-
-    backdrop-filter: blur(10px);
-}
-
-.dark .navbar {
-    background: rgba(16, 21, 34, 0.95);
-    border-color: #273247;
-}
-
-.navbar-content {
-    min-height: 72px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 20px;
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: 800;
-
-    color: var(--primary);
-
-    white-space: nowrap;
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.nav-menu a {
-    color: var(--muted);
-    font-size: 14px;
-    font-weight: 600;
-
-    transition: 0.2s;
-}
-
-.nav-menu a:hover {
-    color: var(--primary);
-}
-
-.navbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.theme-button,
-.menu-button {
-    width: 42px;
-    height: 42px;
-
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
-    background: var(--surface);
-
-    display: grid;
-    place-items: center;
-}
-
-.login-button,
-.primary-button {
-    border: none;
-    border-radius: 10px;
-
-    background: var(--primary);
-    color: white;
-
-    padding: 11px 18px;
-
-    font-weight: 700;
-
-    transition: 0.2s;
-}
-
-.login-button:hover,
-.primary-button:hover {
-    background: var(--primary-dark);
-    transform: translateY(-1px);
-}
-
-.menu-button {
-    display: none;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero {
-    padding: 80px 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef2ff 0%,
-            #ffffff 55%,
-            #e0e7ff 100%
-        );
-}
-
-.dark .hero {
-    background:
-        linear-gradient(
-            135deg,
-            #111827,
-            #182033
-        );
-}
-
-.hero-content {
-    min-height: 430px;
-
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-
-    align-items: center;
-
-    gap: 60px;
-}
-
-.hero-label,
-.section-label {
-    display: inline-block;
-
-    color: var(--primary);
-
-    font-size: 13px;
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 12px;
-}
-
-.hero h1 {
-    max-width: 700px;
-
-    font-size: clamp(40px, 6vw, 68px);
-
-    line-height: 1.05;
-
-    margin-bottom: 24px;
-}
-
-.hero h1 span {
-    color: var(--primary);
-}
-
-.hero-text > p {
-    max-width: 650px;
-
-    color: var(--muted);
-
-    font-size: 18px;
-
-    margin-bottom: 30px;
-}
-
-.search-box {
-    max-width: 680px;
-
-    display: flex;
-
-    background: white;
-
-    padding: 8px;
-
-    border-radius: 14px;
-
-    box-shadow: var(--shadow);
-}
-
-.dark .search-box {
-    background: #1b2435;
-}
-
-.search-box input {
-    flex: 1;
-
-    min-width: 0;
-
-    border: none;
-    outline: none;
-
-    background: transparent;
-
-    padding: 14px 16px;
-
-    color: inherit;
-}
-
-.search-box button {
-    border: none;
-
-    border-radius: 10px;
-
-    padding: 0 22px;
-
-    background: var(--primary);
-    color: white;
-
-    font-weight: 700;
-}
-
-.hero-illustration {
-    min-height: 350px;
-
-    position: relative;
-
-    display: grid;
-    place-items: center;
-}
-
-.book-illustration {
-    width: 240px;
-    height: 240px;
-
-    border-radius: 40px;
-
-    background: white;
-
-    box-shadow:
-        0 25px 70px rgba(79, 70, 229, 0.25);
-
-    display: grid;
-    place-items: center;
-
-    font-size: 100px;
-
-    transform: rotate(-5deg);
-}
-
-.dark .book-illustration {
-    background: #1e293b;
-}
-
-.floating-card {
-    position: absolute;
-
-    background: white;
-
-    padding: 14px 18px;
-
-    border-radius: 12px;
-
-    box-shadow: var(--shadow);
-
-    font-weight: 700;
-
-    animation: floating 3s ease-in-out infinite;
-}
-
-.dark .floating-card {
-    background: #1e293b;
-}
-
-.card-one {
-    top: 35px;
-    right: 20px;
-}
-
-.card-two {
-    bottom: 40px;
-    left: 10px;
-}
-
-@keyframes floating {
-
-    0%,
-    100% {
-        transform: translateY(0);
     }
 
-    50% {
-        transform: translateY(-8px);
-    }
-}
 
+    if (currentSearch) {
 
-/* =====================================================
-   STATISTICS
-===================================================== */
+        result =
+            result.filter(
+                function (book) {
 
-.statistics {
-    margin-top: -35px;
-    position: relative;
-    z-index: 2;
-}
+                    const text =
+                        (
+                            book.title +
+                            " " +
+                            book.author +
+                            " " +
+                            book.category
+                        ).toLowerCase();
 
-.statistics-grid {
-    display: grid;
+                    return text.includes(
+                        currentSearch
+                    );
 
-    grid-template-columns:
-        repeat(4, 1fr);
+                }
+            );
 
-    gap: 16px;
-}
-
-.stat-card {
-    background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    padding: 22px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 16px;
-
-    box-shadow: var(--shadow);
-}
-
-.dark .stat-card {
-    background: #182033;
-}
-
-.stat-icon {
-    width: 50px;
-    height: 50px;
-
-    border-radius: 14px;
-
-    background: var(--primary-light);
-
-    display: grid;
-    place-items: center;
-
-    font-size: 24px;
-}
-
-.stat-card strong {
-    display: block;
-
-    font-size: 20px;
-}
-
-.stat-card span {
-    color: var(--muted);
-
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   SECTION
-===================================================== */
-
-.section {
-    padding: 90px 0;
-}
-
-.alternate-section {
-    background: #eef2ff;
-}
-
-.dark .alternate-section {
-    background: #131b2b;
-}
-
-.section-header {
-    display: flex;
-
-    justify-content: space-between;
-    align-items: end;
-
-    gap: 30px;
-
-    margin-bottom: 30px;
-}
-
-.section-header h2 {
-    font-size: 36px;
-
-    margin-bottom: 8px;
-}
-
-.section-header p {
-    color: var(--muted);
-}
-
-.sorting {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.sorting label {
-    color: var(--muted);
-
-    font-size: 14px;
-}
-
-.sorting select {
-    padding: 10px 14px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 10px;
-
-    background: white;
-
-    color: inherit;
-
-    outline: none;
-}
-
-.dark .sorting select {
-    background: #1b2435;
-}
-
-
-/* =====================================================
-   CATEGORY
-===================================================== */
-
-.category-filter {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin-bottom: 30px;
-}
-
-.category-button {
-    border: 1px solid var(--border);
-
-    background: white;
-
-    color: var(--muted);
-
-    border-radius: 30px;
-
-    padding: 9px 16px;
-
-    font-weight: 600;
-
-    transition: 0.2s;
-}
-
-.dark .category-button {
-    background: #1b2435;
-}
-
-.category-button:hover,
-.category-button.active {
-    background: var(--primary);
-
-    color: white;
-
-    border-color: var(--primary);
-}
-
-
-/* =====================================================
-   BOOK GRID
-===================================================== */
-
-.book-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 22px;
-}
-
-.book-card {
-    overflow: hidden;
-
-    background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
-
-    transition: 0.25s;
-
-    animation: cardAppear 0.4s ease both;
-}
-
-.dark .book-card {
-    background: #182033;
-}
-
-.book-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow: var(--shadow);
-}
-
-@keyframes cardAppear {
-
-    from {
-        opacity: 0;
-        transform: translateY(10px);
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-.book-cover {
-    height: 230px;
+    if (
+        currentSort ===
+        "newest"
+    ) {
 
-    display: grid;
-    place-items: center;
+        result.sort(
+            function (a, b) {
 
-    background:
-        linear-gradient(
-            135deg,
-            #4f46e5,
-            #7c3aed
+                return (
+                    b.year -
+                    a.year
+                );
+
+            }
         );
 
-    color: white;
+    }
 
-    font-size: 70px;
-}
 
-.book-info {
-    padding: 18px;
-}
+    if (
+        currentSort ===
+        "rating"
+    ) {
 
-.book-title {
-    font-size: 18px;
-    font-weight: 800;
+        result.sort(
+            function (a, b) {
 
-    margin-bottom: 5px;
+                return (
+                    b.rating -
+                    a.rating
+                );
 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+            }
+        );
 
-    overflow: hidden;
-}
+    }
 
-.book-author {
-    color: var(--muted);
 
-    font-size: 14px;
+    if (
+        currentSort ===
+        "title"
+    ) {
 
-    margin-bottom: 10px;
-}
+        result.sort(
+            function (a, b) {
 
-.book-meta {
-    display: flex;
+                return a.title.localeCompare(
+                    b.title
+                );
 
-    align-items: center;
-    justify-content: space-between;
+            }
+        );
 
-    gap: 10px;
+    }
 
-    margin-bottom: 15px;
-}
 
-.book-category {
-    color: var(--primary);
+    return result;
 
-    font-size: 12px;
-
-    font-weight: 700;
-}
-
-.rating {
-    color: #f59e0b;
-
-    font-size: 13px;
-
-    font-weight: 700;
-}
-
-.book-actions {
-    display: grid;
-
-    grid-template-columns: 1fr auto auto;
-
-    gap: 7px;
-}
-
-.read-button,
-.detail-button,
-.favorite-button {
-    border: none;
-
-    border-radius: 9px;
-
-    min-height: 38px;
-}
-
-.read-button {
-    background: var(--primary);
-
-    color: white;
-
-    font-weight: 700;
-}
-
-.detail-button {
-    background: var(--primary-light);
-
-    color: var(--primary);
-
-    font-weight: 700;
-
-    padding: 0 12px;
-}
-
-.favorite-button {
-    width: 38px;
-
-    background: #fef2f2;
-
-    color: #ef4444;
-
-    font-size: 18px;
-}
-
-.favorite-button.active {
-    background: #fee2e2;
 }
 
 
 /* =====================================================
-   EMPTY STATE
+   RENDER BOOKS
 ===================================================== */
 
-.empty-state {
-    text-align: center;
+function renderBooks() {
 
-    padding: 60px 20px;
+    const filteredBooks =
+        getFilteredBooks();
 
-    color: var(--muted);
+
+    bookGrid.innerHTML = "";
+
+
+    if (
+        filteredBooks.length ===
+        0
+    ) {
+
+        emptyState.classList.remove(
+            "hidden"
+        );
+
+        return;
+
+    }
+
+
+    emptyState.classList.add(
+        "hidden"
+    );
+
+
+    filteredBooks.forEach(
+        function (book) {
+
+            const card =
+                createBookCard(book);
+
+            bookGrid.appendChild(
+                card
+            );
+
+        }
+    );
+
 }
 
-.empty-state > div {
-    font-size: 55px;
 
-    margin-bottom: 10px;
+/* =====================================================
+   CREATE BOOK CARD
+===================================================== */
+
+function createBookCard(book) {
+
+    const article =
+        document.createElement(
+            "article"
+        );
+
+    article.className =
+        "book-card";
+
+
+    const isFavorite =
+        favorites.includes(
+            book.id
+        );
+
+
+    article.innerHTML = `
+
+        <div class="book-cover">
+            📖
+        </div>
+
+        <div class="book-info">
+
+            <h3 class="book-title">
+                ${escapeHTML(book.title)}
+            </h3>
+
+            <p class="book-author">
+                ${escapeHTML(book.author)}
+            </p>
+
+            <div class="book-meta">
+
+                <span class="book-category">
+                    ${escapeHTML(book.category)}
+                </span>
+
+                <span class="rating">
+                    ⭐ ${book.rating}
+                </span>
+
+            </div>
+
+            <div class="book-actions">
+
+                <button
+                    type="button"
+                    class="read-button"
+                    data-action="read"
+                >
+                    Baca
+                </button>
+
+                <button
+                    type="button"
+                    class="detail-button"
+                    data-action="detail"
+                >
+                    Detail
+                </button>
+
+                <button
+                    type="button"
+                    class="favorite-button ${
+                        isFavorite
+                            ? "active"
+                            : ""
+                    }"
+                    data-action="favorite"
+                    aria-label="Favorit"
+                >
+                    ${
+                        isFavorite
+                            ? "♥"
+                            : "♡"
+                    }
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+
+    article
+        .querySelector(
+            '[data-action="read"]'
+        )
+        .addEventListener(
+            "click",
+            function () {
+
+                readBook(book.id);
+
+            }
+        );
+
+
+    article
+        .querySelector(
+            '[data-action="detail"]'
+        )
+        .addEventListener(
+            "click",
+            function () {
+
+                openBookDetail(
+                    book.id
+                );
+
+            }
+        );
+
+
+    article
+        .querySelector(
+            '[data-action="favorite"]'
+        )
+        .addEventListener(
+            "click",
+            function () {
+
+                toggleFavorite(
+                    book.id
+                );
+
+            }
+        );
+
+
+    return article;
+
 }
 
-.empty-state h3 {
-    color: var(--text);
 
-    margin-bottom: 5px;
+/* =====================================================
+   FAVORITE
+===================================================== */
+
+function toggleFavorite(bookId) {
+
+    const index =
+        favorites.indexOf(
+            bookId
+        );
+
+
+    if (index === -1) {
+
+        favorites.push(
+            bookId
+        );
+
+        showToast(
+            "❤️ Buku ditambahkan ke favorit"
+        );
+
+    } else {
+
+        favorites.splice(
+            index,
+            1
+        );
+
+        showToast(
+            "Buku dihapus dari favorit"
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(
+            favorites
+        )
+    );
+
+
+    renderBooks();
+
+    renderFavorites();
+
+    updateProfileStats();
+
 }
 
-.dark .empty-state h3 {
-    color: white;
+
+function renderFavorites() {
+
+    favoriteGrid.innerHTML = "";
+
+
+    const favoriteBooks =
+        books.filter(
+            function (book) {
+
+                return favorites.includes(
+                    book.id
+                );
+
+            }
+        );
+
+
+    if (
+        favoriteBooks.length ===
+        0
+    ) {
+
+        favoriteEmpty.classList.remove(
+            "hidden"
+        );
+
+        return;
+
+    }
+
+
+    favoriteEmpty.classList.add(
+        "hidden"
+    );
+
+
+    favoriteBooks.forEach(
+        function (book) {
+
+            favoriteGrid.appendChild(
+                createBookCard(book)
+            );
+
+        }
+    );
+
 }
 
-.hidden {
-    display: none !important;
+
+/* =====================================================
+   BOOK DETAIL
+===================================================== */
+
+function openBookDetail(bookId) {
+
+    const book =
+        books.find(
+            function (item) {
+
+                return item.id ===
+                    bookId;
+
+            }
+        );
+
+
+    if (!book) {
+        return;
+    }
+
+
+    bookModalContent.innerHTML = `
+
+        <div class="detail-layout">
+
+            <div class="detail-cover">
+                📖
+            </div>
+
+            <div class="detail-information">
+
+                <span class="section-label">
+                    ${escapeHTML(book.category)}
+                </span>
+
+                <h2 id="modalBookTitle">
+                    ${escapeHTML(book.title)}
+                </h2>
+
+                <p class="author">
+                    Oleh ${escapeHTML(book.author)}
+                </p>
+
+                <div class="detail-meta">
+
+                    <span>
+                        Tahun ${book.year}
+                    </span>
+
+                    <span>
+                        ⭐ ${book.rating}
+                    </span>
+
+                    <span>
+                        ${
+                            book.available
+                                ? "Tersedia"
+                                : "Tidak tersedia"
+                        }
+                    </span>
+
+                </div>
+
+                <p class="detail-description">
+                    ${escapeHTML(
+                        book.description
+                    )}
+                </p>
+
+                <div class="book-actions">
+
+                    <button
+                        type="button"
+                        class="read-button"
+                        id="modalReadButton"
+                    >
+                        📖 Baca Sekarang
+                    </button>
+
+                    <button
+                        type="button"
+                        class="detail-button"
+                        id="modalFavoriteButton"
+                    >
+                        ❤️ Favorit
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+
+    bookModal.classList.remove(
+        "hidden"
+    );
+
+
+    document
+        .getElementById(
+            "modalReadButton"
+        )
+        .addEventListener(
+            "click",
+            function () {
+
+                closeModal();
+
+                readBook(book.id);
+
+            }
+        );
+
+
+    document
+        .getElementById(
+            "modalFavoriteButton"
+        )
+        .addEventListener(
+            "click",
+            function () {
+
+                toggleFavorite(
+                    book.id
+                );
+
+            }
+        );
+
+}
+
+
+function closeModal() {
+
+    bookModal.classList.add(
+        "hidden"
+    );
+
+}
+
+
+/* =====================================================
+   READ BOOK
+===================================================== */
+
+function readBook(bookId) {
+
+    const book =
+        books.find(
+            function (item) {
+
+                return item.id ===
+                    bookId;
+
+            }
+        );
+
+
+    if (!book) {
+        return;
+    }
+
+
+    let readingData =
+        JSON.parse(
+            localStorage.getItem(
+                "readingProgress"
+            )
+        ) || {};
+
+
+    const currentPage =
+        readingData[bookId] || 1;
+
+
+    const pages = [
+
+        `Selamat datang di buku "${book.title}". Halaman ini berisi pengantar dan informasi awal mengenai buku.`,
+
+        `Pada halaman ini kita mulai membahas topik utama. Buku ini ditulis oleh ${book.author} dan termasuk kategori ${book.category}.`,
+
+        `Pembahasan selanjutnya memberikan wawasan yang lebih mendalam kepada pembaca. Gunakan tombol berikutnya untuk melanjutkan.`,
+
+        `Terima kasih telah membaca buku ini melalui Perpustakaan Digital. Semoga pengetahuan yang diperoleh bermanfaat.`
+
+    ];
+
+
+    let page =
+        Math.min(
+            currentPage,
+            pages.length
+        );
+
+
+    const reader =
+        document.createElement(
+            "div"
+        );
+
+    reader.className =
+        "modal";
+
+
+    reader.innerHTML = `
+
+        <div class="modal-content">
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeReader"
+                aria-label="Tutup reader"
+            >
+                ×
+            </button>
+
+            <span class="section-label">
+                DIGITAL READER
+            </span>
+
+            <h2>
+                ${escapeHTML(book.title)}
+            </h2>
+
+            <p>
+                ${escapeHTML(book.author)}
+            </p>
+
+            <div
+                id="readerText"
+                style="
+                    margin-top:25px;
+                    padding:25px;
+                    min-height:250px;
+                    border-radius:15px;
+                    background:var(--primary-light);
+                    line-height:2;
+                    font-size:18px;
+                "
+            >
+            </div>
+
+            <div
+                class="progress"
+                style="margin-top:20px;"
+            >
+                <div
+                    class="progress-bar"
+                    id="readerProgress"
+                ></div>
+            </div>
+
+            <div
+                style="
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    gap:10px;
+                    margin-top:20px;
+                "
+            >
+
+                <button
+                    type="button"
+                    class="detail-button"
+                    id="previousPage"
+                >
+                    ← Sebelumnya
+                </button>
+
+                <strong id="pageNumber"></strong>
+
+                <button
+                    type="button"
+                    class="read-button"
+                    id="nextPage"
+                >
+                    Berikutnya →
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+
+    document.body.appendChild(
+        reader
+    );
+
+
+    const readerText =
+        reader.querySelector(
+            "#readerText"
+        );
+
+    const pageNumber =
+        reader.querySelector(
+            "#pageNumber"
+        );
+
+    const progressBar =
+        reader.querySelector(
+            "#readerProgress"
+        );
+
+    const previousButton =
+        reader.querySelector(
+            "#previousPage"
+        );
+
+    const nextButton =
+        reader.querySelector(
+            "#nextPage"
+        );
+
+
+    function updatePage() {
+
+        readerText.textContent =
+            pages[page - 1];
+
+        pageNumber.textContent =
+            `Halaman ${page} dari ${pages.length}`;
+
+        progressBar.style.width =
+            `${
+                (page / pages.length) *
+                100
+            }%`;
+
+
+        previousButton.disabled =
+            page === 1;
+
+        nextButton.disabled =
+            page === pages.length;
+
+
+        saveReadingProgress(
+            bookId,
+            page,
+            pages.length
+        );
+
+    }
+
+
+    previousButton.addEventListener(
+        "click",
+        function () {
+
+            if (page > 1) {
+
+                page--;
+
+                updatePage();
+
+            }
+
+        }
+    );
+
+
+    nextButton.addEventListener(
+        "click",
+        function () {
+
+            if (
+                page <
+                pages.length
+            ) {
+
+                page++;
+
+                updatePage();
+
+            }
+
+        }
+    );
+
+
+    reader
+        .querySelector(
+            "#closeReader"
+        )
+        .addEventListener(
+            "click",
+            function () {
+
+                reader.remove();
+
+            }
+        );
+
+
+    reader.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target ===
+                reader
+            ) {
+
+                reader.remove();
+
+            }
+
+        }
+    );
+
+
+    updatePage();
+
+    showToast(
+        "📖 Buku berhasil dibuka"
+    );
+
+}
+
+
+/* =====================================================
+   READING PROGRESS
+===================================================== */
+
+function saveReadingProgress(
+    bookId,
+    page,
+    totalPages
+) {
+
+    const progressData =
+        JSON.parse(
+            localStorage.getItem(
+                "readingProgress"
+            )
+        ) || {};
+
+
+    progressData[bookId] =
+        page;
+
+
+    localStorage.setItem(
+        "readingProgress",
+        JSON.stringify(
+            progressData
+        )
+    );
+
+
+    let found =
+        history.find(
+            function (item) {
+
+                return item.id ===
+                    bookId;
+
+            }
+        );
+
+
+    const progress =
+        Math.round(
+            (page / totalPages) *
+            100
+        );
+
+
+    if (found) {
+
+        found.progress =
+            progress;
+
+    } else {
+
+        history.unshift({
+            id: bookId,
+            progress: progress,
+            date: Date.now()
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "readingHistory",
+        JSON.stringify(
+            history
+        )
+    );
+
+
+    renderHistory();
+
+    updateProfileStats();
+
 }
 
 
@@ -774,496 +1413,222 @@ img {
    HISTORY
 ===================================================== */
 
-.history-list {
-    display: grid;
+function renderHistory() {
 
-    gap: 15px;
-}
+    historyList.innerHTML = "";
 
-.history-item {
-    background: white;
 
-    border: 1px solid var(--border);
+    if (
+        history.length ===
+        0
+    ) {
 
-    border-radius: var(--radius);
-
-    padding: 18px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-}
-
-.dark .history-item {
-    background: #182033;
-}
-
-.history-cover {
-    width: 70px;
-    height: 90px;
-
-    flex-shrink: 0;
-
-    border-radius: 8px;
-
-    background: var(--primary);
-
-    display: grid;
-    place-items: center;
-
-    font-size: 30px;
-}
-
-.history-info {
-    flex: 1;
-}
-
-.history-info h3 {
-    margin-bottom: 3px;
-}
-
-.history-info p {
-    color: var(--muted);
-
-    font-size: 14px;
-}
-
-.progress {
-    height: 7px;
-
-    background: #e2e8f0;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    margin-top: 10px;
-}
-
-.progress-bar {
-    height: 100%;
-
-    background: var(--primary);
-
-    border-radius: inherit;
-}
-
-
-/* =====================================================
-   PROFILE
-===================================================== */
-
-.profile-card {
-    max-width: 850px;
-
-    margin: 0 auto;
-
-    background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: 24px;
-
-    padding: 35px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 30px;
-
-    box-shadow: var(--shadow);
-}
-
-.dark .profile-card {
-    background: #182033;
-}
-
-.profile-avatar {
-    width: 130px;
-    height: 130px;
-
-    border-radius: 50%;
-
-    background: var(--primary-light);
-
-    display: grid;
-    place-items: center;
-
-    font-size: 65px;
-
-    flex-shrink: 0;
-}
-
-.profile-information {
-    flex: 1;
-}
-
-.profile-information h2 {
-    font-size: 30px;
-
-    margin-bottom: 2px;
-}
-
-.profile-information > p {
-    color: var(--muted);
-
-    margin-bottom: 20px;
-}
-
-.profile-stats {
-    display: flex;
-
-    gap: 30px;
-
-    margin-bottom: 20px;
-}
-
-.profile-stats strong,
-.profile-stats span {
-    display: block;
-}
-
-.profile-stats strong {
-    font-size: 24px;
-}
-
-.profile-stats span {
-    color: var(--muted);
-
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   MODAL
-===================================================== */
-
-.modal {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 2000;
-
-    background: rgba(15, 23, 42, 0.65);
-
-    display: grid;
-
-    place-items: center;
-
-    padding: 20px;
-}
-
-.modal-content {
-    width: min(850px, 100%);
-
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    position: relative;
-
-    background: white;
-
-    color: var(--text);
-
-    border-radius: 22px;
-
-    padding: 30px;
-
-    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3);
-}
-
-.dark .modal-content {
-    background: #182033;
-
-    color: white;
-}
-
-.modal-close {
-    position: absolute;
-
-    top: 15px;
-    right: 15px;
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #f1f5f9;
-
-    font-size: 25px;
-
-    z-index: 2;
-}
-
-.dark .modal-close {
-    background: #273247;
-
-    color: white;
-}
-
-.detail-layout {
-    display: grid;
-
-    grid-template-columns: 220px 1fr;
-
-    gap: 30px;
-
-    padding-top: 15px;
-}
-
-.detail-cover {
-    height: 300px;
-
-    border-radius: 14px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #4f46e5,
-            #7c3aed
+        historyEmpty.classList.remove(
+            "hidden"
         );
 
-    display: grid;
-    place-items: center;
+        return;
 
-    font-size: 80px;
-}
-
-.detail-information h2 {
-    font-size: 32px;
-
-    margin-bottom: 5px;
-}
-
-.detail-information .author {
-    color: var(--muted);
-
-    margin-bottom: 20px;
-}
-
-.detail-description {
-    color: var(--muted);
-
-    margin: 20px 0;
-}
-
-.detail-meta {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-}
-
-.detail-meta span {
-    background: var(--primary-light);
-
-    color: var(--primary);
-
-    padding: 7px 12px;
-
-    border-radius: 20px;
-
-    font-size: 13px;
-
-    font-weight: 700;
-}
+    }
 
 
-/* =====================================================
-   AUTH
-===================================================== */
+    historyEmpty.classList.add(
+        "hidden"
+    );
 
-.auth-modal {
-    width: min(450px, 100%);
-}
 
-.auth-modal h2 {
-    font-size: 30px;
+    history.forEach(
+        function (item) {
 
-    margin-bottom: 5px;
-}
+            const book =
+                books.find(
+                    function (book) {
 
-.auth-modal > p {
-    color: var(--muted);
+                        return book.id ===
+                            item.id;
 
-    margin-bottom: 25px;
-}
+                    }
+                );
 
-.form-group {
-    margin-bottom: 18px;
-}
 
-.form-group label {
-    display: block;
+            if (!book) {
+                return;
+            }
 
-    font-weight: 700;
 
-    margin-bottom: 7px;
-}
+            const element =
+                document.createElement(
+                    "div"
+                );
 
-.form-group input {
-    width: 100%;
+            element.className =
+                "history-item";
 
-    padding: 13px 14px;
 
-    border: 1px solid var(--border);
+            element.innerHTML = `
 
-    border-radius: 10px;
+                <div class="history-cover">
+                    📖
+                </div>
 
-    outline: none;
+                <div class="history-info">
 
-    background: white;
+                    <h3>
+                        ${escapeHTML(
+                            book.title
+                        )}
+                    </h3>
 
-    color: #172033;
-}
+                    <p>
+                        ${escapeHTML(
+                            book.author
+                        )}
+                    </p>
 
-.dark .form-group input {
-    background: #101522;
+                    <div class="progress">
 
-    color: white;
-}
+                        <div
+                            class="progress-bar"
+                            style="
+                                width:
+                                ${item.progress}%;
+                            "
+                        ></div>
 
-.form-group input:focus {
-    border-color: var(--primary);
+                    </div>
 
-    box-shadow:
-        0 0 0 3px
-        rgba(79, 70, 229, 0.15);
-}
+                    <small>
+                        ${item.progress}% selesai
+                    </small>
 
-.full-width {
-    width: 100%;
-}
+                </div>
 
-.auth-switch {
-    text-align: center;
+                <button
+                    type="button"
+                    class="read-button"
+                >
+                    Lanjutkan
+                </button>
+            `;
 
-    margin-top: 20px;
-}
 
-.auth-switch button {
-    border: none;
+            element
+                .querySelector(
+                    ".read-button"
+                )
+                .addEventListener(
+                    "click",
+                    function () {
 
-    background: transparent;
+                        readBook(
+                            book.id
+                        );
 
-    color: var(--primary);
+                    }
+                );
 
-    font-weight: 700;
+
+            historyList.appendChild(
+                element
+            );
+
+        }
+    );
+
 }
 
 
 /* =====================================================
-   TOAST
+   LOGIN
 ===================================================== */
 
-.toast {
-    position: fixed;
+function openLogin() {
 
-    right: 25px;
-    bottom: 25px;
+    loginModal.classList.remove(
+        "hidden"
+    );
 
-    z-index: 3000;
-
-    background: #172033;
-
-    color: white;
-
-    padding: 14px 20px;
-
-    border-radius: 10px;
-
-    box-shadow: var(--shadow);
-
-    transform:
-        translateY(100px);
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition: 0.3s;
-}
-
-.toast.show {
-    transform:
-        translateY(0);
-
-    opacity: 1;
 }
 
 
-/* =====================================================
-   BACK TO TOP
-===================================================== */
+function closeLogin() {
 
-.back-to-top {
-    position: fixed;
+    loginModal.classList.add(
+        "hidden"
+    );
 
-    right: 25px;
-    bottom: 25px;
-
-    width: 45px;
-    height: 45px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: var(--primary);
-
-    color: white;
-
-    font-size: 20px;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition: 0.3s;
-
-    z-index: 900;
-}
-
-.back-to-top.show {
-    opacity: 1;
-
-    pointer-events: auto;
 }
 
 
-/* =====================================================
-   FOOTER
-===================================================== */
+function handleLogin(event) {
 
-.footer {
-    background: #111827;
+    event.preventDefault();
 
-    color: white;
 
-    padding: 45px 0;
-}
+    const email =
+        document
+            .getElementById(
+                "loginEmail"
+            )
+            .value
+            .trim();
 
-.footer-content {
-    display: flex;
 
-    justify-content: space-between;
+    const password =
+        document
+            .getElementById(
+                "loginPassword"
+            )
+            .value;
 
-    align-items: center;
 
-    gap: 20px;
-}
+    if (
+        !email ||
+        !password
+    ) {
 
-.footer p {
-    color: #94a3b8;
+        showToast(
+            "Email dan password harus diisi."
+        );
+
+        return;
+
+    }
+
+
+    const account =
+        JSON.parse(
+            localStorage.getItem(
+                "account"
+            )
+        );
+
+
+    if (
+        account &&
+        account.email === email &&
+        account.password === password
+    ) {
+
+        localStorage.setItem(
+            "loggedIn",
+            "true"
+        );
+
+        showToast(
+            "✅ Login berhasil."
+        );
+
+        closeLogin();
+
+    } else {
+
+        showToast(
+            "Email atau password salah."
+        );
+
+    }
+
 }
 
 
@@ -1271,204 +1636,136 @@ img {
    DARK MODE
 ===================================================== */
 
-.dark {
-    --text: #f1f5f9;
+function toggleDarkMode() {
 
-    --muted: #94a3b8;
+    document.body.classList.toggle(
+        "dark"
+    );
 
-    --background: #101522;
 
-    --surface: #182033;
+    const isDark =
+        document.body.classList.contains(
+            "dark"
+        );
 
-    --border: #273247;
+
+    localStorage.setItem(
+        "darkMode",
+        isDark
+            ? "true"
+            : "false"
+    );
+
+
+    themeButton.textContent =
+        isDark
+            ? "☀️"
+            : "🌙";
+
 }
 
-.dark body {
-    background: #101522;
+
+function loadTheme() {
+
+    const isDark =
+        localStorage.getItem(
+            "darkMode"
+        ) === "true";
+
+
+    if (isDark) {
+
+        document.body.classList.add(
+            "dark"
+        );
+
+        themeButton.textContent =
+            "☀️";
+
+    }
+
 }
 
 
 /* =====================================================
-   RESPONSIVE
+   PROFILE
 ===================================================== */
 
-@media (max-width: 1100px) {
+function updateProfileStats() {
 
-    .book-grid {
-        grid-template-columns:
-            repeat(3, 1fr);
-    }
+    profileFavoriteCount.textContent =
+        favorites.length;
 
-    .nav-menu {
-        gap: 14px;
-    }
-
-    .hero-content {
-        gap: 30px;
-    }
+    profileHistoryCount.textContent =
+        history.length;
 
 }
 
 
-@media (max-width: 900px) {
+/* =====================================================
+   TOAST
+===================================================== */
 
-    .nav-menu {
-        position: absolute;
+let toastTimer;
 
-        top: 72px;
-        left: 20px;
-        right: 20px;
 
-        padding: 20px;
+function showToast(message) {
 
-        background: white;
+    toast.textContent =
+        message;
 
-        border: 1px solid var(--border);
 
-        border-radius: 15px;
+    toast.classList.add(
+        "show"
+    );
 
-        box-shadow: var(--shadow);
 
-        display: none;
+    clearTimeout(
+        toastTimer
+    );
 
-        flex-direction: column;
 
-        align-items: stretch;
-    }
+    toastTimer =
+        setTimeout(
+            function () {
 
-    .dark .nav-menu {
-        background: #182033;
-    }
+                toast.classList.remove(
+                    "show"
+                );
 
-    .nav-menu.open {
-        display: flex;
-    }
-
-    .menu-button {
-        display: grid;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-illustration {
-        display: none;
-    }
-
-    .statistics-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .book-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
+            },
+            2500
+        );
 
 }
 
 
-@media (max-width: 600px) {
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
 
-    .container {
-        width:
-            min(
-                100% - 24px,
-                1180px
-            );
-    }
+function escapeHTML(value) {
 
-    .navbar-content {
-        min-height: 64px;
-    }
-
-    .logo {
-        font-size: 16px;
-    }
-
-    .login-button {
-        display: none;
-    }
-
-    .hero {
-        padding: 55px 0;
-    }
-
-    .hero h1 {
-        font-size: 42px;
-    }
-
-    .search-box {
-        flex-direction: column;
-
-        gap: 8px;
-    }
-
-    .search-box button {
-        min-height: 48px;
-    }
-
-    .statistics {
-        margin-top: 0;
-
-        padding-top: 20px;
-    }
-
-    .statistics-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section {
-        padding: 60px 0;
-    }
-
-    .section-header {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-    .sorting {
-        width: 100%;
-    }
-
-    .sorting select {
-        flex: 1;
-    }
-
-    .book-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .profile-card {
-        flex-direction: column;
-
-        text-align: center;
-
-        padding: 25px;
-    }
-
-    .profile-stats {
-        justify-content: center;
-    }
-
-    .detail-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .detail-cover {
-        height: 220px;
-    }
-
-    .history-item {
-        align-items: flex-start;
-    }
-
-    .footer-content {
-        flex-direction: column;
-
-        text-align: center;
-    }
+    return String(value)
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
 }
